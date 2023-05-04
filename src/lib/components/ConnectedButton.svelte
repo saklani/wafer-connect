@@ -3,7 +3,8 @@
   import { shortAddress } from "../utils.js";
   import Address from "./Common/Address.svelte";
   import Disconnect from "./Common/Disconnect.svelte";
-  import Modal from "./Modal.svelte";
+  import ModalBox from "./Common/ModalBox.svelte";
+
   let showModal = false;
 
   const handleClick = () => (showModal = true);
@@ -12,16 +13,8 @@
 <button class="black" on:click={handleClick}>
   {shortAddress($account.address)}
 </button>
-<Modal bind:showModal>
-  <div class="connect-box column padding gap">
-    <h3>Connected</h3>
-    <Address />
-    <Disconnect />
-  </div>
-</Modal>
 
-<style>
-  .connect-box {
-    background-color: whitesmoke;
-  }
-</style>
+<ModalBox title={"Connected"} bind:showModal>
+  <Address />
+  <Disconnect />
+</ModalBox>
