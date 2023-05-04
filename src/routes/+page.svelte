@@ -1,6 +1,6 @@
 <script>
-    import ConnectWallet from "$lib/components/ConnectWallet.svelte";
+    import ConnectButton from "$lib/components/ConnectButton.svelte";
 </script>
 
 <h1>Try out Ko</h1>
-<ConnectWallet />
+<ConnectButton />

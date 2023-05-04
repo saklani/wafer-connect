@@ -7,8 +7,8 @@ function sleep(milliseconds) {
 
 /** @param  {string} address */
 function shortAddress(address) {
-    return `${address.substring(0, MAX_ADDRESS_LENGTH)}••••${address.substring(address.length - MAX_ADDRESS_LENGTH, address.length)}`;
-   
+    const length = address.length;
+    return `${address.substring(0, MAX_ADDRESS_LENGTH)}••••${address.substring(length - MAX_ADDRESS_LENGTH, length)}`;
 }
 
 export { shortAddress, sleep };

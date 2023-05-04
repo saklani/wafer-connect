@@ -1,20 +1,21 @@
 <script>
-    import Coinbase from "../connectors/Coinbase.svelte";
-    import Injected from "../connectors/Injected.svelte";
-    import MetaMask from "../connectors/MetaMask.svelte";
-    import WalletConnect from "../connectors/WalletConnect.svelte";
-    import ModalBox from "./Common/ModalBox.svelte";
+    import Loading from "./Loading.svelte";
+    import sveeeth, { account, configureChains } from "sveeeth";
+    import { mainnet } from "sveeeth/chains";
+    import { publicProvider } from "sveeeth/providers";
+    import Connected from "./Connected.svelte";
+    import Disconnected from "./Disconnected.svelte";
+    import "./styles.css";
 
-    let showModal = false;
+    const { provider } = configureChains([mainnet], [publicProvider()]);
 
-    const handleClick = () => (showModal = true);
+    sveeeth({ provider });
 </script>
 
-<button class="black" on:click={handleClick}> Connect Wallet </button>
-
-<ModalBox title={"Connect a Wallet"} bind:showModal>
-    <Injected />
-    <MetaMask />
-    <Coinbase />
-    <WalletConnect />
-</ModalBox>
+{#if $account.status === "connected"}
+    <Connected address={$account.address} />
+{:else if $account.status === "disconnected"}
+    <Disconnected />
+{:else}
+    <Loading />
+{/if}
