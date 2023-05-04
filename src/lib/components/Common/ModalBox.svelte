@@ -11,14 +11,11 @@
 </script>
 
 <Modal bind:showModal>
-    <div class="connect-box column padding gap">
+    <div
+        class="column padding gap"
+        style="background-color: rgba(245, 245, 245, 0.8); backdrop-filter: blur(4px);"
+    >
         <h3>{title}</h3>
         <slot />
     </div>
 </Modal>
-
-<style>
-    .connect-box {
-        background-color: whitesmoke;
-    }
-</style>

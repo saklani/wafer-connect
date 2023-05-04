@@ -53,14 +53,6 @@ button.black:hover {
     transform: scale(1.005);
 }
 
-button.blue {
-    background-color: rgba(19, 66, 107, 0.8);
-}
-
-button.blue:hover {
-    background-color: rgba(19, 66, 107, 1);
-}
-
 
 button.white {
     background-color: rgba(235, 235, 235, 1);
@@ -197,17 +189,10 @@ dialog[open]::backdrop {
     width: auto;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 0.4rem;
-}
-
 .row {
     display: flex;
     width: auto;
 }
-
 
 .wrap {
     display: flex;
@@ -215,38 +200,6 @@ dialog[open]::backdrop {
     width: auto;
 }
 
-/* image */
-
-.title {
-    min-height: 100px;
-    width: auto;
-    padding: 24px;
-}
-
-/* colors */
-.light-blur {
-    background-color: rgba(245, 245, 245, 0.3);
-    backdrop-filter: blur(8px);
-}
-
-.blur {
-    background-color: rgba(235, 235, 235, 0.5);
-    backdrop-filter: blur(6px);
-}
-
-.dark-blur {
-    background-color: rgba(35, 35, 35, 0.7);
-    backdrop-filter: blur(6px);
-}
-
-.gradient {
-    background: linear-gradient(to bottom, var(--zeus), darkred);
-
-}
-
-.error {
-    color: red;
-}
 
 /* Positioning */
 
@@ -281,18 +234,9 @@ dialog[open]::backdrop {
     padding: 0.85rem;
 }
 
-.border {
-    border: solid 0.1px black;
-    border-radius: 6px;
-}
-
 .border-gray {
     border: solid 0.1px lightgray;
     border-radius: 6px;
-}
-
-.margin-inline {
-    margin: 0.85rem;
 }
 
 /*******************************************************************************/
