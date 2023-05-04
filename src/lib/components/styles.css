@@ -116,10 +116,6 @@ button.rainbow:after {
     border-radius: 4px;
 }
 
-button.primary:hover {
-    background-color: rgba(0, 0, 0, 1);
-}
-
 @keyframes glowing {
     0% {
         background-position: 0 0;
