@@ -21,11 +21,14 @@
 
 <style>
     dialog {
-        background: none;
+        background-color: var(--backgroundColor, rgba(255, 255, 255, 0.9));
         border: none;
         border-radius: var(--borderRadius, 4px);
         width: 100%;
-        max-width: 350px;
+        max-width: 325px;
+        border: none;
+        padding: 1rem;
+        width: auto;
     }
 
     dialog::backdrop {
@@ -38,6 +41,13 @@
 
     dialog[open]::backdrop {
         animation: fade 0.2s ease-out;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
     }
 
     @keyframes zoom {

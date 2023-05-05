@@ -1,0 +1,27 @@
+:root {
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+
+/*******************************************************************************/
+/*                                   STYLE                                     */
+/*******************************************************************************/
+
+button {
+    align-items: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    font-family: inherit;
+    font-size: inherit;
+    gap: 16px;
+    height: 42px;
+    justify-content: space-between;
+    padding-inline: 8px;
+    z-index: 1;
+}
+
+button > img {
+    width: 32px;
+}

@@ -5,7 +5,6 @@
 </script>
 
 <button
-    class="white border-gray row padding-inline space-between"
     on:click={() =>
         connect({
             connector: new MetaMaskConnector({
@@ -16,5 +15,5 @@
         })}
 >
     <p>{MetaMask.name}</p>
-    <img class="icon" src={MetaMask.icon} alt={MetaMask.name} />
+    <img src={MetaMask.icon} alt={MetaMask.name} />
 </button>

@@ -5,7 +5,6 @@
 </script>
 
 <button
-    class="white border-gray row padding-inline space-between"
     on:click={() =>
         connect({
             connector: new WalletConnectConnector({
@@ -14,5 +13,5 @@
         })}
 >
     <p>{WalletConnect.name}</p>
-    <img class="icon" src={WalletConnect.icon} alt={WalletConnect.name} />
+    <img src={WalletConnect.icon} alt={WalletConnect.name} />
 </button>

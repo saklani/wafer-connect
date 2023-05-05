@@ -1,12 +1,11 @@
 <script>
-    import sveeeth, { account, network, configureChains } from "sveeeth";
+    import sveeeth, { account, configureChains } from "sveeeth";
     import { mainnet } from "sveeeth/chains";
     import { publicProvider } from "sveeeth/providers";
     import Connected from "./Connected.svelte";
     import Disconnected from "./Disconnected.svelte";
     import Loading from "./Loading.svelte";
-    import "./styles.css";
-
+    import "./style.css";
     const { provider } = configureChains([mainnet], [publicProvider()]);
 
     sveeeth({ provider });
