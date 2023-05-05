@@ -29,7 +29,7 @@
     />
 {:else}
     <div
-        style="height: {radius}; width: {radius}; border-radius: 999px; background:{addressToGradient(
+        style="height: {radius}; width: {radius}; border-radius: {borderRadius}; background:{addressToGradient(
             address
         )};"
     />
