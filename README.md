@@ -1,3 +1,3 @@
-# Svelco
+# Wafer
 
-Svelco offers pre-built components for integrating wallets with Svelte/SvelteKit decentralized applications (dApps).
+Wafer offers minimalist pre-built components for integrating wallets with Svelte/SvelteKit decentralized applications (dApps).
