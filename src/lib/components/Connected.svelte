@@ -6,6 +6,7 @@
   import Avatar from "./wallet/Avatar.svelte";
   import Chain from "./wallet/Chain.svelte";
   import Disconnect from "./wallet/Disconnect.svelte";
+  import Balance from "./wallet/Balance.svelte";
 
   let showDialog = false;
 
@@ -26,8 +27,11 @@
     <h2>Connected</h2>
     <Chain />
   </div>
-  <Avatar {address} />
-  <Address {address} />
+  <div style="align-items: center; display: flex; flex-direction: column;">
+    <Avatar {address} />
+    <Address {address} />
+    <Balance />
+  </div>
   <Disconnect />
 </Dialog>
 
