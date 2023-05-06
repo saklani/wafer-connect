@@ -6,6 +6,7 @@
     import WalletConnect from "./connectors/WalletConnect.svelte";
     import Dialog from "./common/Dialog.svelte";
 
+    /** @type {boolean}  */
     let showDialog = false;
 </script>
 

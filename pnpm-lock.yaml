@@ -1,9 +1,6 @@
 lockfileVersion: '6.0'
 
 dependencies:
-  '@wagmi/connectors':
-    specifier: ^0.3.18
-    version: 0.3.18(@wagmi/core@0.10.10)(ethers@5.7.2)(react@18.2.0)(typescript@5.0.4)
   '@wagmi/core':
     specifier: ^0.10.10
     version: 0.10.10(ethers@5.7.2)(react@18.2.0)(typescript@5.0.4)
@@ -1132,42 +1129,6 @@ packages:
 
   /@wagmi/connectors@0.3.16(@wagmi/core@0.10.10)(ethers@5.7.2)(react@18.2.0)(typescript@5.0.4):
     resolution: {integrity: sha512-WtiFyvai6IWbV7DhujjmtJF0m+FFQCiIDrtHsNf1xio0gBfpnO8rT9PZQQf0uxuLn0nLxqXqYMMwzPipUNaIcg==}
-    peerDependencies:
-      '@wagmi/core': '>=0.9.x'
-      ethers: '>=5.5.1 <6'
-      typescript: '>=4.9.4'
-    peerDependenciesMeta:
-      '@wagmi/core':
-        optional: true
-      typescript:
-        optional: true
-    dependencies:
-      '@coinbase/wallet-sdk': 3.6.6
-      '@ledgerhq/connect-kit-loader': 1.0.2
-      '@safe-global/safe-apps-provider': 0.15.2
-      '@safe-global/safe-apps-sdk': 7.10.1
-      '@wagmi/core': 0.10.10(ethers@5.7.2)(react@18.2.0)(typescript@5.0.4)
-      '@walletconnect/ethereum-provider': 2.7.0(@web3modal/standalone@2.3.7)
-      '@walletconnect/legacy-provider': 2.0.0
-      '@web3modal/standalone': 2.3.7(react@18.2.0)
-      abitype: 0.3.0(typescript@5.0.4)
-      ethers: 5.7.2
-      eventemitter3: 4.0.7
-      typescript: 5.0.4
-    transitivePeerDependencies:
-      - '@react-native-async-storage/async-storage'
-      - bufferutil
-      - debug
-      - encoding
-      - lokijs
-      - react
-      - supports-color
-      - utf-8-validate
-      - zod
-    dev: false
-
-  /@wagmi/connectors@0.3.18(@wagmi/core@0.10.10)(ethers@5.7.2)(react@18.2.0)(typescript@5.0.4):
-    resolution: {integrity: sha512-x2wMA3suNCgWifB2YGX4Hht1vDOD9ARcv5O37iRB57GWKXN+wTe/bFjCr1ahOFeCBdgGBqKmpFfX4Jbo7g4OYw==}
     peerDependencies:
       '@wagmi/core': '>=0.9.x'
       ethers: '>=5.5.1 <6'

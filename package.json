@@ -22,7 +22,6 @@
 		"!dist/**/*.spec.*"
 	],
 	"peerDependencies": {
-
 		"@wagmi/core": "^0.10.10",
 		"sveeeth": "^0.0.1"
 	},

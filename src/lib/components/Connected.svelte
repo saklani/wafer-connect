@@ -8,6 +8,7 @@
   import Disconnect from "./wallet/Disconnect.svelte";
   import Balance from "./wallet/Balance.svelte";
 
+  /** @type {boolean}  */
   let showDialog = false;
 
   /** @type {`0x{string}`}  */
