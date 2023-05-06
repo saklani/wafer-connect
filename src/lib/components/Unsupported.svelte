@@ -16,12 +16,12 @@
 
 <style>
     button {
-        background-color: var(--backgroundColor, rgba(235, 235, 235, 0.9));
+        background-color: var(--button-background-color, rgb(235, 235, 235));
         border: none;
-        border-radius: var(--borderRadius, 4px);
+        border-radius: var(--border-radius, 4px);
         color: var(--color, black);
     }
     button:hover {
-        background-color: var(--hover, rgba(235, 235, 235, 0.6));
+        background-color: var(--hover, rgba(235, 235, 235, 0.8));
     }
 </style>

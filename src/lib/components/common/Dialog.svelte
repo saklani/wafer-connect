@@ -40,19 +40,19 @@
 
 <style>
     dialog {
-        background-color: var(--backgroundColor, rgba(255, 255, 255, 0.9));
+        background-color: var(--background-color, rgba(245, 245, 245, 0.8));
         border: none;
-        border-radius: var(--borderRadius, 4px);
+        border-radius: var(--border-radius, 4px);
         width: 100%;
-        max-width: var(--maxWidth, 325px);
+        max-width: var(--max-width, 325px);
         border: none;
         padding: 1rem;
         width: auto;
-        backdrop-filter: var(--blur, blur(1px));
+        backdrop-filter: var(--blur, blur(4px));
     }
 
     dialog::backdrop {
-        backdrop-filter: var(--backdropBlur, blur(1px));
+        backdrop-filter: var(--backdrop-blur, blur(1px));
     }
 
     dialog[open] {

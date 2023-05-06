@@ -11,7 +11,7 @@
 
 <style>
     h2 {
-        font-size: var(--fontSize, 2rem);
+        font-size: var(--font-size, 2rem);
         color: var(--color, black);
     }
     div {

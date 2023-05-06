@@ -6,7 +6,7 @@
 
 <style>
     button {
-        background-color: var(--backgroundColor, rgba(235, 235, 235, 0.9));
+        background-color: var(--button-background-color, rgb(235, 235, 235));
         color: var(--color, black);
     }
 </style>

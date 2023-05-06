@@ -10,7 +10,7 @@
         chains, with more coming soon.
     </p>
     <div class="focus">
-        <ConnectButton />
+        <ConnectButton style="background-color: red"/>
     </div>
 </div>
 

@@ -24,7 +24,7 @@
 <style>
     .avatar {
         height: var(--radius, 64px);
-        border-radius: var(--borderRadius, 999px);
+        border-radius: var(--avatar-radius, 999px);
         width: var(--radius, 64px);
     }
 </style>
