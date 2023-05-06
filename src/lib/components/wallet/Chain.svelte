@@ -9,6 +9,7 @@
 </button>
 
 <Dialog bind:showDialog --backgroundColor="#FFFFFF" --maxWidth="200px">
+    <h3 slot="title">Chains</h3>
     {#each $network.chains as chain}
         <button
             on:click={
@@ -22,3 +23,9 @@
         </button>
     {/each}
 </Dialog>
+
+<style>
+    button {
+        height: var(--height, 32px);
+    }
+</style>
