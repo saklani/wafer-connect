@@ -2,9 +2,7 @@
     import { fade } from "svelte/transition";
 </script>
 
-<button class="loading" in:fade disabled>
-    Connecting...
-</button>
+<button class="loading" in:fade disabled> Connecting... </button>
 
 <style>
     button {

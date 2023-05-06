@@ -8,18 +8,6 @@
     /** @type {`0x{string}`}  */
     let address;
 
-    /** @type {string}  */
-    let fontSize = "1rem";
-
-    /** @type {string} */
-    let color = "#000000";
-
-    /** @type {string} */
-    let hoverColor = "#5F5F5F";
-
-    /** @type {string} */
-    let _color = color;
-
     let copied = false;
     /** @param  {string} text */
     const copyFn = async (text) => {
@@ -32,26 +20,23 @@
         }
     };
 
-    export { address, color, fontSize, hoverColor };
+    export { address };
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
     class="address"
-    style=" display: flex; align-items:center; gap:8px; color: {_color}; cursor: pointer;"
     title="copy"
     aria-label="address"
     on:click={() => copyFn(address)}
-    on:mouseenter={() => (_color = hoverColor)}
-    on:mouseleave={() => (_color = color)}
 >
-    <h3 style="font-size: {fontSize}">
+    <h3>
         {shortAddress(address)}
     </h3>
     {#if copied}
         <div in:fade={{ delay: 500, duration: 500 }}>
             <img
-                style="height: 16px; width: 16px; color: {_color};"
+                style="height: 16px; width: 16px;"
                 src={check}
                 alt="copied"
             />
@@ -59,10 +44,23 @@
     {:else}
         <div in:fade={{ delay: 300 }}>
             <img
-                style="height: 16px; width: 16px; color: {_color};"
+                style="height: 16px; width: 16px;"
                 src={copy}
                 alt="copy"
             />
         </div>
     {/if}
 </div>
+
+<style>
+    .address {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        gap: 8px;
+    }
+    .address > h3, img {
+        font-size: var(--fontSize, 1rem);
+        color: var(--color, black);
+    }
+</style>

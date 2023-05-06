@@ -9,28 +9,22 @@
     /** @type {`0x{string}`}  */
     let address;
 
-    /** @type {string}*/
-    let borderRadius = "999px";
-
-    /** @type {string}*/
-    let radius = "64px";
-
     /** @type {string | null}*/
     let src = null;
 
-    export { address, borderRadius, radius, src };
+    export { address, src };
 </script>
 
 {#if src}
-    <img
-        style="height: {radius}; width: {radius}; border-radius: {borderRadius};"
-        alt="avatar"
-        {src}
-    />
+    <img class="avatar" alt="avatar" {src} />
 {:else}
-    <div
-        style="height: {radius}; width: {radius}; border-radius: {borderRadius}; background:{addressToGradient(
-            address
-        )};"
-    />
+    <div class="avatar" style="background: {addressToGradient(address)};" />
 {/if}
+
+<style>
+    .avatar {
+        height: var(--radius, 64px);
+        border-radius: var(--borderRadius, 999px);
+        width: var(--radius, 64px);
+    }
+</style>

@@ -10,10 +10,11 @@
         border: none;
         border-radius: var(--borderRadius, 4px);
         color: var(--color, white);
+        font-size: var(--fontSize, 0.9rem);
         justify-content: center;
     }
 
     button:hover {
-        background-color: rgb(210, 63, 63);
+        background-color: var(--hover, rgbrgb(210, 63, 63));
     }
 </style>
