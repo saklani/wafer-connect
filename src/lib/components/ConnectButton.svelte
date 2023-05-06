@@ -1,6 +1,6 @@
 <script>
     import sveeeth, { account, configureChains, network } from "sveeeth";
-    import { arbitrum, mainnet, optimism, polygon } from "sveeeth/chains";
+    import { chainStore } from "../chains.js";
     import { publicProvider } from "sveeeth/providers";
     import Connected from "./Connected.svelte";
     import Disconnected from "./Disconnected.svelte";
@@ -8,8 +8,12 @@
     import Unsupported from "./Unsupported.svelte";
     import "./style.css";
 
-    let chains = [mainnet, polygon, optimism, arbitrum];
-    const { provider } = configureChains(chains, [publicProvider()]);
+    /** @type {import("@wagmi/core").Chain}*/
+    let chains;
+
+    const { provider } = configureChains(chains ?? $chainStore, [
+        publicProvider(),
+    ]);
 
     sveeeth({ provider });
 

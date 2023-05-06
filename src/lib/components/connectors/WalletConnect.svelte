@@ -1,6 +1,7 @@
 <script>
     import { WalletConnectConnector } from "@wagmi/connectors/walletConnect";
     import { connect } from "sveeeth";
+    import { chainStore } from "../../chains.js";
     import { WalletConnect } from "./injected.js";
 </script>
 
@@ -9,6 +10,7 @@
         connect({
             connector: new WalletConnectConnector({
                 projectId: "",
+                chains: $chainStore,
             }),
         })}
 >

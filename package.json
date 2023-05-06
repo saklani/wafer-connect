@@ -22,7 +22,9 @@
 		"!dist/**/*.spec.*"
 	],
 	"peerDependencies": {
-		"svelte": "^3.54.0"
+
+		"@wagmi/core": "^0.10.10",
+		"sveeeth": "^0.0.1"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-vercel": "^2.4.3",
@@ -37,9 +39,6 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
-		"@wagmi/connectors": "^0.3.18",
-		"@wagmi/core": "^0.10.10",
-		"ethers": "^5.7.2",
-		"sveeeth": "^0.0.1"
+		"ethers": "^5.7.2"
 	}
 }
