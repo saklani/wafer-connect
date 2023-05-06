@@ -14,7 +14,7 @@
 </script>
 
 <button in:fade on:click={() => (showDialog = true)}>
-  <Avatar {address} --radius="27px"/>
+  <Avatar {address} --radius="28px" />
   {shortAddress(address)}
 </button>
 
