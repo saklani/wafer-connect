@@ -15,6 +15,6 @@
     }
 
     button:hover {
-        background-color: var(--hover, rgbrgb(210, 63, 63));
+        background-color: var(--hover, rgb(210, 63, 63));
     }
 </style>

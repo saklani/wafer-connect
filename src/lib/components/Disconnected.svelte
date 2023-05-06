@@ -6,13 +6,13 @@
     import WalletConnect from "./connectors/WalletConnect.svelte";
     import Dialog from "./common/Dialog.svelte";
 
-    let showModal = false;
+    let showDialog = false;
 </script>
 
-<button in:fade on:click={() => (showModal = true)}>
+<button in:fade on:click={() => (showDialog = true)}>
     Connect Wallet
 </button>
-<Dialog bind:showModal>
+<Dialog bind:showDialog>
     <h2>Connect a Wallet</h2>
     <Injected />
     <MetaMask />
@@ -28,6 +28,6 @@
         color: var(--color, black);
     }
     button:hover {
-        background-color: var(--backgroundHoverColor, rgba(235, 235, 235, 0.6));
+        background-color: var(--hover, rgba(235, 235, 235, 0.6));
     }
 </style>

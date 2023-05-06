@@ -1,17 +1,17 @@
 <script>
     /** @type {boolean} */
-    export let showModal;
+    export let showDialog;
 
     /** @type {HTMLDialogElement} */
     let dialog;
 
-    $: if (dialog) showModal ? dialog.showModal() : dialog.close();
+    $: if (dialog) showDialog ? dialog.showModal() : dialog.close();
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <dialog
     bind:this={dialog}
-    on:close={() => (showModal = false)}
+    on:close={() => (showDialog = false)}
     on:click|self={() => dialog.close()}
 >
     <div on:click|stopPropagation>
@@ -25,14 +25,15 @@
         border: none;
         border-radius: var(--borderRadius, 4px);
         width: 100%;
-        max-width: 325px;
+        max-width: var(--maxWidth, 325px);
         border: none;
         padding: 1rem;
         width: auto;
+        backdrop-filter: var(--blur, blur(1px));
     }
 
     dialog::backdrop {
-        backdrop-filter: blur(1px);
+        backdrop-filter: var(--backdropBlur, blur(1px));
     }
 
     dialog[open] {

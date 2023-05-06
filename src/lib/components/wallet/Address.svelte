@@ -35,19 +35,11 @@
     </h3>
     {#if copied}
         <div in:fade={{ delay: 500, duration: 500 }}>
-            <img
-                style="height: 16px; width: 16px;"
-                src={check}
-                alt="copied"
-            />
+            <img style="height: 16px; width: 16px;" src={check} alt="copied" />
         </div>
     {:else}
         <div in:fade={{ delay: 300 }}>
-            <img
-                style="height: 16px; width: 16px;"
-                src={copy}
-                alt="copy"
-            />
+            <img style="height: 16px; width: 16px;" src={copy} alt="copy" />
         </div>
     {/if}
 </div>
@@ -59,7 +51,11 @@
         display: flex;
         gap: 8px;
     }
-    .address > h3, img {
+    .address:hover {
+        color: var(--hover, rgba(63, 65, 63, 1));
+    }
+    .address > h3,
+    img {
         font-size: var(--fontSize, 1rem);
         color: var(--color, black);
     }
