@@ -13,9 +13,8 @@
 </script>
 
 <button
-  in:fade={{ delay: 300 }}
+  in:fade
   on:click={() => (showModal = true)}
-  out:fade={{ duration: 400 }}
 >
   <Avatar {address} radius={"26px"} />
   {shortAddress(address)}

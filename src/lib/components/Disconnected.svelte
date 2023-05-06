@@ -9,7 +9,7 @@
     let showModal = false;
 </script>
 
-<button in:fade={{ delay: 400 }} on:click={() => (showModal = true)}>
+<button in:fade on:click={() => (showModal = true)}>
     Connect Wallet
 </button>
 <Dialog bind:showModal>

@@ -2,7 +2,7 @@
     import { fade } from "svelte/transition";
 </script>
 
-<button class="loading" out:fade={{ duration: 300 }} disabled>
+<button class="loading" in:fade disabled>
     Connecting...
 </button>
 
