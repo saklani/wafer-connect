@@ -9,11 +9,9 @@
     let showDialog = false;
 </script>
 
-<button in:fade on:click={() => (showDialog = true)}>
-    Connect Wallet
-</button>
+<button in:fade on:click={() => (showDialog = true)}> Connect Wallet </button>
 <Dialog bind:showDialog>
-    <h2>Connect a Wallet</h2>
+    <h2 slot="title">Connect a Wallet</h2>
     <Injected />
     <MetaMask />
     <Coinbase />

@@ -1,4 +1,5 @@
 <script>
+    import cross from "../../images/cross.svg";
     /** @type {boolean} */
     export let showDialog;
 
@@ -14,7 +15,25 @@
     on:close={() => (showDialog = false)}
     on:click|self={() => dialog.close()}
 >
-    <div on:click|stopPropagation>
+    <div
+        style="display: flex; flex-direction: column; gap: 0.5rem; width: 100%;"
+        on:click|stopPropagation
+    >
+        <div
+            style="align-items: center; display: flex; justify-content: space-between; gap: 0.5rem;"
+        >
+            <slot name="title" />
+            <button
+                style="padding: 4px; width: 32px; height: 32px;"
+                on:click={() => (showDialog = false)}
+            >
+                <img
+                    src={cross}
+                    alt="close"
+                    style="width: 24px; height: 24px;"
+                />
+            </button>
+        </div>
         <slot />
     </div>
 </dialog>
@@ -42,13 +61,6 @@
 
     dialog[open]::backdrop {
         animation: fade 0.2s ease-out;
-    }
-
-    div {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        width: 100%;
     }
 
     @keyframes zoom {

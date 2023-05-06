@@ -6,9 +6,11 @@
 
 <button on:click={() => (showDialog = true)}> Unsupported Chain </button>
 <Dialog bind:showDialog>
-    <h2>Switch Chain</h2>
+    <h2 slot="title">Switch Chain</h2>
     {#each $network.chains as chain}
-        <button on:click={() => switchNetwork({ chainId: chain.id })}>{chain.name}</button>
+        <button on:click={() => switchNetwork({ chainId: chain.id })}
+            >{chain.name}</button
+        >
     {/each}
 </Dialog>
 

@@ -19,7 +19,10 @@
 </button>
 
 <Dialog bind:showDialog>
-  <div class="row">
+  <div
+    slot="title"
+    style="align-items: center; display: flex; justify-content: space-between; width: 100%;"
+  >
     <h2>Connected</h2>
     <Chain />
   </div>
@@ -29,11 +32,6 @@
 </Dialog>
 
 <style>
-  .row {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-  }
   button {
     background-color: var(--backgroundColor, rgba(235, 235, 235, 0.9));
     border: none;
