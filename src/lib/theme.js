@@ -10,7 +10,7 @@ const defaultTheme = {
 		backgroundColor: "rgb(230, 230, 230)",
 		color: "black",
 		dialog: {
-			backgroundColor: "rgb(235, 235, 235)",
+			backgroundColor: "rgba(255, 255, 255, 0.7)",
 			color: "black",
 		},
 	},
@@ -18,7 +18,7 @@ const defaultTheme = {
 		backgroundColor: "rgb(235, 235, 235)",
 		color: "black",
 		dialog: {
-			backgroundColor: "rgb(255, 255, 255)",
+      backgroundColor: "rgba(250, 250, 250, 0.72)",
 			color: "black",
 		},
 		hover: "rgba(235, 235, 235, 0.8)",
@@ -36,7 +36,7 @@ const defaultTheme = {
 		backgroundColor: "rgb(235, 235, 235)",
 		color: "black",
 		dialog: {
-			backgroundColor: "rgba(245, 245, 245, 0.7)",
+			backgroundColor: "rgba(250, 250, 250, 0.72)",
 			color: "black",
 		},
 		hover: "rgba(235, 235, 235, 0.8)",
@@ -46,13 +46,13 @@ const defaultTheme = {
 		color: "black",
 	},
 	unsupported: {
-		backgroundColor: "rgb(190, 59, 59)",
+		backgroundColor: "rgb(220, 66, 66)",
 		color: "white",
 		dialog: {
-			backgroundColor: "rgb(235, 235, 235)",
+      backgroundColor: "rgba(250, 250, 250, 0.72)",
 			color: "black",
 		},
-		hover: "rgba(190, 59, 59, 0.8)",
+		hover: "rgb(230, 69, 69)",
 	},
 };
 
