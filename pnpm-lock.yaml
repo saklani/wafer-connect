@@ -10,6 +10,9 @@ dependencies:
   sveeeth:
     specifier: ^0.0.1
     version: 0.0.1(@wagmi/core@0.10.10)
+  svelte:
+    specifier: ^3.54.0
+    version: 3.58.0
 
 devDependencies:
   '@sveltejs/adapter-vercel':
@@ -24,9 +27,6 @@ devDependencies:
   publint:
     specifier: ^0.1.9
     version: 0.1.11
-  svelte:
-    specifier: ^3.54.0
-    version: 3.58.0
   svelte-check:
     specifier: ^3.0.1
     version: 3.2.0(svelte@3.58.0)

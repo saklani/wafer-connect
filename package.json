@@ -1,6 +1,7 @@
 {
-	"name": "wafer",
-	"version": "0.0.2",
+	"name": "wafer-connect",
+	"version": "0.0.3",
+	"license": "MIT",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && pnpm run package",
@@ -16,13 +17,9 @@
 			"svelte": "./dist/index.js"
 		}
 	},
-	"files": [
-		"dist",
-		"!dist/**/*.test.*",
-		"!dist/**/*.spec.*"
-	],
+	"files": ["dist", "!dist/**/*.test.*", "!dist/**/*.spec.*"],
 	"peerDependencies": {
-		"@wagmi/core": "^0.10.10",
+		"svelte": "^3.54.0",
 		"sveeeth": "^0.0.1"
 	},
 	"devDependencies": {
@@ -30,14 +27,14 @@
 		"@sveltejs/kit": "^1.5.0",
 		"@sveltejs/package": "^2.0.0",
 		"publint": "^0.1.9",
-		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
 		"vite": "^4.3.0"
 	},
+	"dependencies": {
+		"@wagmi/core": "^0.10.10",
+		"ethers": "^5.7.2"
+	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"type": "module",
-	"dependencies": {
-		"ethers": "^5.7.2"
-	}
+	"type": "module"
 }
