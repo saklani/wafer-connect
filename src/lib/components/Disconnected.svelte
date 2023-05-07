@@ -1,6 +1,5 @@
 <script>
     import { fade } from "svelte/transition";
-    import Coinbase from "./connectors/Coinbase.svelte";
     import Injected from "./connectors/Injected.svelte";
     import MetaMask from "./connectors/MetaMask.svelte";
     import WalletConnect from "./connectors/WalletConnect.svelte";
@@ -15,7 +14,6 @@
     <h2 slot="title">Connect a Wallet</h2>
     <Injected />
     <MetaMask />
-    <Coinbase />
     <WalletConnect />
 </Dialog>
 

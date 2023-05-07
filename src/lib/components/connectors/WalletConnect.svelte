@@ -9,7 +9,9 @@
   on:click={() =>
     connect({
       connector: new WalletConnectConnector({
-        projectId: "",
+        options: {
+          projectId: "956d5ec8e006d78c793f06be590de1fa",
+        },
         chains: $chainStore,
       }),
     })}
