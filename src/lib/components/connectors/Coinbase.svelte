@@ -1,5 +1,5 @@
 <script>
-  import { CoinbaseWalletConnector } from "@wagmi/connectors/coinbaseWallet";
+  import { CoinbaseWalletConnector } from "@wagmi/core/connectors/coinbaseWallet";
   import { connect } from "sveeeth";
   import { chainStore } from "../../chains.js";
   import { Coinbase } from "./injected.js";

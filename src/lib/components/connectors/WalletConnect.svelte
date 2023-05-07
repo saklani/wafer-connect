@@ -1,5 +1,5 @@
 <script>
-  import { WalletConnectConnector } from "@wagmi/connectors/walletConnect";
+  import { WalletConnectConnector } from "@wagmi/core/connectors/walletConnect";
   import { connect } from "sveeeth";
   import { chainStore } from "../../chains.js";
   import { WalletConnect } from "./injected.js";

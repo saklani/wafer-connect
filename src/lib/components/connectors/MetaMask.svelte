@@ -1,6 +1,6 @@
 <script>
   import { connect } from "sveeeth";
-  import { MetaMaskConnector } from "@wagmi/connectors/metaMask";
+  import { MetaMaskConnector } from "@wagmi/core/connectors/metaMask";
   import { MetaMask } from "./injected.js";
   import { chainStore } from "../../chains.js";
 </script>
