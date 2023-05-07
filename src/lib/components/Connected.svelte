@@ -1,12 +1,13 @@
 <script>
   import { fade } from "svelte/transition";
+  import { waferStore } from "../store.js";
   import { shortAddress } from "../utils.js";
   import Dialog from "./common/Dialog.svelte";
   import Address from "./wallet/Address.svelte";
   import Avatar from "./wallet/Avatar.svelte";
+  import Balance from "./wallet/Balance.svelte";
   import Chain from "./wallet/Chain.svelte";
   import Disconnect from "./wallet/Disconnect.svelte";
-  import Balance from "./wallet/Balance.svelte";
 
   /** @type {boolean}  */
   let showDialog = false;
@@ -20,7 +21,11 @@
   {shortAddress(address)}
 </button>
 
-<Dialog bind:showDialog>
+<Dialog
+  bind:showDialog
+  --dialog-background-color={$waferStore.theme.connected.dialog.backgroundColor}
+  --dialog-color={$waferStore.theme.connected.dialog.color}
+>
   <div
     slot="title"
     style="align-items: center; display: flex; justify-content: space-between; width: 100%;"
@@ -30,10 +35,18 @@
   </div>
   <div style="align-items: center; display: flex; flex-direction: column;">
     <Avatar {address} />
-    <Address {address} />
-    <Balance />
+    <Address
+      {address}
+      --address-color={$waferStore.theme.address.color}
+      --address-hover={$waferStore.theme.address.hover}
+    />
+    <Balance --balance-color={$waferStore.theme.balance.color} />
   </div>
-  <Disconnect />
+  <Disconnect
+    --disconnect-background-color={$waferStore.theme.disconnect.backgroundColor}
+    --disconnect-color={$waferStore.theme.disconnect.color}
+    --disconnect-hover={$waferStore.theme.disconnect.hover}
+  />
 </Dialog>
 
 <style>
@@ -42,6 +55,6 @@
     color: var(--connected-color, black);
   }
   button:hover {
-    background-color: var(--hover, rgba(235, 235, 235, 0.7));
+    background-color: var(--connected-hover, rgba(235, 235, 235, 0.7));
   }
 </style>

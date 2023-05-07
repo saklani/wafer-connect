@@ -19,3 +19,13 @@
   <p>{WalletConnect.name}</p>
   <img src={WalletConnect.icon} alt={WalletConnect.name} />
 </button>
+
+<style>
+  button {
+    background-color: var(--connector-background-color, white);
+    color: var(--connector-color, black);
+  }
+  button:hover {
+    background-color: var(--connector-hover, rgba(255, 255, 255, 0.75));
+  }
+</style>

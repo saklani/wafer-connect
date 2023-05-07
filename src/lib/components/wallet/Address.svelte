@@ -52,10 +52,9 @@
     gap: 8px;
   }
   .address:hover {
-    color: var(--hover, rgba(63, 65, 63, 1));
+    color: var(--address-hover, rgba(63, 65, 63, 1));
   }
-  .address > h3,
-  img {
+  .address > h3 {
     font-size: var(--address-font-size, 1rem);
     color: var(--address-color, black);
   }

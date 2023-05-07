@@ -24,7 +24,7 @@
     >
       <slot name="title" />
       <button
-        style="padding: 4px; width: 32px; height: 32px;"
+        style="background-color: transparent; padding: 4px; width: 32px; height: 32px;"
         on:click={() => (showDialog = false)}
       >
         <img src={cross} alt="close" style="width: 24px; height: 24px;" />
@@ -40,6 +40,7 @@
     background-color: var(--dialog-background-color, rgba(245, 245, 245, 0.8));
     border: none;
     border-radius: var(--border-radius, 4px);
+    color: var(--dialog-color, black);
     max-width: var(--max-width, 325px);
     padding: 1rem;
     width: 100%;

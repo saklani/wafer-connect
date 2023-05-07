@@ -2,8 +2,9 @@ import { writable } from "svelte/store";
 
 function createStore() {
 	const { subscribe, set } = writable({
-		walletConnectProjectId: "",
 		chains: [],
+		theme: {},
+		walletConnectProjectId: "",
 	});
 
 	return {

@@ -25,6 +25,8 @@
 
 <style>
   button {
+    background-color: var(--chain-background-color, rgb(230, 230, 230));
+    color: var(--chain-color, black);
     height: var(--height, 32px);
   }
 </style>
