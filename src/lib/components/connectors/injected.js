@@ -33,6 +33,9 @@ const getInjectedPreset = (ethereum) => {
 	if (ethereum === undefined) {
 		return Browser;
 	}
+	if (ethereum.isMetaMask) {
+		return MetaMask;
+	}
 	if (ethereum.isRainbow) {
 		return {
 			name: "Rainbow",

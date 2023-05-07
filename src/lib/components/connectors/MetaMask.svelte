@@ -1,15 +1,15 @@
 <script>
-  import { connect } from "sveeeth";
   import { MetaMaskConnector } from "@wagmi/core/connectors/metaMask";
+  import { connect } from "sveeeth";
+  import { waferStore } from "./../../store.js";
   import { MetaMask } from "./injected.js";
-  import { chainStore } from "../../chains.js";
 </script>
 
 <button
   on:click={() =>
     connect({
       connector: new MetaMaskConnector({
-        chains: $chainStore,
+        chains: $waferStore.chains,
         options: {
           UNSTABLE_shimOnConnectSelectAccount: true,
         },

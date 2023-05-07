@@ -1,23 +1,29 @@
 <script>
   import sveeeth, { account, configureChains, network } from "sveeeth";
+  import { arbitrum, mainnet, optimism, polygon } from "sveeeth/chains";
   import { publicProvider } from "sveeeth/providers";
-  import { chainStore } from "../chains.js";
+  import { waferStore } from "../store.js";
   import Connected from "./Connected.svelte";
   import Disconnected from "./Disconnected.svelte";
   import Loading from "./Loading.svelte";
   import Unsupported from "./Unsupported.svelte";
   import "./style.css";
 
-  /** @type {import("@wagmi/core").Chain | undefined}*/
-  let chains;
+  /** @type {import("@wagmi/core").Chain}*/
+  let chains = [mainnet, polygon, optimism, arbitrum];
 
-  const { provider } = configureChains(chains ?? $chainStore, [
+  /** @type {string} */
+  let walletConnectProjectId;
+
+  waferStore.set({chains, walletConnectProjectId});
+
+  const { provider } = configureChains(chains ?? $waferStore.chains, [
     publicProvider(),
   ]);
 
   sveeeth({ provider });
 
-  export { chains };
+  export { chains, walletConnectProjectId };
 </script>
 
 {#if $account.status === "connected"}
