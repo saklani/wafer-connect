@@ -16,10 +16,8 @@
 
 <style>
   button {
-    background-color: var(--button-background-color, rgb(235, 235, 235));
-    border: none;
-    border-radius: var(--border-radius, 4px);
-    color: var(--color, black);
+    background-color: var(--unsupported-background-color, rgb(190, 59, 59));
+    color: var(--unsupported-color, black);
   }
   button:hover {
     background-color: var(--hover, rgba(235, 235, 235, 0.8));

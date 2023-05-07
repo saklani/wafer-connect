@@ -36,15 +36,13 @@
 
 <style>
   dialog {
-    background-color: var(--background-color, rgba(245, 245, 245, 0.8));
+    backdrop-filter: var(--blur, blur(4px));
+    background-color: var(--dialog-background-color, rgba(245, 245, 245, 0.8));
     border: none;
     border-radius: var(--border-radius, 4px);
-    width: 100%;
     max-width: var(--max-width, 325px);
-    border: none;
     padding: 1rem;
-    width: auto;
-    backdrop-filter: var(--blur, blur(4px));
+    width: 100%;
   }
 
   dialog::backdrop {

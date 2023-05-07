@@ -23,8 +23,8 @@
 
 <style>
   .avatar {
-    height: var(--radius, 64px);
     border-radius: var(--avatar-radius, 999px);
+    height: var(--radius, 64px);
     width: var(--radius, 64px);
   }
 </style>

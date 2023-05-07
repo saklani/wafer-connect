@@ -15,7 +15,7 @@
   /** @type {string} */
   let walletConnectProjectId;
 
-  waferStore.set({chains, walletConnectProjectId});
+  waferStore.set({ chains, walletConnectProjectId });
 
   const { provider } = configureChains(chains ?? $waferStore.chains, [
     publicProvider(),
@@ -30,7 +30,7 @@
   {#if $network.chain.unsupported}
     <Unsupported />
   {:else}
-    <Connected address={$account.address} />
+    <Connected address={$account.address}/>
   {/if}
 {:else if $account.status === "disconnected"}
   <Disconnected />

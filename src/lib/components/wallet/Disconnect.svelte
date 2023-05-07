@@ -6,11 +6,9 @@
 
 <style>
   button {
-    background-color: var(--button-background-color, rgb(243, 71, 71));
-    border: none;
-    border-radius: var(--border-radius, 4px);
-    color: var(--color, white);
-    font-size: var(--font-size, 0.9rem);
+    background-color: var(--disconnect-background-color, rgb(243, 71, 71));
+    color: var(--disconnect-color, white);
+    font-size: var(--disconnect-font-size, 0.9rem);
     justify-content: center;
   }
 

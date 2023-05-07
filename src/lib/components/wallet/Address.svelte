@@ -56,7 +56,7 @@
   }
   .address > h3,
   img {
-    font-size: var(--font-size, 1rem);
-    color: var(--color, black);
+    font-size: var(--address-font-size, 1rem);
+    color: var(--address-color, black);
   }
 </style>

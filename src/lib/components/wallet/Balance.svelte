@@ -11,8 +11,8 @@
 
 <style>
   h2 {
-    font-size: var(--font-size, 2rem);
-    color: var(--color, black);
+    font-size: var(--balance-font-size, 2rem);
+    color: var(--balance-color, black);
   }
   div {
     min-width: 48px;

@@ -8,7 +8,7 @@
   {$network.chain.name}
 </button>
 
-<Dialog bind:showDialog --backgroundColor="#FFFFFF" --maxWidth="200px">
+<Dialog bind:showDialog --max-width="200px">
   <h3 slot="title">Chains</h3>
   {#each $network.chains as chain}
     <button
