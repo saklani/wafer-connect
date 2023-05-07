@@ -15,18 +15,23 @@
         },
       }),
     })}
+  aria-label={`Connect using MetaMask`}
 >
-  <p>{MetaMask.name}</p>
+  <p style="color: var(--connector-text-color)">{MetaMask.name}</p>
   <img src={MetaMask.icon} alt={MetaMask.name} />
 </button>
 
-
 <style>
+  :root {
+    --connector-background-color: white;
+    --connector-text-color: black;
+    --connector-hover-color: rgba(255, 255, 255, 0.75);
+  }
   button {
-    background-color: var(--connector-background-color, white);
-    color: var(--connector-color, black);
+    background-color: var(--connector-background-color);
+    color: var(--connector-color);
   }
   button:hover {
-    background-color: var(--connector-hover, rgba(255, 255, 255, 0.75));
+    background-color: var(--connector-hover);
   }
 </style>

@@ -10,7 +10,7 @@
   import Unsupported from "./Unsupported.svelte";
   import "./style.css";
 
-  /** @type {import("@wagmi/core").Chain}*/
+  /** @type {import("@wagmi/core").Chain[]}*/
   let chains = [mainnet, polygon, optimism, arbitrum];
 
   /** @type {string} */

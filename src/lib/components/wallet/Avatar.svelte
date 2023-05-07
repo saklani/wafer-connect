@@ -16,15 +16,19 @@
 </script>
 
 {#if src}
-  <img class="avatar" alt="avatar" {src} />
+  <img class="avatar" alt="Avatar" {src} />
 {:else}
   <div class="avatar" style="background: {addressToGradient(address)};" />
 {/if}
 
 <style>
+  :root {
+    --avatar-radius: 999px;
+    --radius: 64px;
+  }
   .avatar {
-    border-radius: var(--avatar-radius, 999px);
-    height: var(--radius, 64px);
-    width: var(--radius, 64px);
+    border-radius: var(--avatar-radius);
+    height: var(--radius);
+    width: var(--radius);
   }
 </style>

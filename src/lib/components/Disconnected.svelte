@@ -33,12 +33,18 @@
 </Dialog>
 
 <style>
+  :root {
+    --disconnected-background-color: rgb(235, 235, 235);
+    --disconnected-color: black;
+    --disconnected-hover: rgba(235, 235, 235, 0.7);
+    --border-radius: 4px;
+  }
   button {
-    background-color: var(--disconnected-background-color, rgb(235, 235, 235));
-    border-radius: var(--border-radius, 4px);
-    color: var(--disconnected-color, black);
+    background-color: var(--disconnected-background-color);
+    border-radius: var(--border-radius);
+    color: var(--disconnected-color);
   }
   button:hover {
-    background-color: var(--disconnected-hover, rgba(235, 235, 235, 0.8));
+    background-color: var(--disconnected-hover);
   }
 </style>

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { browser } from "$app/environment";
   import { connect } from "sveeeth";
   import { InjectedConnector } from "sveeeth/connectors";
@@ -8,23 +8,28 @@
 
 {#if browser && !window.ethereum?.isMetaMask}
   <button
+    aria-label={`Connect using ${Browser.name}`}
     on:click={() =>
       connect({
         connector: new InjectedConnector({ chains: $waferStore.chains }),
       })}
   >
-    <p>{Browser.name}</p>
+    <p style="color: var(--connector-text-color)">{Browser.name}</p>
     <img src={Browser.icon} alt={Browser.name} />
   </button>
 {/if}
 
-
 <style>
+  :root {
+    --connector-background-color: white;
+    --connector-text-color: black;
+    --connector-hover-color: rgba(255, 255, 255, 0.75);
+  }
   button {
-    background-color: var(--connector-background-color, white);
-    color: var(--connector-color, black);
+    background-color: var(--connector-background-color);
+    color: var(--connector-text-color);
   }
   button:hover {
-    background-color: var(--connector-hover, rgba(255, 255, 255, 0.75));
+    background-color: var(--connector-hover-color);
   }
 </style>

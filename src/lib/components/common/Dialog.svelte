@@ -35,19 +35,26 @@
 </dialog>
 
 <style>
+  :root {
+    --dialog-background-color: rgba(245, 245, 245, 0.8);
+    --dialog-color: black;
+    --border-radius: 4px;
+    --max-width: 325px;
+  }
+
   dialog {
-    backdrop-filter: var(--blur, blur(4px));
-    background-color: var(--dialog-background-color, rgba(245, 245, 245, 0.8));
+    backdrop-filter: var(--blur);
+    background-color: var(--dialog-background-color);
     border: none;
-    border-radius: var(--border-radius, 4px);
-    color: var(--dialog-color, black);
-    max-width: var(--max-width, 325px);
+    border-radius: var(--border-radius);
+    color: var(--dialog-color);
+    max-width: var(--max-width);
     padding: 1rem;
     width: 100%;
   }
 
   dialog::backdrop {
-    backdrop-filter: var(--backdrop-blur, blur(1px));
+    backdrop-filter: blur(1px);
   }
 
   dialog[open] {

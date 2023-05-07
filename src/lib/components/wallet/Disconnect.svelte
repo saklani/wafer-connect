@@ -1,17 +1,36 @@
 <script>
   import { disconnect } from "sveeeth";
+
+  let isDisconnecting = false;
+
+  async function handleDisconnect() {
+    if (isDisconnecting) return;
+    isDisconnecting = true;
+    try {
+      await disconnect();
+    } finally {
+      isDisconnecting = false;
+    }
+  }
 </script>
 
-<button on:click={disconnect}> Disconnect </button>
+<button on:click={handleDisconnect} disabled={isDisconnecting}>
+  Disconnect
+</button>
 
 <style>
+  :root {
+    --disconnect-background-color: rgb(243, 71, 71);
+    --disconnect-color: white;
+    --disconnect-hover: rgb(210, 63, 63);
+  }
   button {
-    background-color: var(--disconnect-background-color, rgb(243, 71, 71));
-    color: var(--disconnect-color, white);
+    background-color: var(--disconnect-background-color);
+    color: var(--disconnect-color);
     justify-content: center;
   }
 
   button:hover {
-    background-color: var(--disconnect-hover, rgb(210, 63, 63));
+    background-color: var(--disconnect-hover);
   }
 </style>

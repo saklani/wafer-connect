@@ -5,8 +5,12 @@
 <button in:fade disabled> Connecting... </button>
 
 <style>
+  :root {
+    --loading-background-color: rgb(235, 235, 235);
+    --loading-color: black;
+  }
   button {
-    background-color: var(--loading-background-color, rgb(190, 59, 59));
-    color: var(--loading-color, black);
+    background-color: var(--loading-background-color);
+    color: var(--loading-color);
   }
 </style>

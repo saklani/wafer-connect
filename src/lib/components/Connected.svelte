@@ -16,7 +16,11 @@
   export let address;
 </script>
 
-<button in:fade on:click={() => (showDialog = true)}>
+<button
+  in:fade
+  on:click={() => (showDialog = true)}
+  aria-label={`Connected to wallet with address ${address}`}
+>
   <Avatar {address} --radius="28px" />
   {shortAddress(address)}
 </button>
@@ -50,11 +54,16 @@
 </Dialog>
 
 <style>
+  :root {
+    --connected-background-color: rgb(235, 235, 235);
+    --connected-color: black;
+    --connected-hover: rgba(235, 235, 235, 0.7);
+  }
   button {
-    background-color: var(--connected-background-color, rgb(235, 235, 235));
-    color: var(--connected-color, black);
+    background-color: var(--connected-background-color);
+    color: var(--connected-color);
   }
   button:hover {
-    background-color: var(--connected-hover, rgba(235, 235, 235, 0.7));
+    background-color: var(--connected-hover);
   }
 </style>

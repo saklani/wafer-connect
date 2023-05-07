@@ -1,8 +1,8 @@
 <script>
-	import { WalletConnectConnector } from "@wagmi/core/connectors/walletConnect";
-	import { connect } from "sveeeth";
-	import { waferStore } from './../../store.js';
-	import { WalletConnect } from "./injected.js";
+  import { WalletConnectConnector } from "@wagmi/core/connectors/walletConnect";
+  import { connect } from "sveeeth";
+  import { waferStore } from "./../../store.js";
+  import { WalletConnect } from "./injected.js";
 </script>
 
 <button
@@ -15,17 +15,23 @@
         chains: $waferStore.chains,
       }),
     })}
+  aria-label={`Connect using WalletConnect`}
 >
-  <p>{WalletConnect.name}</p>
+  <p style="color: var(--connector-text-color)">{WalletConnect.name}</p>
   <img src={WalletConnect.icon} alt={WalletConnect.name} />
 </button>
 
 <style>
+  :root {
+    --connector-background-color: white;
+    --connector-text-color: black;
+    --connector-hover-color: rgba(255, 255, 255, 0.75);
+  }
   button {
-    background-color: var(--connector-background-color, white);
-    color: var(--connector-color, black);
+    background-color: var(--connector-background-color);
+    color: var(--connector-color);
   }
   button:hover {
-    background-color: var(--connector-hover, rgba(255, 255, 255, 0.75));
+    background-color: var(--connector-hover);
   }
 </style>

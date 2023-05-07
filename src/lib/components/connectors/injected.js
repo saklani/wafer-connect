@@ -20,7 +20,7 @@ const Coinbase = {
 const Browser = {
 	name: "Browser Wallet",
 	icon: browser,
-	url: "",
+	url: "https://ethereum.org/wallets/",
 };
 
 const WalletConnect = {
@@ -30,9 +30,8 @@ const WalletConnect = {
 };
 
 const getInjectedPreset = (ethereum) => {
-	if (ethereum === undefined) {
-		return Browser;
-	}
+	if (!ethereum) return Browser;
+
 	if (ethereum.isMetaMask) {
 		return MetaMask;
 	}
@@ -43,14 +42,18 @@ const getInjectedPreset = (ethereum) => {
 			url: "https://rainbow.me",
 		};
 	}
-	if (ethereum.isTrust || ethereum.isTrustWallet) {
+	if (ethereum.isTrust) {
 		return {
-			name: "Trust",
+			name: "Trust Wallet",
 			icon: trust,
 			url: "https://trustwallet.com",
 		};
 	}
-	return Browser;
+	return {
+		name: "Injected Wallet",
+		icon: Browser.icon,
+		url: "https://ethereum.org/wallets/",
+	};
 };
 
 export { Browser, Coinbase, MetaMask, WalletConnect, getInjectedPreset };
