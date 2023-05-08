@@ -1,5 +1,5 @@
 <script>
-  import ConnectButton from "$lib/components/ConnectButton.svelte";
+  import ConnectButton from "$lib/ConnectButton.svelte";
 </script>
 
 <div class="column">

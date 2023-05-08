@@ -1,2 +1,2 @@
 // Reexport your entry components here
-export { ConnectButton } from "./components/ConnectButton.svelte";
+export { ConnectButton } from "./ConnectButton.svelte";

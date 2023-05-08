@@ -1,7 +1,11 @@
 {
 	"name": "wafer-connect",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"license": "MIT",
+	"homepage": "https://github.com/saklani/wafer",
+	"bugs": {
+		"url": "https://github.com/saklani/wafer"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && pnpm run package",

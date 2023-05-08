@@ -2,12 +2,12 @@
   import sveeeth, { account, configureChains, network } from "sveeeth";
   import { arbitrum, mainnet, optimism, polygon } from "sveeeth/chains";
   import { publicProvider } from "sveeeth/providers";
-  import { waferStore } from "../store.js";
-  import { defaultTheme } from "../theme.js";
-  import Connected from "./Connected.svelte";
-  import Disconnected from "./Disconnected.svelte";
-  import Loading from "./Loading.svelte";
-  import Unsupported from "./Unsupported.svelte";
+  import { waferStore } from "./store.js";
+  import { defaultTheme } from "./theme.js";
+  import Connected from "./components/Connected.svelte.js";
+  import Disconnected from "./components/Disconnected.svelte.js";
+  import Loading from "./components/Loading.svelte.js";
+  import Unsupported from "./components/Unsupported.svelte.js";
   import "./style.css";
 
   /** @type {import("@wagmi/core").Chain[]}*/
