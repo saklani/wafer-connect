@@ -2,7 +2,7 @@
 
 Wafer offers minimalist pre-built components for connecting to wallets with Svelte/SvelteKit decentralized applications (dApps).
 
-Try it out: (https://wafer.vercel.app)[https://wafer.vercel.app]
+Try it out: [https://wafer.vercel.app](https://wafer.vercel.app)
 
 
 ## Getting Started
@@ -12,11 +12,14 @@ Install peer dependencies
 ```bash
   npm install @wagmi/core @wagmi/connectors ethers sveeeth
 ```
+
 Install wafer
 
 ```bash
   npm install wafer-connect
 ```
+
+Minimal Examplee
 
 ```js
   <script>
@@ -26,7 +29,6 @@ Install wafer
   <header>
     <div />
     <ConnectButton walletConnectProjectId={"..."} />
-    <!-- walletConnectProjectId is required -->
   </header>
 
   <style>
