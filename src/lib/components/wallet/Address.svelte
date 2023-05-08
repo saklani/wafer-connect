@@ -55,18 +55,17 @@
 
 <style>
   :root {
-    --address-background-color: white;
     --address-font-size: 1rem;
     --address-color: black;
     --address-hover: rgb(73, 69, 69);
   }
   .address {
     align-items: center;
-    background-color: var(--address-background-color); 
     border-radius: var(--border-radius);
     cursor: pointer;
     display: flex;
     gap: 8px;
+    padding-inline: 8px;
   }
   .address:hover {
     color: var(--address-hover);

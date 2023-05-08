@@ -37,7 +37,7 @@
     <h2>Connected</h2>
     <Chain />
   </div>
-  <div style="align-items: center; display: flex; flex-direction: column;">
+  <div style="align-items: center; display: flex; flex-direction: column; gap: 8px;">
     <Avatar {address} />
     <Address
       {address}

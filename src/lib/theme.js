@@ -1,6 +1,5 @@
 const defaultTheme = {
 	address: {
-		backgroundColor: "white",
 		color: "black",
 		hover: "gray",
 	},
