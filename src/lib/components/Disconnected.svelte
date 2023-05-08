@@ -21,14 +21,17 @@
   <Injected
     --connector-background-color={$waferStore.theme.connector.backgroundColor}
     --connector-color={$waferStore.theme.connector.color}
+    --connector-hover-color={$waferStore.theme.connector.hoverColor}
   />
   <MetaMask
     --connector-background-color={$waferStore.theme.connector.backgroundColor}
     --connector-color={$waferStore.theme.connector.color}
+    --connector-hover-color={$waferStore.theme.connector.hoverColor}
   />
   <WalletConnect
     --connector-background-color={$waferStore.theme.connector.backgroundColor}
     --connector-color={$waferStore.theme.connector.color}
+    --connector-hover-color={$waferStore.theme.connector.hoverColor}
   />
 </Dialog>
 
