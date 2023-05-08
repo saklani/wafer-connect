@@ -20,7 +20,7 @@ Install wafer
 
 Minimal Examplee
 
-```js
+```svelte
   <script>
     import { ConnectButton } from "wafer-connect";
   </script>
@@ -41,7 +41,7 @@ Minimal Examplee
 
 ## Custom chains
 
-```js
+```svelte
     <script>
       import { mainnet, goerli } from "@wagmi/core";
       import { ConnectButton } from "wafer-connect";
