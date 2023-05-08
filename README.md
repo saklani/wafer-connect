@@ -39,11 +39,19 @@ Minimal Examplee
 </style>
 ```
 
-## Custom chains
+## Actions
+
+```svelte
+
+```
+
+## Chains
+
+Add any chain you need.
 
 ```svelte
 <script>
-  import { mainnet, goerli } from "@wagmi/core";
+  import { mainnet, goerli } from "sveeeth/chains";
   import { ConnectButton } from "wafer-connect";
 </script>
 

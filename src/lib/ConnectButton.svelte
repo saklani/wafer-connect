@@ -1,6 +1,6 @@
 <script>
   import sveeeth, { account, configureChains, network } from "sveeeth";
-  import { arbitrum, mainnet, optimism, polygon, sepolia } from "sveeeth/chains";
+  import { mainnet, optimism, polygon, sepolia } from "sveeeth/chains";
   import { publicProvider } from "sveeeth/providers";
   import { waferStore } from "./store.js";
   import { defaultTheme } from "./theme.js";
