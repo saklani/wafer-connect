@@ -8,7 +8,7 @@
 
 {#if browser && !window.ethereum?.isMetaMask}
   <button
-    aria-label={`Connect using ${Browser.name}`}
+    aria-label={`Connect using Injected Wallet`}
     on:click={() =>
       connect({
         connector: new InjectedConnector({ chains: $waferStore.chains }),
