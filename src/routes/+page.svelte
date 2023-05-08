@@ -6,8 +6,7 @@
   <h1>Wafer</h1>
   <p>
     Wafer is a minimalistic svelte component library for connect a wallet to
-    your Svelte/Sveltekit dApp. It currently supports limited connectors and
-    chains, with more coming soon.
+    your Svelte/Sveltekit dApp.
   </p>
   <div class="focus">
     <ConnectButton
