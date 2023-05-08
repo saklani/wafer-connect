@@ -4,10 +4,12 @@
   import { publicProvider } from "sveeeth/providers";
   import { waferStore } from "./store.js";
   import { defaultTheme } from "./theme.js";
-  import Connected from "./components/Connected.svelte.js";
-  import Disconnected from "./components/Disconnected.svelte.js";
-  import Loading from "./components/Loading.svelte.js";
-  import Unsupported from "./components/Unsupported.svelte.js";
+
+  import Connected from "./components/Connected.svelte";
+  import Disconnected from "./components/Disconnected.svelte";
+  import Loading from "./components/Loading.svelte";
+  import Unsupported from "./components/Unsupported.svelte";
+  
   import "./style.css";
 
   /** @type {import("@wagmi/core").Chain[]}*/

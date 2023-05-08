@@ -1,12 +1,12 @@
 <script>
-  import { browser } from "$app/environment";
+  import { BROWSER } from 'esm-env'
   import { connect } from "sveeeth";
   import { InjectedConnector } from "sveeeth/connectors";
   import { waferStore } from "./../../store.js";
   import { Browser } from "./injected.js";
 </script>
 
-{#if browser && !window.ethereum?.isMetaMask}
+{#if BROWSER && !window.ethereum?.isMetaMask}
   <button
     aria-label={`Connect using Injected Wallet`}
     on:click={() =>

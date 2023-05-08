@@ -1,11 +1,24 @@
 {
 	"name": "wafer-connect",
 	"version": "0.0.4",
-	"license": "MIT",
 	"homepage": "https://github.com/saklani/wafer",
 	"bugs": {
-		"url": "https://github.com/saklani/wafer"
+		"url": "https://github.com/saklani/wafer/issues"
 	},
+	"keywords": [
+		"svelte",
+		"ethereum",
+		"dapp",
+		"wallet",
+		"web3"
+	],
+	"author": "@saklani",
+	"license": "MIT",
+	"type": "module",
+	"svelte": "./dist/index.js",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && pnpm run package",
@@ -21,24 +34,28 @@
 			"svelte": "./dist/index.js"
 		}
 	},
-	"files": ["dist", "!dist/**/*.test.*", "!dist/**/*.spec.*"],
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
+	],
 	"peerDependencies": {
-		"svelte": "^3.54.0",
-		"sveeeth": "^0.0.1"
+		"@wagmi/connectors": "^0.3.19",
+		"@wagmi/core": "^0.10.10",
+		"ethers": "^5.7.2",
+		"sveeeth": "^0.0.1",
+		"svelte": "^3.54.0"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-vercel": "^2.4.3",
+		"@sveltejs/adapter-auto": "^2.0.1",
 		"@sveltejs/kit": "^1.5.0",
 		"@sveltejs/package": "^2.0.0",
 		"publint": "^0.1.9",
 		"svelte-check": "^3.0.1",
+		"typescript": "^5.0.4",
 		"vite": "^4.3.0"
 	},
 	"dependencies": {
-		"@wagmi/core": "^0.10.10",
-		"ethers": "^5.7.2"
-	},
-	"svelte": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"type": "module"
+		"esm-env": "^1.0.0"
+	}
 }
