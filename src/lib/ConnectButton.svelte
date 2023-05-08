@@ -1,7 +1,11 @@
 <script>
   import sveeeth, { account, configureChains, network } from "sveeeth";
   import { mainnet, optimism, polygon, sepolia } from "sveeeth/chains";
-  import { publicProvider } from "sveeeth/providers";
+  import {
+      alchemyProvider,
+      infuraProvider,
+      publicProvider,
+  } from "sveeeth/providers";
   import { waferStore } from "./store.js";
   import { defaultTheme } from "./theme.js";
 
@@ -20,13 +24,33 @@
 
   let theme = defaultTheme;
 
+  /** @type {string | undefined} */
+  let ALCHEMY_API_KEY;
+
+  /** @type {string | undefined} */
+  let INFURA_API_KEY;
+
+  let providers = [publicProvider()];
+  
+  if (ALCHEMY_API_KEY)
+    providers.push(alchemyProvider({ apiKey: ALCHEMY_API_KEY }));
+
+  if (INFURA_API_KEY)
+    providers.push(infuraProvider({ apiKey: INFURA_API_KEY }));
+
   waferStore.set({ chains, theme, walletConnectProjectId });
 
-  const { provider } = configureChains($waferStore.chains, [publicProvider()]);
+  const { provider } = configureChains($waferStore.chains, providers);
 
   sveeeth({ provider });
 
-  export { chains, theme, walletConnectProjectId };
+  export {
+    chains,
+    theme,
+    walletConnectProjectId,
+    ALCHEMY_API_KEY,
+    INFURA_API_KEY,
+  };
 </script>
 
 {#if $account.status === "connected"}

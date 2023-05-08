@@ -18,7 +18,7 @@ Install wafer
   npm install wafer-connect
 ```
 
-Minimal Examplee
+## Minimal Example
 
 ```svelte
 <script>
