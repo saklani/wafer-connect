@@ -1,2 +1,2 @@
 // Reexport your entry components here
-export { ConnectButton } from "./ConnectButton.svelte.js";
+export { default as ConnectButton } from "./ConnectButton.svelte";
