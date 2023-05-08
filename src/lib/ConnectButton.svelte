@@ -1,6 +1,6 @@
 <script>
   import sveeeth, { account, configureChains, network } from "sveeeth";
-  import { arbitrum, mainnet, optimism, polygon } from "sveeeth/chains";
+  import { arbitrum, mainnet, optimism, polygon, sepolia } from "sveeeth/chains";
   import { publicProvider } from "sveeeth/providers";
   import { waferStore } from "./store.js";
   import { defaultTheme } from "./theme.js";
@@ -9,11 +9,11 @@
   import Disconnected from "./components/Disconnected.svelte";
   import Loading from "./components/Loading.svelte";
   import Unsupported from "./components/Unsupported.svelte";
-  
+
   import "./style.css";
 
   /** @type {import("@wagmi/core").Chain[]}*/
-  let chains = [mainnet, polygon, optimism, arbitrum];
+  let chains = [mainnet, polygon, optimism, sepolia];
 
   /** @type {string} */
   let walletConnectProjectId;
