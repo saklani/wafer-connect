@@ -9,7 +9,7 @@ Try it out: [https://wafer.vercel.app](https://wafer.vercel.app)
 Install peer dependencies
 
 ```bash
-  npm install @wagmi/core @wagmi/connectors ethers sveeeth 
+  npm install wafer-connect @wagmi/core @wagmi/connectors viem
 ```
 
 Install wafer

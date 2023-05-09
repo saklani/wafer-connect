@@ -1,11 +1,10 @@
 <script>
+  import { balance } from "../../store.js";
   import { abbreviateETHBalance } from "../../utils.js";
-  import { fetchBalance } from "@wagmi/core";
-  import { account } from "sveeeth";
 </script>
 
 <div>
-  {#await fetchBalance({ address: $account.address }) then result}
+  {#await $balance then result}
     <h2>
       {abbreviateETHBalance(parseFloat(result.formatted))}
       {result.symbol}

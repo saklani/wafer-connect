@@ -1,6 +1,6 @@
 <script>
-  import { network, switchNetwork } from "sveeeth";
-  import { waferStore } from "../store.js";
+  import { switchNetwork } from "@wagmi/core";
+  import { network, wafer } from "../store.js";
   import Dialog from "./common/Dialog.svelte";
   let showDialog = false;
 </script>
@@ -10,13 +10,15 @@
 </button>
 <Dialog
   bind:showDialog
-  --dialog-background-color={$waferStore.theme.unsupported.dialog
-    .backgroundColor}
-  --dialog-color={$waferStore.theme.unsupported.dialog.color}
+  --dialog-background-color={$wafer.theme.unsupported.dialog.backgroundColor}
+  --dialog-color={$wafer.theme.unsupported.dialog.color}
 >
   <h2 slot="title">Switch Chain</h2>
   {#each $network.chains as chain}
-    <button style="background-color: var(--chain-background-color); color: var(--chain-color);" on:click={() => switchNetwork({ chainId: chain.id })}>
+    <button
+      style="background-color: var(--chain-background-color); color: var(--chain-color);"
+      on:click={() => switchNetwork({ chainId: chain.id })}
+    >
       {chain.name}
     </button>
   {/each}

@@ -1,6 +1,26 @@
 <script>
-  import { mainnet, sepolia } from "sveeeth/chains";
+  import { createConfig, configureChains } from "@wagmi/core";
+  import { mainnet, sepolia } from "@wagmi/core/chains";
+  import { publicProvider } from "@wagmi/core/providers/public";
   import ConnectButton from "$lib/ConnectButton.svelte";
+  import { getDefaultConnectors } from "$lib/index.js";
+
+  const { chains, publicClient, webSocketPublicClient } = configureChains(
+    [mainnet, sepolia],
+    [publicProvider()]
+  );
+
+  const { connectors } = getDefaultConnectors({
+    projectId: "956d5ec8e006d78c793f06be590de1fa",
+    chains,
+  });
+
+  const wagmiConfig = createConfig({
+    chains,
+    connectors,
+    publicClient,
+    webSocketPublicClient,
+  });
 </script>
 
 <div class="column">
@@ -10,11 +30,7 @@
     your Svelte/Sveltekit dApp.
   </p>
   <div class="focus">
-    <ConnectButton
-      walletConnectProjectId={"956d5ec8e006d78c793f06be590de1fa"}
-      chains={[sepolia]}
-      ALCHEMY_API_KEY={"Oc_p6budYE4UmNzU-ps8hLFRtP8JxA0n"}
-    />
+    <ConnectButton {wagmiConfig} />
   </div>
 </div>
 

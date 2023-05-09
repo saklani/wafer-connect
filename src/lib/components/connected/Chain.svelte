@@ -1,5 +1,6 @@
 <script>
-  import { network, switchNetwork } from "sveeeth";
+	import { network, wagmi } from '../../store.js';
+  import { switchNetwork } from "@wagmi/core";
   import Dialog from "../common/Dialog.svelte";
 
   /** @type {boolean}  */
@@ -26,7 +27,7 @@
 
 <Dialog bind:showDialog --max-width="200px">
   <h3 slot="title">Chains</h3>
-  {#each $network.chains as chain}
+  {#each $wagmi.chains as chain}
     {#if chain.id !== $network.chain.id}
       <button on:click={() => changeNetwork({ chainId: chain.id })}>
         {chain.name}

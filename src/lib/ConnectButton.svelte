@@ -1,13 +1,6 @@
 <script>
-  import sveeeth, { account, configureChains, network } from "sveeeth";
-  import { mainnet, optimism, polygon, sepolia } from "sveeeth/chains";
-  import {
-    alchemyProvider,
-    infuraProvider,
-    publicProvider,
-  } from "sveeeth/providers";
+  import { account, network, wafer, wagmi } from "./store.js";
 
-  import { waferStore } from "./store.js";
   import { defaultTheme } from "./theme.js";
 
   import Connected from "./components/Connected.svelte";
@@ -17,66 +10,38 @@
 
   import "./style.css";
 
-  /** @type {import("@wagmi/core").Chain[]}*/
-  let chains = [mainnet, polygon, optimism, sepolia];
-
-  /** @type {string} */
-  let walletConnectProjectId;
-
   let theme = defaultTheme;
 
-  /** @type {string | undefined} */
-  let ALCHEMY_API_KEY = undefined;
+  /** @type {import("@wagmi/core").Config}*/
+  let wagmiConfig;
 
-  /** @type {string | undefined} */
-  let INFURA_API_KEY = undefined;
+  wagmi.set(wagmiConfig);
+  wafer.set({ theme });
 
-  let providers = [publicProvider()];
-
-  if (ALCHEMY_API_KEY)
-    providers.push(alchemyProvider({ apiKey: ALCHEMY_API_KEY }));
-
-  if (INFURA_API_KEY)
-    providers.push(infuraProvider({ apiKey: INFURA_API_KEY }));
-
-  waferStore.set({ chains, theme, walletConnectProjectId });
-
-  const { provider } = configureChains($waferStore.chains, providers);
-
-  sveeeth({ provider });
-
-  export {
-    chains,
-    theme,
-    walletConnectProjectId,
-    ALCHEMY_API_KEY,
-    INFURA_API_KEY,
-  };
+  export { theme, wagmiConfig };
 </script>
 
 {#if $account.status === "connected"}
   {#if $network.chain.unsupported}
     <Unsupported
-      --unsupported-background-color={$waferStore.theme.unsupported
-        .backgroundColor}
-      --unsupported-color={$waferStore.theme.unsupported.color}
+      --unsupported-background-color={$wafer.theme.unsupported.backgroundColor}
+      --unsupported-color={$wafer.theme.unsupported.color}
     />
   {:else}
     <Connected
       address={$account.address}
-      --connected-background-color={$waferStore.theme.connected.backgroundColor}
-      --connected-color={$waferStore.theme.connected.color}
+      --connected-background-color={$wafer.theme.connected.backgroundColor}
+      --connected-color={$wafer.theme.connected.color}
     />
   {/if}
 {:else if $account.status === "disconnected"}
   <Disconnected
-    --disconnected-background-color={$waferStore.theme.disconnected
-      .backgroundColor}
-    --disconnected-color={$waferStore.theme.disconnected.color}
+    --disconnected-background-color={$wafer.theme.disconnected.backgroundColor}
+    --disconnected-color={$wafer.theme.disconnected.color}
   />
 {:else}
   <Loading
-    --loading-background-color={$waferStore.theme.loading.backgroundColor}
-    --loading-color={$waferStore.theme.loading.color}
+    --loading-background-color={$wafer.theme.loading.backgroundColor}
+    --loading-color={$wafer.theme.loading.color}
   />
 {/if}

@@ -1,9 +1,9 @@
 <script>
   import { fade } from "svelte/transition";
-  import { waferStore } from "../store.js";
-  import Injected from "./connectors/Injected.svelte";
-  import MetaMask from "./connectors/MetaMask.svelte";
-  import WalletConnect from "./connectors/WalletConnect.svelte";
+  import { wafer } from "../store.js";
+  import Injected from "./disconnected/Injected.svelte";
+  import MetaMask from "./disconnected/MetaMask.svelte";
+  import WalletConnect from "./disconnected/WalletConnect.svelte";
   import Dialog from "./common/Dialog.svelte";
 
   /** @type {boolean}  */
@@ -13,25 +13,24 @@
 <button in:fade on:click={() => (showDialog = true)}> Connect Wallet </button>
 <Dialog
   bind:showDialog
-  --dialog-background-color={$waferStore.theme.disconnected.dialog
-    .backgroundColor}
-  --dialog-color={$waferStore.theme.disconnected.dialog.color}
+  --dialog-background-color={$wafer.theme.disconnected.dialog.backgroundColor}
+  --dialog-color={$wafer.theme.disconnected.dialog.color}
 >
   <h2 slot="title">Connect a Wallet</h2>
   <Injected
-    --connector-background-color={$waferStore.theme.connector.backgroundColor}
-    --connector-color={$waferStore.theme.connector.color}
-    --connector-hover-color={$waferStore.theme.connector.hoverColor}
+    --connector-background-color={$wafer.theme.connector.backgroundColor}
+    --connector-color={$wafer.theme.connector.color}
+    --connector-hover-color={$wafer.theme.connector.hoverColor}
   />
   <MetaMask
-    --connector-background-color={$waferStore.theme.connector.backgroundColor}
-    --connector-color={$waferStore.theme.connector.color}
-    --connector-hover-color={$waferStore.theme.connector.hoverColor}
+    --connector-background-color={$wafer.theme.connector.backgroundColor}
+    --connector-color={$wafer.theme.connector.color}
+    --connector-hover-color={$wafer.theme.connector.hoverColor}
   />
   <WalletConnect
-    --connector-background-color={$waferStore.theme.connector.backgroundColor}
-    --connector-color={$waferStore.theme.connector.color}
-    --connector-hover-color={$waferStore.theme.connector.hoverColor}
+    --connector-background-color={$wafer.theme.connector.backgroundColor}
+    --connector-color={$wafer.theme.connector.color}
+    --connector-hover-color={$wafer.theme.connector.hoverColor}
   />
 </Dialog>
 

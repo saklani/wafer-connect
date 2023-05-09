@@ -1,5 +1,5 @@
 <script>
-  import { disconnect } from "sveeeth";
+  import { disconnect } from "@wagmi/core";
 
   let isDisconnecting = false;
 

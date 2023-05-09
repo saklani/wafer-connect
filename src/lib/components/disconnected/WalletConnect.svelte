@@ -1,21 +1,12 @@
 <script>
-  import { WalletConnectConnector } from "@wagmi/core/connectors/walletConnect";
-  import { connect } from "sveeeth";
-  import { waferStore } from "./../../store.js";
-  import { WalletConnect } from "./injected.js";
+  import { connect } from "@wagmi/core";
+  import { WalletConnect } from "../../wallet/injected.js";
+  import { wagmi } from "./../../store.js";
 </script>
 
 <button
-  on:click={() =>
-    connect({
-      connector: new WalletConnectConnector({
-        options: {
-          projectId: $waferStore.walletConnectProjectId,
-        },
-        chains: $waferStore.chains,
-      }),
-    })}
   aria-label={`Connect using WalletConnect`}
+  on:click={() => connect({ connector: $wagmi.connectors[2] })}
 >
   <p style="color: var(--connector-text-color)">{WalletConnect.name}</p>
   <img src={WalletConnect.icon} alt={WalletConnect.name} />

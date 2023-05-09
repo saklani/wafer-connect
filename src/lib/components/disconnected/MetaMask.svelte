@@ -1,21 +1,12 @@
 <script>
-  import { MetaMaskConnector } from "@wagmi/core/connectors/metaMask";
-  import { connect } from "sveeeth";
-  import { waferStore } from "./../../store.js";
-  import { MetaMask } from "./injected.js";
+  import { connect } from "@wagmi/core";
+  import { MetaMask } from "../../wallet/injected.js";
+  import { wagmi } from "./../../store.js";
 </script>
 
 <button
-  on:click={() =>
-    connect({
-      connector: new MetaMaskConnector({
-        chains: $waferStore.chains,
-        options: {
-          UNSTABLE_shimOnConnectSelectAccount: true,
-        },
-      }),
-    })}
   aria-label={`Connect using MetaMask`}
+  on:click={() => connect({ connector: $wagmi.connectors[1] })}
 >
   <p style="color: var(--connector-text-color)">{MetaMask.name}</p>
   <img src={MetaMask.icon} alt={MetaMask.name} />
