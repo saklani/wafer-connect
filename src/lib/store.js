@@ -1,7 +1,10 @@
-import { watchAccount } from "@wagmi/core";
-import { fetchBalance } from "@wagmi/core";
-import { watchNetwork } from "@wagmi/core";
-import { getAccount, getNetwork } from "@wagmi/core";
+import {
+	fetchBalance,
+	getAccount,
+	getNetwork,
+	watchAccount,
+	watchNetwork,
+} from "@wagmi/core";
 import { derived, writable } from "svelte/store";
 
 /**

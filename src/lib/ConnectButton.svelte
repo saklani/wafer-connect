@@ -24,8 +24,8 @@
 {#if $account.status === "connected"}
   {#if $network.chain.unsupported}
     <Unsupported
-      --unsupported-background-color={$themeStore.errorColor}
-      --unsupported-color={$themeStore.errorColor}
+      --unsupported-background-color={$themeStore.errorButtonColor}
+      --unsupported-color={$themeStore.errorButtonTextColor}
     />
   {:else}
     <Connected

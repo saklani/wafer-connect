@@ -123,3 +123,31 @@ A basic read contract example.
   }
 </style>
 ```
+
+## Basic Theme
+
+Basic themes can be set by passing the interface below
+
+```typescript
+interface Theme {
+    const borderRadius: string; // Controls the border radius of all elements
+    const primaryButtonColor: string;
+    const primaryButtonHoverColor: string;
+    const primaryButtonTextColor: string;
+    const secondaryButtonColor: string;
+    const secondaryButtonHoverColor: string;
+    const secondaryButtonTextColor: string;
+    const errorButtonColor: string;
+    const errorButtonHoverColor: string;
+    const errorButtonTextColor: string;
+    const dialogBackgroundColor: string;
+    const dialogTextColor: string;
+    const dialogBlur: string;
+}```
+
+```svelte
+   <script>
+   const theme = {...} // Your custom theme
+   </script>
+  <ConnectButton {wagmiConfig} {theme}/>
+```
