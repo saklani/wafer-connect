@@ -1,9 +1,9 @@
 {
 	"name": "wafer-connect",
 	"version": "0.1.0",
-	"homepage": "https://github.com/saklani/wafer",
+	"homepage": "https://github.com/saklani/wafer-connect",
 	"bugs": {
-		"url": "https://github.com/saklani/wafer/issues"
+		"url": "https://github.com/saklani/wafer-connect/issues"
 	},
 	"keywords": [
 		"svelte",

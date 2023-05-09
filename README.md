@@ -1,28 +1,42 @@
-# Wafer
+# Wafer Connect
 
-Wafer offers minimalist pre-built components for connecting to wallets with Svelte/SvelteKit decentralized applications (dApps).
+Wafer Connect offers minimalist pre-built components for connecting to wallets with [https://svelte.dev](Svelte) decentralized applications (dApps).
 
 Try it out: [https://wafer.vercel.app](https://wafer.vercel.app)
 
 ## Getting Started
 
-Install peer dependencies
+Install WaferConnect and its peer dependencies, @wagmi/core & viem
 
 ```bash
-  npm install wafer-connect @wagmi/core @wagmi/connectors viem
-```
-
-Install wafer
-
-```bash
-  npm install wafer-connect
+  npm install wafer-connect @wagmi/core viem
 ```
 
 ## Minimal Example
 
 ```svelte
 <script>
-  import { ConnectButton } from "wafer-connect";
+  import { createConfig, configureChains } from "@wagmi/core";
+  import { mainnet } from "@wagmi/core/chains";
+  import { publicProvider } from "@wagmi/core/providers";
+  import ConnectButton, { getDefaultConnectors } from "wafer-connect";
+
+  const { chains, publicClient, webSocketPublicClient } = configureChains(
+    [mainnet],
+    [publicProvider()]
+  );
+
+  const { connectors } = getDefaultConnectors({
+    projectId: "...",
+    chains,
+  });
+
+  const wagmiConfig = createConfig({
+    chains,
+    connectors,
+    publicClient,
+    webSocketPublicClient,
+  });
 </script>
 
 <header>
@@ -41,33 +55,71 @@ Install wafer
 
 ## Actions
 
-```svelte
-
-```
-
-## Chains
-
-Add any chain you need.
+A basic read contract example.
 
 ```svelte
-<script>
-  import { mainnet, goerli } from "sveeeth/chains";
-  import { ConnectButton } from "wafer-connect";
+<script lang="ts">
+  import {
+    configureChains,
+    createConfig,
+    erc721ABI,
+    readContract,
+  } from "@wagmi/core";
+  import { mainnet } from "@wagmi/core/chains";
+  import { alchemyProvider } from "@wagmi/core/providers/alchemy";
+  import ConnectButton, { getDefaultConnectors } from "wafer-connect";
+
+  const { chains, publicClient } = configureChains(
+    [mainnet],
+    [alchemyProvider({ apiKey: "SQirhwwp8taoeBFQlmlNhS3e4Q8-Ki2j" })]
+  );
+
+  const { connectors } = getDefaultConnectors({
+    projectId: "956d5ec8e006d78c793f06be590de1fa",
+    chains,
+  });
+  const wagmiConfig = createConfig({
+    chains,
+    connectors,
+    publicClient,
+  });
+
+  let value: unknown;
+
+  async function getData() {
+    value = await readContract({
+      address: "0xFBA3912Ca04dd458c843e2EE08967fC04f3579c2" as `0x${string}`,
+      abi: erc721ABI,
+      functionName: "name",
+    });
+  }
 </script>
 
+<svelte:head>
+  <title>Home</title>
+  <meta name="description" content="Svelte demo app" />
+</svelte:head>
 <header>
   <div />
-  <ConnectButton
-    walletConnectProjectId={"956d5ec8e006d78c793f06be590de1fa"}
-    chains={[mainnet, goerli]}
-  />
+  <ConnectButton {wagmiConfig} />
 </header>
+<section>
+  <h2>{`Name: ${value}`}</h2>
+  <button on:click={() => getData()}>Read Data</button>
+</section>
 
 <style>
   header {
     display: flex;
     justify-content: space-between;
     padding: 8px;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0.6;
   }
 </style>
 ```
