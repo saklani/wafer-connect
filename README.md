@@ -128,7 +128,7 @@ A basic read contract example.
 
 Basic themes can be set by passing the interface below
 
-```typescript
+```ts
 interface Theme {
     const borderRadius: string; // Controls the border radius of all elements
     const primaryButtonColor: string;
@@ -143,7 +143,8 @@ interface Theme {
     const dialogBackgroundColor: string;
     const dialogTextColor: string;
     const dialogBlur: string;
-}```
+}
+```
 
 ```svelte
    <script>
