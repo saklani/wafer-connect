@@ -43,7 +43,7 @@
   }
 
   dialog {
-    backdrop-filter: var(--blur);
+    backdrop-filter: var(--dialog-blur);
     background-color: var(--dialog-background-color);
     border: none;
     border-radius: var(--border-radius);

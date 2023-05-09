@@ -1,5 +1,5 @@
 <script>
-  import { account, network, wafer, wagmi } from "./store.js";
+  import { account, network, theme as themeStore, wagmi } from "./store.js";
 
   import { defaultTheme } from "./theme.js";
 
@@ -16,7 +16,7 @@
   let wagmiConfig;
 
   wagmi.set(wagmiConfig);
-  wafer.set({ theme });
+  themeStore.set(theme);
 
   export { theme, wagmiConfig };
 </script>
@@ -24,24 +24,24 @@
 {#if $account.status === "connected"}
   {#if $network.chain.unsupported}
     <Unsupported
-      --unsupported-background-color={$wafer.theme.unsupported.backgroundColor}
-      --unsupported-color={$wafer.theme.unsupported.color}
+      --unsupported-background-color={$themeStore.errorColor}
+      --unsupported-color={$themeStore.errorColor}
     />
   {:else}
     <Connected
       address={$account.address}
-      --connected-background-color={$wafer.theme.connected.backgroundColor}
-      --connected-color={$wafer.theme.connected.color}
+      --connected-background-color={$themeStore.primaryButtonColor}
+      --connected-color={$themeStore.primaryButtonTextColor}
     />
   {/if}
 {:else if $account.status === "disconnected"}
   <Disconnected
-    --disconnected-background-color={$wafer.theme.disconnected.backgroundColor}
-    --disconnected-color={$wafer.theme.disconnected.color}
+    --disconnected-background-color={$themeStore.primaryButtonColor}
+    --disconnected-color={$themeStore.primaryButtonTextColor}
   />
 {:else}
   <Loading
-    --loading-background-color={$wafer.theme.loading.backgroundColor}
-    --loading-color={$wafer.theme.loading.color}
+    --loading-background-color={$themeStore.primaryButtonColor}
+    --loading-color={$themeStore.primaryButtonTextColor}
   />
 {/if}

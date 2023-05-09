@@ -14,7 +14,6 @@ function createAccount() {
 }
 const account = createAccount({ address: null });
 
-
 /**
  * Network store
  */
@@ -24,7 +23,6 @@ function createNetwork() {
 	return { subscribe, reset: () => set(getNetwork()) };
 }
 const network = createNetwork();
-
 
 /**
  * Balance store
@@ -37,16 +35,16 @@ const balance = derived([account, network], ([$account, $network]) =>
 	}),
 );
 
-function createStore() {
-	const { subscribe, set } = writable({ theme: {} });
+function createTheme() {
+	const { subscribe, set } = writable({});
 
 	return {
 		subscribe,
-		set: (options) => set(options),
+		set: (theme) => set(theme),
 	};
 }
 
-const wafer = createStore();
+const theme = createTheme();
 
 function wagmiStore() {
 	const { subscribe, set } = writable({});
@@ -65,4 +63,4 @@ function wagmiStore() {
 
 const wagmi = wagmiStore();
 
-export { account, balance, network, wagmi, wafer };
+export { account, balance, network, theme, wagmi };

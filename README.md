@@ -41,7 +41,7 @@ Install WaferConnect and its peer dependencies, @wagmi/core & viem
 
 <header>
   <div />
-  <ConnectButton walletConnectProjectId={"..."} />
+   <ConnectButton {wagmiConfig} />
 </header>
 
 <style>

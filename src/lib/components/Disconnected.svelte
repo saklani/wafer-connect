@@ -1,6 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
-  import { wafer } from "../store.js";
+  import { theme } from "../store.js";
   import Injected from "./disconnected/Injected.svelte";
   import MetaMask from "./disconnected/MetaMask.svelte";
   import WalletConnect from "./disconnected/WalletConnect.svelte";
@@ -13,24 +13,25 @@
 <button in:fade on:click={() => (showDialog = true)}> Connect Wallet </button>
 <Dialog
   bind:showDialog
-  --dialog-background-color={$wafer.theme.disconnected.dialog.backgroundColor}
-  --dialog-color={$wafer.theme.disconnected.dialog.color}
+  --dialog-background-color={$theme.dialogBackgroundColor}
+  --dialog-color={$theme.dialogTextColor}
+  --dialog-blur={$theme.dialogBlur}
 >
   <h2 slot="title">Connect a Wallet</h2>
   <Injected
-    --connector-background-color={$wafer.theme.connector.backgroundColor}
-    --connector-color={$wafer.theme.connector.color}
-    --connector-hover-color={$wafer.theme.connector.hoverColor}
+    --connector-background-color={$theme.secondaryButtonColor}
+    --connector-color={$theme.secondaryButtonTextColor}
+    --connector-hover-color={$theme.secondaryButtonHoverColor}
   />
   <MetaMask
-    --connector-background-color={$wafer.theme.connector.backgroundColor}
-    --connector-color={$wafer.theme.connector.color}
-    --connector-hover-color={$wafer.theme.connector.hoverColor}
+    --connector-background-color={$theme.secondaryButtonColor}
+    --connector-color={$theme.secondaryButtonTextColor}
+    --connector-hover-color={$theme.secondaryButtonHoverColor}
   />
   <WalletConnect
-    --connector-background-color={$wafer.theme.connector.backgroundColor}
-    --connector-color={$wafer.theme.connector.color}
-    --connector-hover-color={$wafer.theme.connector.hoverColor}
+    --connector-background-color={$theme.secondaryButtonColor}
+    --connector-color={$theme.secondaryButtonTextColor}
+    --connector-hover-color={$theme.secondaryButtonHoverColor}
   />
 </Dialog>
 

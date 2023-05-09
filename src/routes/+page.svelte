@@ -1,8 +1,8 @@
 <script>
-  import { createConfig, configureChains } from "@wagmi/core";
+  import ConnectButton, { getDefaultConnectors } from "$lib/index.js";
+  import { configureChains, createConfig } from "@wagmi/core";
   import { mainnet, sepolia } from "@wagmi/core/chains";
   import { publicProvider } from "@wagmi/core/providers/public";
-  import ConnectButton, { getDefaultConnectors }  from "$lib/index.js";
 
   const { chains, publicClient, webSocketPublicClient } = configureChains(
     [mainnet, sepolia],
@@ -23,9 +23,9 @@
 </script>
 
 <div class="column">
-  <h1>Wafer</h1>
+  <h1>Wafer Connect</h1>
   <p>
-    Wafer is a minimalistic svelte component library for connect a wallet to
+    Wafer Connect is a minimalistic svelte component library for connect a wallet to
     your Svelte/Sveltekit dApp.
   </p>
   <div class="focus">

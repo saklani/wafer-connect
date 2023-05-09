@@ -1,6 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
-  import { wafer } from "../store.js";
+  import { theme } from "../store.js";
   import { shortAddress } from "../utils.js";
   import Dialog from "./common/Dialog.svelte";
   import Address from "./connected/Address.svelte";
@@ -27,8 +27,9 @@
 
 <Dialog
   bind:showDialog
-  --dialog-background-color={$wafer.theme.connected.dialog.backgroundColor}
-  --dialog-color={$wafer.theme.connected.dialog.color}
+  --dialog-background-color={$theme.dialogBackgroundColor}
+  --dialog-color={$theme.dialogTextColor}
+  --dialog-blur={$theme.dialogBlur}
 >
   <div
     slot="title"
@@ -37,19 +38,17 @@
     <h2>Connected</h2>
     <Chain />
   </div>
-  <div style="align-items: center; display: flex; flex-direction: column; gap: 8px;">
+  <div
+    style="align-items: center; display: flex; flex-direction: column; gap: 8px;"
+  >
     <Avatar {address} />
-    <Address
-      {address}
-      --address-color={$wafer.theme.address.color}
-      --address-hover={$wafer.theme.address.hover}
-    />
-    <Balance --balance-color={$wafer.theme.balance.color} />
+    <Address {address} />
+    <Balance />
   </div>
   <Disconnect
-    --disconnect-background-color={$wafer.theme.disconnect.backgroundColor}
-    --disconnect-color={$wafer.theme.disconnect.color}
-    --disconnect-hover={$wafer.theme.disconnect.hover}
+    --disconnect-background-color={$theme.errorButtonColor}
+    --disconnect-color={$theme.errorButtonTextColor}
+    --disconnect-hover={$theme.errorButtonHoverColor}
   />
 </Dialog>
 
