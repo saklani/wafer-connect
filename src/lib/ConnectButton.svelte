@@ -12,7 +12,7 @@
 
   let theme = defaultTheme;
 
-  /** @type {import("@wagmi/core").Config}*/
+  /** @type {import("@wagmi/core").Config<any, any>}*/
   let wagmiConfig;
 
   wagmi.set(wagmiConfig);
