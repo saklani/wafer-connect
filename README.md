@@ -147,8 +147,10 @@ interface Theme {
 ```
 
 ```svelte
-   <script>
+
+<script>
    const theme = {...} // Your custom theme
-   </script>
-  <ConnectButton {wagmiConfig} {theme}/>
+</script>
+
+<ConnectButton {wagmiConfig} {theme}/>
 ```
