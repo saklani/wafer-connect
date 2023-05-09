@@ -130,19 +130,19 @@ Basic themes can be set by passing the interface below
 
 ```ts
 interface Theme {
-    const borderRadius: string; // Controls the border radius of all elements
-    const primaryButtonColor: string;
-    const primaryButtonHoverColor: string;
-    const primaryButtonTextColor: string;
-    const secondaryButtonColor: string;
-    const secondaryButtonHoverColor: string;
-    const secondaryButtonTextColor: string;
-    const errorButtonColor: string;
-    const errorButtonHoverColor: string;
-    const errorButtonTextColor: string;
-    const dialogBackgroundColor: string;
-    const dialogTextColor: string;
-    const dialogBlur: string;
+   borderRadius: string; // Controls the border radius of all elements
+   primaryButtonColor: string;
+   primaryButtonHoverColor: string;
+   primaryButtonTextColor: string;
+   secondaryButtonColor: string;
+   secondaryButtonHoverColor: string;
+   secondaryButtonTextColor: string;
+   errorButtonColor: string;
+   errorButtonHoverColor: string;
+   errorButtonTextColor: string;
+   dialogBackgroundColor: string;
+   dialogTextColor: string;
+   dialogBlur: string;
 }
 ```
 
