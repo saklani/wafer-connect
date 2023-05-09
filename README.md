@@ -1,6 +1,6 @@
 # Wafer Connect
 
-Wafer Connect offers minimalist pre-built components for connecting to wallets with [https://svelte.dev](Svelte) decentralized applications (dApps).
+Wafer Connect offers minimalist pre-built components for connecting to wallets with [Svelte](https://svelte.dev) decentralized applications (dApps).
 
 Try it out: [https://wafer.vercel.app](https://wafer.vercel.app)
 
@@ -71,11 +71,11 @@ A basic read contract example.
 
   const { chains, publicClient } = configureChains(
     [mainnet],
-    [alchemyProvider({ apiKey: "SQirhwwp8taoeBFQlmlNhS3e4Q8-Ki2j" })]
+    [alchemyProvider({ apiKey: "..." })]
   );
 
   const { connectors } = getDefaultConnectors({
-    projectId: "956d5ec8e006d78c793f06be590de1fa",
+    projectId: "...",
     chains,
   });
   const wagmiConfig = createConfig({
