@@ -1,4 +1,5 @@
 <script>
+  import { mainnet, sepolia } from "sveeeth/chains";
   import ConnectButton from "$lib/ConnectButton.svelte";
 </script>
 
@@ -11,6 +12,8 @@
   <div class="focus">
     <ConnectButton
       walletConnectProjectId={"956d5ec8e006d78c793f06be590de1fa"}
+      chains={[sepolia]}
+      ALCHEMY_API_KEY={"Oc_p6budYE4UmNzU-ps8hLFRtP8JxA0n"}
     />
   </div>
 </div>

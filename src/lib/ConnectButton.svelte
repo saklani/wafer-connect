@@ -2,10 +2,11 @@
   import sveeeth, { account, configureChains, network } from "sveeeth";
   import { mainnet, optimism, polygon, sepolia } from "sveeeth/chains";
   import {
-      alchemyProvider,
-      infuraProvider,
-      publicProvider,
+    alchemyProvider,
+    infuraProvider,
+    publicProvider,
   } from "sveeeth/providers";
+
   import { waferStore } from "./store.js";
   import { defaultTheme } from "./theme.js";
 
@@ -25,13 +26,13 @@
   let theme = defaultTheme;
 
   /** @type {string | undefined} */
-  let ALCHEMY_API_KEY;
+  let ALCHEMY_API_KEY = undefined;
 
   /** @type {string | undefined} */
-  let INFURA_API_KEY;
+  let INFURA_API_KEY = undefined;
 
   let providers = [publicProvider()];
-  
+
   if (ALCHEMY_API_KEY)
     providers.push(alchemyProvider({ apiKey: ALCHEMY_API_KEY }));
 
