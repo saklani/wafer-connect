@@ -2,8 +2,7 @@
   import { createConfig, configureChains } from "@wagmi/core";
   import { mainnet, sepolia } from "@wagmi/core/chains";
   import { publicProvider } from "@wagmi/core/providers/public";
-  import ConnectButton from "$lib/ConnectButton.svelte";
-  import { getDefaultConnectors } from "$lib/index.js";
+  import ConnectButton, { getDefaultConnectors }  from "$lib/index.js";
 
   const { chains, publicClient, webSocketPublicClient } = configureChains(
     [mainnet, sepolia],

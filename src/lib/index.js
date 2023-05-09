@@ -1,3 +1,7 @@
 // Reexport your entry components here
-export { default as ConnectButton } from "./ConnectButton.svelte";
-export { getDefaultConnectors } from "./wallet/connectors.js";
+import ConnectButton from "./ConnectButton.svelte";
+import { getDefaultConnectors } from "./wallet/connectors.js";
+
+export default ConnectButton;
+
+export { getDefaultConnectors };

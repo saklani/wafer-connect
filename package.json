@@ -40,7 +40,6 @@
 		"!dist/**/*.spec.*"
 	],
 	"peerDependencies": {
-		"@wagmi/connectors": "^0.3.19",
 		"@wagmi/core": "^1.0.0",
 		"svelte": "^3.54.0",
 		"viem": "^0.3.19"
