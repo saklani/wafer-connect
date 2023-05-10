@@ -9,23 +9,31 @@ import { derived, writable } from "svelte/store";
 
 /**
  * Account store
+ * @param {{address: `0x${string}` | undefined;	isConnected: boolean; isConnecting: boolean; isDisconnected: boolean; isReconnecting: boolean;status: "connected" | "reconnecting" | "connecting" | "disconnected";}} param
  */
-function createAccount() {
-	const { set, subscribe } = writable({});
-
+function createAccount(param) {
+	const { set, subscribe } = writable(param);
 	return { subscribe, reset: () => set(getAccount()) };
 }
-const account = createAccount({ address: null });
+const account = createAccount({
+	address: undefined,
+	isConnected: false,
+	isConnecting: false,
+	isDisconnected: true,
+	isReconnecting: false,
+	status: "disconnected",
+});
 
 /**
  * Network store
+ * @param {{chain?: import("@wagmi/core").Chain & {unsupported?: boolean;}; chains: import("@wagmi/core").Chain[];}} param
  */
-function createNetwork() {
-	const { set, subscribe } = writable({});
+function createNetwork(param) {
+	const { set, subscribe } = writable(param);
 
 	return { subscribe, reset: () => set(getNetwork()) };
 }
-const network = createNetwork();
+const network = createNetwork({ chains: [] });
 
 /**
  * Balance store
