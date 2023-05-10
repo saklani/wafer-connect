@@ -1,6 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
-  import { theme } from "../store.js";
+  import { theme } from "../stores";
   import Injected from "./disconnected/Injected.svelte";
   import MetaMask from "./disconnected/MetaMask.svelte";
   import WalletConnect from "./disconnected/WalletConnect.svelte";

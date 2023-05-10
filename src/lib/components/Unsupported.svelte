@@ -1,6 +1,6 @@
 <script>
   import { switchNetwork } from "@wagmi/core";
-  import { network, theme } from "../store.js";
+  import { network, theme } from "../stores";
   import Dialog from "./common/Dialog.svelte";
   let showDialog = false;
 </script>

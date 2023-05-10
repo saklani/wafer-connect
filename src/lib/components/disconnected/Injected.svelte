@@ -1,7 +1,7 @@
 <script>
   import { connect } from "@wagmi/core";
   import { Injected } from "../../wallet/injected.js";
-  import { wagmi } from "./../../store.js";
+  import { wagmi } from "../../stores";
 </script>
 
 <button

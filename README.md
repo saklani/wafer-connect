@@ -157,7 +157,7 @@ The library exports convenient stores like `account` and `network`.
   {#if $account.status === "connected"}
     <p>Connected</p>
     <p>address: {$account.address}</p>
-    <p>network: {$network.chain.id}</p>
+    <p>network: {$network.chain?.id}</p>
   {:else}
     <p>Not Connected</p>
   {/if}

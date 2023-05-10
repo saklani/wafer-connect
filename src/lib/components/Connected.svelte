@@ -1,6 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
-  import { theme } from "../store.js";
+  import { theme } from "../stores";
   import { shortAddress } from "../utils.js";
   import Dialog from "./common/Dialog.svelte";
   import Address from "./connected/Address.svelte";

@@ -1,6 +1,8 @@
 <script>
-  import { account, network, theme as themeStore, wagmi } from "./store.js";
-
+  import { account } from "./stores/account.js";
+  import { network } from "./stores/network.js";
+  import { theme as themeStore } from "./stores/theme.js";
+  import { wagmi } from "./stores/wagmi.js";
   import { defaultTheme } from "./theme.js";
 
   import Connected from "./components/Connected.svelte";
