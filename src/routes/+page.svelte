@@ -4,7 +4,7 @@
   import { mainnet, polygon, optimism } from "@wagmi/core/chains";
   import { publicProvider } from "@wagmi/core/providers/public";
 
-  const { chains, publicClient, webSocketPublicClient } = configureChains(
+  const { chains, publicClient } = configureChains(
     [mainnet, polygon, optimism],
     [publicProvider()]
   );
@@ -18,7 +18,6 @@
     chains,
     connectors,
     publicClient,
-    webSocketPublicClient,
   });
 </script>
 
