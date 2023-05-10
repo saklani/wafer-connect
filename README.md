@@ -16,7 +16,7 @@ Install WaferConnect and its peer dependencies, @wagmi/core & viem
 
 ```svelte
 <script>
-  import { createConfig, configureChains } from "@wagmi/core";
+  import { configureChains, createConfig } from "@wagmi/core";
   import { mainnet } from "@wagmi/core/chains";
   import { publicProvider } from "@wagmi/core/providers/public";
   import ConnectButton, { getDefaultConnectors } from "wafer-connect";
@@ -31,15 +31,12 @@ Install WaferConnect and its peer dependencies, @wagmi/core & viem
     chains,
   });
 
-  const wagmiConfig = createConfig({
-    connectors,
-    publicClient,
-  });
+  const wagmiConfig = createConfig({ connectors, publicClient });
 </script>
 
 <header>
   <div />
-   <ConnectButton {wagmiConfig} />
+  <ConnectButton {wagmiConfig} />
 </header>
 
 <style>
@@ -56,13 +53,12 @@ Install WaferConnect and its peer dependencies, @wagmi/core & viem
 A basic read contract example.
 
 ```svelte
-
 <script lang="ts">
   import {
-    configureChains,
-    createConfig,
-    erc721ABI,
-    readContract,
+      configureChains,
+      createConfig,
+      erc721ABI,
+      readContract,
   } from "@wagmi/core";
   import { mainnet } from "@wagmi/core/chains";
   import { alchemyProvider } from "@wagmi/core/providers/alchemy";
@@ -122,7 +118,61 @@ A basic read contract example.
 </style>
 ```
 
-## Basic Theme
+## Stores
+
+The library exports convenient stores like `account` and `network`.
+
+```svelte
+<script>
+  import { configureChains, createConfig } from "@wagmi/core";
+  import { mainnet } from "@wagmi/core/chains";
+  import { publicProvider } from "@wagmi/core/providers/public";
+  import ConnectButton, {
+      account,
+      getDefaultConnectors,
+      network,
+  } from "wafer-connect";
+
+  const { chains, publicClient } = configureChains(
+    [mainnet],
+    [publicProvider()]
+  );
+
+  const { connectors } = getDefaultConnectors({
+    projectId: "...",
+    chains,
+  });
+
+  const wagmiConfig = createConfig({
+    connectors,
+    publicClient,
+  });
+</script>
+
+<header>
+  <div />
+  <ConnectButton {wagmiConfig} />
+</header>
+<div>
+  {#if $account.status === "connected"}
+    <p>Connected</p>
+    <p>address: {$account.address}</p>
+    <p>network: {$network.chain.id}</p>
+  {:else}
+    <p>Not Connected</p>
+  {/if}
+</div>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+  }
+</style>
+```
+
+## Themes
 
 Basic themes can be set by passing the interface below
 
@@ -151,50 +201,4 @@ interface Theme {
 </script>
 
 <ConnectButton {wagmiConfig} {theme}/>
-```
-
-## Stores
-
-The library exports convenient stores like `account`, `network`, and `balance`.
-
-```svelte
-<script>
-  import { createConfig, configureChains } from "@wagmi/core";
-  import { mainnet } from "@wagmi/core/chains";
-  import { publicProvider } from "@wagmi/core/providers/public";
-  import ConnectButton, { getDefaultConnectors, account } from "wafer-connect";
-
-  const { chains, publicClient } = configureChains(
-    [mainnet],
-    [publicProvider()]
-  );
-
-  const { connectors } = getDefaultConnectors({
-    projectId: "...",
-    chains,
-  });
-
-  const wagmiConfig = createConfig({
-    connectors,
-    publicClient
-  });
-</script>
-
-<header>
-  <div />
-   <ConnectButton {wagmiConfig} />
-</header>
-{#if $account.status === "connected"}
-  <p>connected</p>
-{:else}
-  <p>disconnected</p>  
-{/if}
-
-<style>
-  header {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px;
-  }
-</style>
 ```
