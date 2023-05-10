@@ -6,7 +6,7 @@ Try it out: [https://wafer.vercel.app](https://wafer.vercel.app)
 
 ## Getting Started
 
-Install WaferConnect and its peer dependencies, @wagmi/core & viem
+Install `wafer-connect` and its peer dependencies `@wagmi/core` and `viem`.
 
 ```bash
   npm install wafer-connect @wagmi/core viem
