@@ -36,14 +36,14 @@
     style="align-items: center; display: flex; justify-content: space-between; width: 100%;"
   >
     <h2>Connected</h2>
-    <Chain />
+    <Chain --chain-color={$theme.dialogTextColor} />
   </div>
   <div
     style="align-items: center; display: flex; flex-direction: column; gap: 8px;"
   >
     <Avatar {address} />
-    <Address {address} />
-    <Balance />
+    <Address {address} --address-text-color={$theme.dialogTextColor} />
+    <Balance --balance-text-color={$theme.dialogTextColor} />
   </div>
   <Disconnect
     --disconnect-background-color={$theme.errorButtonColor}
@@ -56,13 +56,13 @@
   :root {
     --connected-background-color: rgb(235, 235, 235);
     --connected-color: black;
-    --connected-hover: rgba(235, 235, 235, 0.7);
+    --connected-hover-color: rgba(235, 235, 235, 0.7);
   }
   button {
     background-color: var(--connected-background-color);
     color: var(--connected-color);
   }
   button:hover {
-    background-color: var(--connected-hover);
+    background-color: var(--connected-hover-color);
   }
 </style>

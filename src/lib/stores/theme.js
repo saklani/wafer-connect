@@ -1,13 +1,11 @@
 import { writable } from "svelte/store";
-import { defaultTheme } from "../theme.js";
+import { lightTheme } from "../themes/lightTheme.js";
 
 function createTheme() {
-	const { set, subscribe } = (0, writable)(defaultTheme);
+	const { set, subscribe } = writable(lightTheme);
 	return {
 		subscribe: subscribe,
-		set: function (theme) {
-			return set(theme);
-		},
+		set: (theme) => set(theme),
 	};
 }
 export const theme = createTheme();

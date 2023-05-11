@@ -1,5 +1,9 @@
 <script>
-  import ConnectButton, { getDefaultConnectors } from "$lib/index.js";
+  import ConnectButton, {
+    lightTheme,
+    darkTheme,
+    getDefaultConnectors,
+  } from "$lib/index.js";
   import { configureChains, createConfig } from "@wagmi/core";
   import { mainnet, polygon, optimism } from "@wagmi/core/chains";
   import { publicProvider } from "@wagmi/core/providers/public";
@@ -19,40 +23,95 @@
     connectors,
     publicClient,
   });
+
+  let theme = lightTheme;
 </script>
 
-<div class="column">
+<div class="column padding">
   <h1>Wafer Connect</h1>
   <p>
-    Wafer Connect is a minimalist svelte component library for connect a
-    wallet to your Svelte/Sveltekit dApp.
+    Wafer Connect is a minimalist svelte component library to connect a wallet
+    to your Svelte dApp.
   </p>
-  <div class="focus">
-    <ConnectButton {wagmiConfig} />
+  <div class="row" style="height: 200px;">
+    <div class="column center focus">
+      <div class="row controls">
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <svg
+          on:click={() => (theme = lightTheme)}
+          width="21"
+          height="21"
+          viewBox="0 0 21 21"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M10.5 3V1M18 10.5H20M15.8033 15.8033L17.2175 17.2175M10.5 20V18M1 10.5H3M3.78249 3.78249L5.1967 5.1967M5.19668 15.8031L3.78247 17.2173M17.2175 3.78256L15.8033 5.19678M14.5 10.5C14.5 12.7091 12.7091 14.5 10.5 14.5C8.29086 14.5 6.5 12.7091 6.5 10.5C6.5 8.29086 8.29086 6.5 10.5 6.5C12.7091 6.5 14.5 8.29086 14.5 10.5Z"
+            stroke={theme === lightTheme ? "black" : "lightslategray"}
+            stroke-width="1.25"
+            stroke-linecap="round"
+          />
+        </svg>
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <svg
+          on:click={() => (theme = darkTheme)}
+          width="19"
+          height="19"
+          viewBox="0 0 21 21"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5.95221 2C2.80737 3.16531 1 6.19495 1 9.7451C1 14.3042 4.69579 18 9.2549 18C12.8051 18 15.8347 16.1924 17 13.0478C16.06 13.4261 15.0337 13.6193 13.9581 13.6193C9.4524 13.6193 5.38084 9.5477 5.38084 5.04206C5.38084 3.9664 5.57393 2.94074 5.95221 2Z"
+            stroke={theme === darkTheme ? "black" : "lightslategray"}
+            stroke-width="1.25"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
+      {#key theme}
+        <ConnectButton {wagmiConfig} {theme} />
+      {/key}
+    </div>
   </div>
 </div>
 
 <style>
   .focus {
-    display: flex;
+    position: relative;
+    border: solid 0.1px grey;
+    border-radius: 8px;
+  }
+  .controls {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border-radius: 25px;
+    border: solid 1px lightslategray;
+    gap: 8px;
+    padding-inline: 8px;
+    padding-block: 4px;
+  }
+  .center {
     justify-content: center;
     align-items: center;
-    border: solid 0.1px grey;
-    border-radius: 4px;
-    width: 100%;
-    height: 300px;
-    background-color: rgb(255, 255, 255, 0.4);
   }
   .column {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    padding: 1rem;
+    width: 100%;
+    height: 100%;
   }
-
+  .padding {
+    padding: 2rem;
+  }
+  .row {
+    display: flex;
+    gap: 8px;
+  }
   h1,
   p,
-  .focus {
-    max-width: 900px;
+  .row {
+    max-width: 600px;
   }
 </style>

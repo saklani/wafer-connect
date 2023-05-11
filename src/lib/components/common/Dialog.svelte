@@ -1,5 +1,4 @@
 <script>
-  import cross from "../../images/cross.svg";
   /** @type {boolean} */
   export let showDialog;
 
@@ -23,12 +22,18 @@
       style="align-items: center; display: flex; justify-content: space-between; gap: 0.5rem;"
     >
       <slot name="title" />
-      <button
-        style="background-color: transparent; padding: 4px; width: 32px; height: 32px;"
+      <svg
         on:click={() => (showDialog = false)}
+        width="41"
+        height="41"
       >
-        <img src={cross} alt="close" style="width: 24px; height: 24px;" />
-      </button>
+        <path
+          d="M30.225 10.64 10.426 30.437M10.394 10.607l19.798 19.799"
+          stroke="var(--dialog-color)"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
     </div>
     <slot />
   </div>

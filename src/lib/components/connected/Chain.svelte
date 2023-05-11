@@ -38,13 +38,14 @@
 
 <style>
   :root {
-    --chain-background-color: rgb(230, 230, 230);
     --chain-color: black;
     --height: 32px;
   }
   button {
-    background-color: var(--chain-background-color);
+    background-color: transparent;
     color: var(--chain-color);
     height: var(--height);
+    border: solid 0.1px;
+    border-color: var(--chain-color);
   }
 </style>

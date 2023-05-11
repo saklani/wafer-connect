@@ -14,14 +14,13 @@
 
 <style>
   :root {
-    --balance-background-color: white;
     --balance-font-size: 1.5rem;
-    --balance-color: black;
+    --balance-text-color: black;
     --border-radius: 4px;
   }
   h2 {
     font-size: var(--balance-font-size);
-    color: var(--balance-color);
+    color: var(--balance-text-color);
   }
   div {
     border-radius: var(--border-radius);
@@ -32,6 +31,5 @@
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--balance-background-color);
   }
 </style>

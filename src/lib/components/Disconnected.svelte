@@ -20,17 +20,17 @@
   <h2 slot="title">Connect a Wallet</h2>
   <Injected
     --connector-background-color={$theme.secondaryButtonColor}
-    --connector-color={$theme.secondaryButtonTextColor}
+    --connector-text-color={$theme.secondaryButtonTextColor}
     --connector-hover-color={$theme.secondaryButtonHoverColor}
   />
   <MetaMask
     --connector-background-color={$theme.secondaryButtonColor}
-    --connector-color={$theme.secondaryButtonTextColor}
+    --connector-text-color={$theme.secondaryButtonTextColor}
     --connector-hover-color={$theme.secondaryButtonHoverColor}
   />
   <WalletConnect
     --connector-background-color={$theme.secondaryButtonColor}
-    --connector-color={$theme.secondaryButtonTextColor}
+    --connector-text-color={$theme.secondaryButtonTextColor}
     --connector-hover-color={$theme.secondaryButtonHoverColor}
   />
 </Dialog>
@@ -39,7 +39,7 @@
   :root {
     --disconnected-background-color: rgb(235, 235, 235);
     --disconnected-color: black;
-    --disconnected-hover: rgba(235, 235, 235, 0.7);
+    --disconnected-hover-color: rgba(235, 235, 235, 0.7);
     --border-radius: 4px;
   }
   button {
@@ -48,6 +48,6 @@
     color: var(--disconnected-color);
   }
   button:hover {
-    background-color: var(--disconnected-hover);
+    background-color: var(--disconnected-hover-color);
   }
 </style>

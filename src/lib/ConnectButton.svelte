@@ -3,7 +3,7 @@
   import { network } from "./stores/network.js";
   import { theme as themeStore } from "./stores/theme.js";
   import { wagmi } from "./stores/wagmi.js";
-  import { defaultTheme } from "./theme.js";
+  import { lightTheme } from "./themes/lightTheme.js";
 
   import Connected from "./components/Connected.svelte";
   import Disconnected from "./components/Disconnected.svelte";
@@ -12,15 +12,15 @@
 
   import "./style.css";
 
-  let theme = defaultTheme;
+  let theme = lightTheme;
 
   /** @type {import("@wagmi/core").Config<any, any>}*/
   let wagmiConfig;
 
+  export { theme, wagmiConfig };
+
   wagmi.set(wagmiConfig);
   themeStore.set(theme);
-
-  export { theme, wagmiConfig };
 </script>
 
 {#if $account.status === "connected"}
@@ -34,11 +34,13 @@
       address={$account.address}
       --connected-background-color={$themeStore.primaryButtonColor}
       --connected-color={$themeStore.primaryButtonTextColor}
+      --connected-hover-color={$themeStore.primaryButtonHoverColor}
     />
   {/if}
 {:else if $account.status === "disconnected"}
   <Disconnected
     --disconnected-background-color={$themeStore.primaryButtonColor}
+    --disconnected-hover-color={$themeStore.primaryButtonHoverColor}
     --disconnected-color={$themeStore.primaryButtonTextColor}
   />
 {:else}
