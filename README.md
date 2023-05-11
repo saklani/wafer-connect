@@ -197,7 +197,12 @@ interface Theme {
 ```svelte
 
 <script>
-   const theme = {...} // Your custom theme
+   import { lightTheme } from "wafer-connect";
+   const theme = {
+    ...darkTheme,
+    primaryButtonColor: "rgb(38, 51, 106)",
+    primaryButtonHoverColor: "rgb(38, 51, 106, 0.8)",
+  }; // Your custom theme
 </script>
 
 <ConnectButton {wagmiConfig} {theme}/>
