@@ -8,7 +8,7 @@ function wagmiStore() {
 	return {
 		subscribe,
 		set: (config) => {
-			set({ chains: config.chains, connectors: config.connectors });
+			set({ chains: config.chains });
 			account.reset();
 			network.reset();
 			watchAccount(() => account.reset());

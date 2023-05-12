@@ -1,10 +1,9 @@
 <script>
   import { fade } from "svelte/transition";
-  import { theme } from "../stores";
-  import Injected from "./disconnected/Injected.svelte";
-  import MetaMask from "./disconnected/MetaMask.svelte";
-  import WalletConnect from "./disconnected/WalletConnect.svelte";
+  import { connectors } from "../stores/connectors.js";
+  import { theme } from "../stores/theme.js";
   import Dialog from "./common/Dialog.svelte";
+  import Connector from "./disconnected/Connector.svelte";
 
   /** @type {boolean}  */
   let showDialog = false;
@@ -18,21 +17,15 @@
   --dialog-blur={$theme.dialogBlur}
 >
   <h2 slot="title">Connect a Wallet</h2>
-  <Injected
-    --connector-background-color={$theme.secondaryButtonColor}
-    --connector-text-color={$theme.secondaryButtonTextColor}
-    --connector-hover-color={$theme.secondaryButtonHoverColor}
-  />
-  <MetaMask
-    --connector-background-color={$theme.secondaryButtonColor}
-    --connector-text-color={$theme.secondaryButtonTextColor}
-    --connector-hover-color={$theme.secondaryButtonHoverColor}
-  />
-  <WalletConnect
-    --connector-background-color={$theme.secondaryButtonColor}
-    --connector-text-color={$theme.secondaryButtonTextColor}
-    --connector-hover-color={$theme.secondaryButtonHoverColor}
-  />
+  {#each $connectors.wallets as wallet, index}
+    <Connector
+      connector={$connectors.wagmiConnectors[index]}
+      {wallet}
+      --connector-background-color={$theme.secondaryButtonColor}
+      --connector-text-color={$theme.secondaryButtonTextColor}
+      --connector-hover-color={$theme.secondaryButtonHoverColor}
+    />
+  {/each}
 </Dialog>
 
 <style>
