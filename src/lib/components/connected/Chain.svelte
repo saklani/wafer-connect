@@ -21,7 +21,7 @@
   let showDialog = false;
 </script>
 
-<button on:click={() => (showDialog = true)} disabled={isSwitchingNetwork}>
+<button on:click={() => (showDialog = true)} disabled={isSwitchingNetwork || $wagmi.chains.length === 1}>
   {isSwitchingNetwork ? "Switching..." : $network.chain.name}
 </button>
 
