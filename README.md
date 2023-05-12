@@ -26,7 +26,8 @@ Install `wafer-connect` and its peer dependencies `@wagmi/core` and `viem`.
     [publicProvider()]
   );
 
-  const { connectors } = getDefaultConnectors({
+  const { connectors, wallets } = getDefaultConnectors({
+    appName: "example",
     projectId: "...",
     chains,
   });
@@ -36,7 +37,7 @@ Install `wafer-connect` and its peer dependencies `@wagmi/core` and `viem`.
 
 <header>
   <div />
-  <ConnectButton {wagmiConfig} />
+  <ConnectButton {wagmiConfig} {connectors} {wallets} />
 </header>
 
 <style>
@@ -55,10 +56,10 @@ A basic read contract example.
 ```svelte
 <script lang="ts">
   import {
-      configureChains,
-      createConfig,
-      erc721ABI,
-      readContract,
+    configureChains,
+    createConfig,
+    erc721ABI,
+    readContract,
   } from "@wagmi/core";
   import { mainnet } from "@wagmi/core/chains";
   import { alchemyProvider } from "@wagmi/core/providers/alchemy";
@@ -69,7 +70,8 @@ A basic read contract example.
     [alchemyProvider({ apiKey: "..." })]
   );
 
-  const { connectors } = getDefaultConnectors({
+  const { connectors, wallets } = getDefaultConnectors({
+    appName: "example",
     projectId: "...",
     chains,
   });
@@ -89,13 +91,9 @@ A basic read contract example.
   }
 </script>
 
-<svelte:head>
-  <title>Home</title>
-  <meta name="description" content="Svelte demo app" />
-</svelte:head>
 <header>
   <div />
-  <ConnectButton {wagmiConfig} />
+  <ConnectButton {wagmiConfig} {connectors} {wallets} />
 </header>
 <section>
   <h2>{`Name: ${value}`}</h2>
@@ -128,9 +126,9 @@ The library exports convenient stores like `account` and `network`.
   import { mainnet } from "@wagmi/core/chains";
   import { publicProvider } from "@wagmi/core/providers/public";
   import ConnectButton, {
-      account,
-      getDefaultConnectors,
-      network,
+    account,
+    getDefaultConnectors,
+    network,
   } from "wafer-connect";
 
   const { chains, publicClient } = configureChains(
@@ -138,7 +136,8 @@ The library exports convenient stores like `account` and `network`.
     [publicProvider()]
   );
 
-  const { connectors } = getDefaultConnectors({
+  const { connectors, wallets } = getDefaultConnectors({
+    appName: "example",
     projectId: "...",
     chains,
   });
@@ -151,7 +150,7 @@ The library exports convenient stores like `account` and `network`.
 
 <header>
   <div />
-  <ConnectButton {wagmiConfig} />
+  <ConnectButton {wagmiConfig} {connectors} {wallets} />
 </header>
 <div>
   {#if $account.status === "connected"}
@@ -197,13 +196,81 @@ interface Theme {
 ```svelte
 
 <script>
-   import { lightTheme } from "wafer-connect";
-   const theme = {
+  import { configureChains, createConfig } from "@wagmi/core";
+  import { mainnet } from "@wagmi/core/chains";
+  import { publicProvider } from "@wagmi/core/providers/public";
+  import ConnectButton, {
+      darkTheme,
+      getDefaultConnectors,
+  } from "wafer-connect";
+
+  const { chains, publicClient } = configureChains(
+    [mainnet],
+    [publicProvider()]
+  );
+
+  const { connectors, wallets } = getDefaultConnectors({
+    appName: "example",
+    projectId: "...",
+    chains,
+  });
+
+  const wagmiConfig = createConfig({ connectors, publicClient });
+
+  const theme = {
     ...darkTheme,
     primaryButtonColor: "rgb(38, 51, 106)",
     primaryButtonHoverColor: "rgb(38, 51, 106, 0.8)",
-  }; // Your custom theme
+  };
 </script>
 
-<ConnectButton {wagmiConfig} {theme}/>
+<header>
+  <div />
+  <ConnectButton {wagmiConfig} {theme} {connectors} {wallets} />
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+  }
+</style>
+```
+
+## Custom Connectors
+
+Connectors can be passed according to requirements.
+
+```svelte
+<script>
+  import { configureChains, createConfig } from "@wagmi/core";
+  import { mainnet, optimism, polygon } from "@wagmi/core/chains";
+  import { publicProvider } from "@wagmi/core/providers/public";
+  import ConnectButton, {
+      MetaMask,
+      WalletConnect
+  } from "wafer-connect";
+
+  const { chains, publicClient } = configureChains(
+    [mainnet, polygon, optimism],
+    [publicProvider()]
+  );
+
+  const wallets = [MetaMask, WalletConnect];
+
+  const connectors = [
+    wallets[0].createConnector({ chains }),
+    wallets[1].createConnector({
+      chains,
+      projectId: "...",
+    }),
+  ];
+
+  const wagmiConfig = createConfig({
+    connectors,
+    publicClient,
+  });
+</script>
+<ConnectButton {wagmiConfig} {connectors} {wallets} />
 ```
