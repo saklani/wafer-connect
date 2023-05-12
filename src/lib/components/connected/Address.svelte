@@ -33,13 +33,12 @@
     {shortAddress(address)}
   </h3>
   {#if copied}
-    <div in:fade={{ delay: 500, duration: 500 }}>
+    <div style="height: 24px; width: 24px; display: flex; align-items: center; justify-contents: center;" in:fade={{ delay: 500, duration: 500 }}>
       <svg
         width="18"
         height="18"
         viewBox="0 0 18 18"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
       >
         <path
           d="M17.0156 5.40063L5.70192 16.7143"
@@ -54,13 +53,8 @@
       </svg>
     </div>
   {:else}
-    <div in:fade={{ delay: 300 }}>
-      <svg
-        width="18"
-        height="19"
-        viewBox="0 0 18 19"
-        fill="none"
-      >
+    <div style="height: 24px; width: 24px; display: flex; align-items: center; justify-contents: center;" in:fade={{ delay: 300 }}>
+      <svg width="18" height="19" viewBox="0 0 18 19" fill="none">
         <rect
           x="2.84668"
           y="0.5"

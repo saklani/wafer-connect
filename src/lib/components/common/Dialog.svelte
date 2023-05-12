@@ -23,14 +23,21 @@
     >
       <slot name="title" />
       <svg
+        width="24"
+        height="23"
+        viewBox="0 0 24 23"
         on:click={() => (showDialog = false)}
-        width="41"
-        height="41"
       >
         <path
-          d="M30.225 10.64 10.426 30.437M10.394 10.607l19.798 19.799"
+          d="M17.4829 5.86792L6.1692 17.1816"
           stroke="var(--dialog-color)"
-          stroke-width="2"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        />
+        <path
+          d="M6.15088 5.84937L17.4646 17.1631"
+          stroke="var(--dialog-color)"
+          stroke-width="1.5"
           stroke-linecap="round"
         />
       </svg>

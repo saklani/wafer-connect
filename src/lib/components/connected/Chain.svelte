@@ -1,5 +1,5 @@
 <script>
-	import { network, wagmi } from '../../stores';
+  import { network, wagmi } from "../../stores";
   import { switchNetwork } from "@wagmi/core";
   import Dialog from "../common/Dialog.svelte";
 
