@@ -1,0 +1,67 @@
+`wafer-connect` offers built-in light and dark themes.
+
+The built-in themes can be customized in the following way:
+
+```html
+<script>
+  import { configureChains, createConfig } from "@wagmi/core";
+  import { mainnet } from "@wagmi/core/chains";
+  import { publicProvider } from "@wagmi/core/providers/public";
+  import ConnectButton, {
+      darkTheme,
+      getDefaultConnectors,
+  } from "wafer-connect";
+
+  const { chains, publicClient } = configureChains(
+    [mainnet],
+    [publicProvider()]
+  );
+
+  const { connectors, wallets } = getDefaultConnectors({
+    appName: "example",
+    projectId: "...",
+    chains,
+  });
+
+  const wagmiConfig = createConfig({ connectors, publicClient });
+
+  const theme = {
+    ...darkTheme,
+    primaryButtonColor: "rgb(38, 51, 106)",
+    primaryButtonHoverColor: "rgb(38, 51, 106, 0.8)",
+  };
+</script>
+
+<header>
+  <div />
+  <ConnectButton {wagmiConfig} {theme} {connectors} {wallets} />
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+  }
+</style>
+```
+
+The complete list of customisable theme options.
+
+```javascript
+interface Theme {
+   borderRadius: string; // Controls the border radius of all elements
+   primaryButtonColor: string;
+   primaryButtonHoverColor: string;
+   primaryButtonTextColor: string;
+   secondaryButtonColor: string;
+   secondaryButtonHoverColor: string;
+   secondaryButtonTextColor: string;
+   errorButtonColor: string;
+   errorButtonHoverColor: string;
+   errorButtonTextColor: string;
+   dialogBackgroundColor: string;
+   dialogTextColor: string;
+   dialogBlur: string;
+}
+```

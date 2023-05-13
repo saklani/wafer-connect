@@ -21,6 +21,9 @@ devDependencies:
   '@sveltejs/package':
     specifier: ^2.0.0
     version: 2.0.2(svelte@3.58.0)(typescript@5.0.4)
+  marked:
+    specifier: ^5.0.2
+    version: 5.0.2
   publint:
     specifier: ^0.1.9
     version: 0.1.11
@@ -2518,6 +2521,12 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
+    dev: true
+
+  /marked@5.0.2:
+    resolution: {integrity: sha512-TXksm9GwqXCRNbFUZmMtqNLvy3K2cQHuWmyBDLOrY1e6i9UvZpOTJXoz7fBjYkJkaUFzV9hBFxMuZSyQt8R6KQ==}
+    engines: {node: '>= 18'}
+    hasBin: true
     dev: true
 
   /merge2@1.4.1:

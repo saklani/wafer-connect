@@ -1,32 +1,64 @@
 <script>
-    import { page } from "$app/stores";
+  import { page } from "$app/stores";
 </script>
 
 <div class="sidebar">
-  <a href="/"  style="background-color: {$page.url.pathname === "/"? "blue": "white"}; color: {$page.url.pathname === "/"? "white": "black"};"> Introduction </a>
-  <a href="/actions" style="background-color: {$page.url.pathname === "/actions"? "blue": "white"}; color: {$page.url.pathname === "/actions"? "white": "black"};"> Actions </a>
-  <a href="/theme" style="background-color: {$page.url.pathname === "/theme"? "blue": "white"}; color: {$page.url.pathname === "/theme"? "white": "black"};"> Themes </a>
+  <a
+    href="/"
+    style="background-color: {$page.url.pathname === '/'
+      ? '#1d1814'
+      : 'white'}; color: {$page.url.pathname === '/' ? 'white' : 'grey'};"
+  >
+    Introduction
+  </a>
+  <a
+    href="/themes"
+    style="background-color: {$page.url.pathname === '/themes'
+      ? '#1d1814'
+      : 'white'}; color: {$page.url.pathname === '/themes' ? 'white' : 'grey'};"
+  >
+    Themes
+  </a>
+  <a
+    href="/actions"
+    style="background-color: {$page.url.pathname === '/actions'
+      ? '#1d1814'
+      : 'white'}; color: {$page.url.pathname === '/actions'
+      ? 'white'
+      : 'grey'};"
+  >
+    Actions
+  </a>
+  <a
+    href="/stores"
+    style="background-color: {$page.url.pathname === '/stores'
+      ? '#1d1814'
+      : 'white'}; color: {$page.url.pathname === '/stores' ? 'white' : 'grey'};"
+  >
+    Stores
+  </a>
 </div>
 
 <style>
   .sidebar {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 175px;
     min-height: 100vh;
     gap: 4px;
     padding: 4px;
-    background-color: #F0F0F0;
   }
 
   a {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1416d1;
-    color: white;
-    padding: 16px;
+    padding-block: 12px;
+    padding-inline: 8px;
     border-radius: 4px;
     text-decoration: none;
+  }
+
+  a:hover {
+    background-color: #e5e5e5;
+    color: rgb(43, 39, 39);
   }
 </style>
