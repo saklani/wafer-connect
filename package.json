@@ -1,7 +1,10 @@
 {
 	"name": "wafer-connect",
-	"version": "0.1.5",
-	"homepage": "https://github.com/saklani/wafer-connect",
+	"version": "0.1.6",
+	"homepage": "https://wafer.vercel.app",
+  "repository": {
+    "url": "https://github.com/saklani/wafer-connect"
+  },
 	"bugs": {
 		"url": "https://github.com/saklani/wafer-connect/issues"
 	},
