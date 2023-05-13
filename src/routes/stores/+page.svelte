@@ -25,7 +25,7 @@
   });
 </script>
 
-<zero-md src="../../documentation/04-stores.md" />
+<zero-md src="/documentation/04-stores.md" />
 
 <div class="col">
   <div>

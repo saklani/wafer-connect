@@ -70,7 +70,7 @@
     {/key}
   </div>
 
-<zero-md src="../../documentation/02-themes.md" />
+<zero-md src="/documentation/02-themes.md" />
 </div>
 
 <style>

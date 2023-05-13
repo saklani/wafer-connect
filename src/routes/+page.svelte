@@ -1,1 +1,1 @@
-<zero-md src="../../documentation/01-introduction.md" />
+<zero-md src="/documentation/01-introduction.md"/>
