@@ -7,8 +7,8 @@ import { network } from "./network.js";
  * Balance store
  */
 export const balance = derived([account, network], ([$account, $network]) =>
-	fetchBalance({
-		address: $account.address,
-		chainId: $network.chainId,
-	}),
+  fetchBalance({
+    address: $account.address,
+    chainId: $network.chain?.id,
+  }),
 );

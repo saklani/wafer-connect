@@ -1,7 +1,7 @@
 <script>
   import { account } from "./stores/account.js";
-  import { network } from "./stores/network.js";
   import { connectors as _connectors } from "./stores/connectors.js";
+  import { network } from "./stores/network.js";
   import { theme as _theme } from "./stores/theme.js";
   import { wagmi } from "./stores/wagmi.js";
   import { lightTheme } from "./themes/lightTheme.js";

@@ -1,6 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
-  import { sleep, shortAddress } from "../../utils.js";
+  import { shortAddress, sleep } from "../../utils.js";
 
   /** @type {`0x{string}`}  */
   let address;
@@ -33,13 +33,11 @@
     {shortAddress(address)}
   </h3>
   {#if copied}
-    <div style="height: 24px; width: 24px; display: flex; align-items: center; justify-contents: center;" in:fade={{ delay: 500, duration: 500 }}>
-      <svg
-        width="18"
-        height="18"
-        viewBox="0 0 18 18"
-        fill="none"
-      >
+    <div
+      style="height: 24px; width: 24px; display: flex; align-items: center; justify-contents: center;"
+      in:fade={{ delay: 500, duration: 500 }}
+    >
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
         <path
           d="M17.0156 5.40063L5.70192 16.7143"
           stroke="var(--address-text-color)"
@@ -53,7 +51,10 @@
       </svg>
     </div>
   {:else}
-    <div style="height: 24px; width: 24px; display: flex; align-items: center; justify-contents: center;" in:fade={{ delay: 300 }}>
+    <div
+      style="height: 24px; width: 24px; display: flex; align-items: center; justify-contents: center;"
+      in:fade={{ delay: 300 }}
+    >
       <svg width="18" height="19" viewBox="0 0 18 19" fill="none">
         <rect
           x="2.84668"

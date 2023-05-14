@@ -1,5 +1,4 @@
 <script>
-  import { browser } from "$app/environment";
   import { connect } from "@wagmi/core";
 
   /** @type {import("@wagmi/core/connectors").Connector}*/
@@ -9,11 +8,10 @@
    */
   let wallet;
 
-
   export { connector, wallet };
 </script>
 
-{#if wallet.id === "injected" && ( typeof window === "undefined" || typeof window !== "undefined" && window?.ethereum?.isMetaMask)}
+{#if wallet.id === "injected" && (typeof window === "undefined" || (typeof window !== "undefined" && window?.ethereum?.isMetaMask))}
   <div style="display: none;" />
 {:else}
   <button
