@@ -38,9 +38,7 @@
     <h2>Connected</h2>
     <Chain --chain-color={$theme.dialogTextColor} />
   </div>
-  <div
-    style="align-items: center; display: flex; flex-direction: column; gap: 8px;"
-  >
+  <div style="align-items: center; display: flex; flex-direction: column; gap: 8px;">
     <Avatar {address} />
     <Address {address} --address-text-color={$theme.dialogTextColor} />
     <Balance --balance-text-color={$theme.dialogTextColor} />

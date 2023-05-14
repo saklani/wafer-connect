@@ -10,7 +10,7 @@
 button {
   align-items: center;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   display: flex;
   font-family: inherit;
@@ -18,10 +18,16 @@ button {
   gap: 16px;
   height: 42px;
   justify-content: space-between;
-  padding-inline: 8px;
+  padding-inline: 12px;
   z-index: 1;
 }
 
 button>img {
   width: 32px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0px;
 }

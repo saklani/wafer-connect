@@ -1,6 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
-  import { shortAddress, sleep } from "../../utils.js";
+  import { sleep, shortAddress } from "../../utils.js";
 
   /** @type {`0x{string}`}  */
   let address;
@@ -80,7 +80,7 @@
 
 <style>
   :root {
-    --address-font-size: 1rem;
+    --address-font-size: 1.1rem;
     --address-text-color: black;
     --address-hover: rgb(73, 69, 69);
   }
@@ -90,7 +90,7 @@
     cursor: pointer;
     display: flex;
     gap: 8px;
-    padding-inline: 8px;
+    padding-inline: 4px;
   }
   .address:hover {
     color: var(--address-hover);

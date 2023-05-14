@@ -25,13 +25,16 @@
 
 <style>
   :root {
-    --connector-background-color: white;
+    --connector-background-color: rgba(255, 255, 255, 0.8);
     --connector-text-color: black;
-    --connector-hover-color: rgba(255, 255, 255, 0.9);
+    --connector-hover-color: rgba(255, 255, 255, 0.6);
   }
   button {
     background-color: var(--connector-background-color);
     color: var(--connector-text-color);
+    height: 54px;
+    padding-inline: 16px;
+    padding-block: 8px;
   }
   button:hover {
     background-color: var(--connector-hover-color);

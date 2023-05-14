@@ -9,9 +9,9 @@ const lightTheme = {
 	errorButtonColor: "rgb(220, 66, 66)",
 	errorButtonHoverColor: "rgb(230, 69, 69)",
 	errorButtonTextColor: "white",
-	dialogBackgroundColor: "rgba(250, 250, 250, 0.72)",
+	dialogBackgroundColor: "rgba(250, 250, 250, 0.85)",
 	dialogTextColor: "black",
-	dialogBlur: "blur(4px)",
+	dialogBlur: "blur(2px)",
 };
 
 export { lightTheme };

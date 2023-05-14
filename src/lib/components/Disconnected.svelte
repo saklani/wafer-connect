@@ -4,6 +4,7 @@
   import { theme } from "../stores/theme.js";
   import Dialog from "./common/Dialog.svelte";
   import Connector from "./disconnected/Connector.svelte";
+  import NoWallet from "./disconnected/NoWallet.svelte";
 
   /** @type {boolean}  */
   let showDialog = false;
@@ -17,7 +18,7 @@
   --dialog-blur={$theme.dialogBlur}
 >
   <h2 slot="title">Connect a Wallet</h2>
-  {#each $connectors.wallets as wallet, index}
+  {#each $connectors.wallets ?? [] as wallet, index}
     <Connector
       connector={$connectors.wagmiConnectors[index]}
       {wallet}
@@ -26,6 +27,7 @@
       --connector-hover-color={$theme.secondaryButtonHoverColor}
     />
   {/each}
+  <NoWallet />
 </Dialog>
 
 <style>
@@ -33,11 +35,9 @@
     --disconnected-background-color: rgb(235, 235, 235);
     --disconnected-color: black;
     --disconnected-hover-color: rgba(235, 235, 235, 0.7);
-    --border-radius: 4px;
   }
   button {
     background-color: var(--disconnected-background-color);
-    border-radius: var(--border-radius);
     color: var(--disconnected-color);
   }
   button:hover {

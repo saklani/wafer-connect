@@ -22,7 +22,7 @@
 </script>
 
 <button on:click={() => (showDialog = true)} disabled={isSwitchingNetwork || $wagmi.chains.length === 1}>
-  {isSwitchingNetwork ? "Switching..." : $network.chain.name}
+  {isSwitchingNetwork ? "Switching•••" : $network.chain.name}
 </button>
 
 <Dialog bind:showDialog --max-width="200px">
@@ -45,7 +45,10 @@
     background-color: transparent;
     color: var(--chain-color);
     height: var(--height);
-    border: solid 0.1px;
-    border-color: var(--chain-color);
+    border: solid 0.1px var(--chain-color);
+    padding-block: 6px;
+  }
+  button:hover {
+    background-color: rgb(192, 192, 192, 0.1);
   }
 </style>

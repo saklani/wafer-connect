@@ -15,7 +15,7 @@
   on:click|self={() => dialog.close()}
 >
   <div
-    style="display: flex; flex-direction: column; gap: 0.5rem; width: 100%;"
+    style="display: flex; flex-direction: column; gap: 0.8rem; width: 100%;"
     on:click|stopPropagation
   >
     <div
@@ -48,20 +48,19 @@
 
 <style>
   :root {
-    --dialog-background-color: rgba(245, 245, 245, 0.8);
+    --dialog-background-color: rgba(240, 240, 240, 0.8);
     --dialog-color: black;
-    --border-radius: 4px;
-    --max-width: 325px;
+    --max-width: 300px;
   }
 
   dialog {
     backdrop-filter: var(--dialog-blur);
     background-color: var(--dialog-background-color);
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: 8px;
     color: var(--dialog-color);
     max-width: var(--max-width);
-    padding: 1rem;
+    padding-inline: 1rem;
     width: 100%;
   }
 
@@ -70,11 +69,11 @@
   }
 
   dialog[open] {
-    animation: zoom 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: zoom 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   dialog[open]::backdrop {
-    animation: fade 0.2s ease-out;
+    animation: fade 0.3s ease-out;
   }
 
   @keyframes zoom {
