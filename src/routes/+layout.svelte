@@ -29,9 +29,12 @@
   }
 
   header {
-    background-color: #1D1814;
+    background-color: #1d1814;
     padding-inline: 0.5rem;
     color: white;
+    height: 64px;
+    display: flex;
+    align-items: center;
   }
 
   main {
