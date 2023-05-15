@@ -1,6 +1,4 @@
-`wafer-connect` offers built-in light and dark themes.
-
-The built-in themes can be customized in the following way:
+The themes can be customized in the following way:
 
 ```html
 <script>
