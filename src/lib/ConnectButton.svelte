@@ -38,6 +38,7 @@
     <Unsupported
       --unsupported-background-color={$_theme.errorButtonColor}
       --unsupported-color={$_theme.errorButtonTextColor}
+      --border-radius={$_theme.borderRadius}
     />
   {:else}
     <Connected
@@ -45,6 +46,7 @@
       --connected-background-color={$_theme.primaryButtonColor}
       --connected-color={$_theme.primaryButtonTextColor}
       --connected-hover-color={$_theme.primaryButtonHoverColor}
+      --border-radius={$_theme.borderRadius}
     />
   {/if}
 {:else if $account.status === "disconnected"}
@@ -52,10 +54,12 @@
     --disconnected-background-color={$_theme.primaryButtonColor}
     --disconnected-hover-color={$_theme.primaryButtonHoverColor}
     --disconnected-color={$_theme.primaryButtonTextColor}
+    --border-radius={$_theme.borderRadius}
   />
 {:else}
   <Loading
     --loading-background-color={$_theme.primaryButtonColor}
     --loading-color={$_theme.primaryButtonTextColor}
+    --border-radius={$_theme.borderRadius}
   />
 {/if}

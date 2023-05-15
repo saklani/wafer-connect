@@ -16,6 +16,7 @@
   --dialog-background-color={$theme.dialogBackgroundColor}
   --dialog-color={$theme.dialogTextColor}
   --dialog-blur={$theme.dialogBlur}
+  --border-radius={$theme.borderRadius}
 >
   <h2 slot="title">Connect a Wallet</h2>
   {#each $connectors.wallets ?? [] as wallet, index}
@@ -25,6 +26,7 @@
       --connector-background-color={$theme.secondaryButtonColor}
       --connector-text-color={$theme.secondaryButtonTextColor}
       --connector-hover-color={$theme.secondaryButtonHoverColor}
+      --border-radius={$theme.borderRadius}
     />
   {/each}
   <NoWallet />
@@ -35,10 +37,12 @@
     --disconnected-background-color: rgb(235, 235, 235);
     --disconnected-color: black;
     --disconnected-hover-color: rgba(235, 235, 235, 0.7);
+    --border-radius: 6px;
   }
   button {
     background-color: var(--disconnected-background-color);
     color: var(--disconnected-color);
+    border-radius: var(--border-radius);
   }
   button:hover {
     background-color: var(--disconnected-hover-color);

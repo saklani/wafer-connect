@@ -17,7 +17,7 @@
   <h2 slot="title">Switch Chain</h2>
   {#each $network.chains as chain}
     <button
-      style="background-color: {$theme.secondaryButtonColor}; color: {$theme.secondaryButtonTextColor};"
+      style="background-color: {$theme.secondaryButtonColor}; color: {$theme.secondaryButtonTextColor}; border-radius: {$theme.borderRadius};"
       on:click={() => switchNetwork({ chainId: chain.id })}
     >
       {chain.name}
@@ -29,11 +29,13 @@
   :root {
     --unsupported-background-color: rgb(190, 59, 59);
     --unsupported-color: white;
-    --unsupported-hover: rgba(190, 59, 59, 0.8);
+    --unsupported-hover: rgb(200, 69, 69);
+    --border-radius: 6px;
   }
   button {
     background-color: var(--unsupported-background-color);
     color: var(--unsupported-color);
+    border-radius: var(--border-radius);
   }
   button:hover {
     background-color: var(--unsupported-hover);

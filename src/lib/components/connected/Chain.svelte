@@ -21,7 +21,7 @@
   let showDialog = false;
 </script>
 
-<button on:click={() => (showDialog = true)} disabled={isSwitchingNetwork || $wagmi.chains.length === 1}>
+<button on:click={() => (showDialog = true)} disabled={isSwitchingNetwork || $wagmi.chains.length === 1} style="border-radius: 999px;">
   {isSwitchingNetwork ? "Switching•••" : $network.chain.name}
 </button>
 
@@ -40,12 +40,14 @@
   :root {
     --chain-color: black;
     --height: 32px;
+    --border-radius: 6px;
   }
   button {
     background-color: transparent;
     color: var(--chain-color);
     height: var(--height);
-    border: solid 0.1px var(--chain-color);
+    border: solid 1px var(--chain-color);
+    border-radius: var(--border-radius);
     padding-block: 6px;
   }
   button:hover {

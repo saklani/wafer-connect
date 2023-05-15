@@ -19,7 +19,7 @@
     on:click|stopPropagation
   >
     <div
-      style="align-items: center; display: flex; justify-content: space-between; gap: 0.5rem;"
+      style="align-items: center; display: flex; justify-content: space-between; gap: 0.5rem; padding-bottom: 1rem;"
     >
       <slot name="title" />
       <svg
@@ -50,17 +50,18 @@
   :root {
     --dialog-background-color: rgba(240, 240, 240, 0.8);
     --dialog-color: black;
-    --max-width: 300px;
+    --max-width: 324px;
+    --border-radius: 6px;
   }
 
   dialog {
     backdrop-filter: var(--dialog-blur);
     background-color: var(--dialog-background-color);
     border: none;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     color: var(--dialog-color);
     max-width: var(--max-width);
-    padding-inline: 1rem;
+    padding: 24px;
     width: 100%;
   }
 

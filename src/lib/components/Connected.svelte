@@ -30,6 +30,7 @@
   --dialog-background-color={$theme.dialogBackgroundColor}
   --dialog-color={$theme.dialogTextColor}
   --dialog-blur={$theme.dialogBlur}
+  --border-radius={$theme.borderRadius}
 >
   <div
     slot="title"
@@ -38,7 +39,9 @@
     <h2>Connected</h2>
     <Chain --chain-color={$theme.dialogTextColor} />
   </div>
-  <div style="align-items: center; display: flex; flex-direction: column; gap: 8px;">
+  <div
+    style="align-items: center; display: flex; flex-direction: column; gap: 16px; padding-block: 16px;"
+  >
     <Avatar {address} />
     <Address {address} --address-text-color={$theme.dialogTextColor} />
     <Balance --balance-text-color={$theme.dialogTextColor} />
@@ -47,6 +50,7 @@
     --disconnect-background-color={$theme.errorButtonColor}
     --disconnect-color={$theme.errorButtonTextColor}
     --disconnect-hover={$theme.errorButtonHoverColor}
+    --border-radius={$theme.borderRadius}
   />
 </Dialog>
 
@@ -55,10 +59,12 @@
     --connected-background-color: rgb(235, 235, 235);
     --connected-color: black;
     --connected-hover-color: rgba(235, 235, 235, 0.7);
+    --border-radius: 6px;
   }
   button {
     background-color: var(--connected-background-color);
     color: var(--connected-color);
+    border-radius: var(--border-radius);
   }
   button:hover {
     background-color: var(--connected-hover-color);

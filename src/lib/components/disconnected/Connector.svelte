@@ -28,6 +28,7 @@
     --connector-background-color: rgba(255, 255, 255, 0.8);
     --connector-text-color: black;
     --connector-hover-color: rgba(255, 255, 255, 0.6);
+    --border-radius: 6px;
   }
   button {
     background-color: var(--connector-background-color);
@@ -35,6 +36,7 @@
     height: 54px;
     padding-inline: 16px;
     padding-block: 8px;
+    border-radius: var(--border-radius);
   }
   button:hover {
     background-color: var(--connector-hover-color);

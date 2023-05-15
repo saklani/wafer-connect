@@ -10,7 +10,7 @@
 button {
   align-items: center;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   display: flex;
   font-family: inherit;
