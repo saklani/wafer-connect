@@ -1,11 +1,20 @@
 <script>
+  import { goto } from "$app/navigation";
   import Sidebar from "./Sidebar.svelte";
+  import github from "./github.svg";
   import "./style.css";
 </script>
 
 <div class="app">
   <header>
     <h3>Wafer Connect</h3>
+    <a href="https://github.com/saklani/wafer-connect">
+      <img
+        style="height: 32px; width: 32px; background: white; border-radius: 999px;"
+        src={github}
+        alt="https://github.com/saklani/wafer-connect"
+      />
+    </a>
   </header>
   <main>
     <div class="row">
@@ -34,6 +43,7 @@
     color: white;
     height: 64px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
 
