@@ -19,7 +19,7 @@
     chains,
   });
 
-  const wagmiConfig = createConfig({
+  createConfig({
     chains,
     connectors,
     publicClient,
@@ -54,7 +54,7 @@
   <div class="column center focus">
     {#key themeIndex}
       <ConnectButton
-        {wagmiConfig}
+        {chains}
         theme={themes[themeIndex]}
         {connectors}
         {wallets}

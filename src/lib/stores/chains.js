@@ -3,12 +3,12 @@ import { writable } from "svelte/store";
 import { account } from "./account.js";
 import { network } from "./network.js";
 
-function wagmiStore() {
+function chainsStore() {
   const { subscribe, set } = writable({});
   return {
     subscribe,
-    set: (config) => {
-      set({ chains: config.chains });
+    set: (chains) => {
+      set(chains);
       account.reset();
       network.reset();
       watchAccount(() => account.reset());
@@ -17,4 +17,4 @@ function wagmiStore() {
   };
 }
 
-export const wagmi = wagmiStore();
+export const chains = chainsStore();

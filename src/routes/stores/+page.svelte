@@ -19,7 +19,7 @@
     chains,
   });
 
-  const wagmiConfig = createConfig({
+  createConfig({
     connectors,
     publicClient,
   });
@@ -29,7 +29,7 @@
 
 <div class="col">
   <div>
-    <ConnectButton {wagmiConfig} {connectors} {wallets} />
+    <ConnectButton {chains} {connectors} {wallets} />
   </div>
   <p><strong>account.address:</strong> {$account.address}</p>
   <p><strong>account.status:</strong> {$account.status}</p>

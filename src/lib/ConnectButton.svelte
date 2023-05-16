@@ -3,7 +3,7 @@
   import { connectors as _connectors } from "./stores/connectors.js";
   import { network } from "./stores/network.js";
   import { theme as _theme } from "./stores/theme.js";
-  import { wagmi } from "./stores/wagmi.js";
+  import { chains as _chains } from "./stores/chains.js";
   import { lightTheme } from "./themes/lightTheme.js";
 
   import Connected from "./components/Connected.svelte";
@@ -15,8 +15,8 @@
 
   let theme = lightTheme;
 
-  /** @type {import("@wagmi/core").Config<any, any>}*/
-  let wagmiConfig;
+  /** @type {import("@wagmi/core").Chain[]}*/
+  let chains;
 
   /**
    * @type {{id: string; name: string; icon: string; url: string; createConnector: (params) => import("@wagmi/core/connectors").Connector}[]}
@@ -26,10 +26,10 @@
   /** @type {import("@wagmi/core/connectors").Connector[]}*/
   let connectors;
 
-  export { connectors, theme, wagmiConfig, wallets };
+  export { connectors, theme, chains, wallets };
 
+  _chains.set(chains);
   _connectors.set({ wagmiConnectors: connectors, wallets });
-  wagmi.set(wagmiConfig);
   _theme.set(theme);
 </script>
 

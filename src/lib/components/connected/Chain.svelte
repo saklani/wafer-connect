@@ -1,5 +1,5 @@
 <script>
-  import { network, wagmi } from "../../stores";
+  import { network, chains } from "../../stores";
   import { switchNetwork } from "@wagmi/core";
   import Dialog from "../common/Dialog.svelte";
 
@@ -21,13 +21,13 @@
   let showDialog = false;
 </script>
 
-<button on:click={() => (showDialog = true)} disabled={isSwitchingNetwork || $wagmi.chains.length === 1} style="border-radius: 999px;">
+<button on:click={() => (showDialog = true)} disabled={isSwitchingNetwork || $chains.length === 1} style="border-radius: 999px;">
   {isSwitchingNetwork ? "Switching•••" : $network.chain.name}
 </button>
 
 <Dialog bind:showDialog --max-width="200px">
   <h3 slot="title">Chains</h3>
-  {#each $wagmi.chains as chain}
+  {#each $chains as chain}
     {#if chain.id !== $network.chain.id}
       <button on:click={() => changeNetwork({ chainId: chain.id })}>
         {chain.name}
