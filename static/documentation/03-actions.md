@@ -30,7 +30,8 @@ Read the name of an ERC721 at `0xFBA3912Ca04dd458c843e2EE08967fC04f3579c2` on ma
     projectId: "...",
     chains,
   });
-  const wagmiConfig = createConfig({
+  
+  createConfig({
     connectors,
     publicClient,
   });
@@ -48,7 +49,7 @@ Read the name of an ERC721 at `0xFBA3912Ca04dd458c843e2EE08967fC04f3579c2` on ma
 
 <header>
   <div />
-  <ConnectButton {wagmiConfig} {connectors} {wallets} />
+  <ConnectButton {chains} {connectors} {wallets} />
 </header>
 <section>
   <h2>{`Name: ${value}`}</h2>

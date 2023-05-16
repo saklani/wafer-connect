@@ -48,12 +48,12 @@ A minimal example script.
     chains,
   });
 
-  const wagmiConfig = createConfig({ connectors, publicClient });
+   createConfig({ connectors, publicClient });
 </script>
 
 <header>
   <div />
-  <ConnectButton {wagmiConfig} {connectors} {wallets} />
+  <ConnectButton {chains} {connectors} {wallets} />
 </header>
 
 <style>

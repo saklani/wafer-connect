@@ -21,7 +21,7 @@ The themes can be customized in the following way:
     chains,
   });
 
-  const wagmiConfig = createConfig({ connectors, publicClient });
+  createConfig({ connectors, publicClient });
 
   const theme = {
     ...darkTheme,
@@ -32,7 +32,7 @@ The themes can be customized in the following way:
 
 <header>
   <div />
-  <ConnectButton {wagmiConfig} {theme} {connectors} {wallets} />
+  <ConnectButton {chains} {theme} {connectors} {wallets} />
 </header>
 
 <style>
