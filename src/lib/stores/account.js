@@ -2,7 +2,7 @@ import { getAccount } from "@wagmi/core";
 import { writable } from "svelte/store";
 
 function createAccount() {
-  /**  @type {{address: `0x${string}` | undefined;	isConnected: boolean; isConnecting: boolean; isDisconnected: boolean; isReconnecting: boolean;status: "connected" | "reconnecting" | "connecting" | "disconnected";}} */
+  /**  @type {{address: `0x${string}` | undefined;	isConnected: boolean; isConnecting: boolean; isDisconnected: boolean; isReconnecting: boolean; status: "connected" | "reconnecting" | "connecting" | "disconnected";}} */
   const init = {
     address: undefined,
     isConnected: false,
