@@ -14,7 +14,7 @@
 
 <style>
   :root {
-    --balance-font-size: 1.1rem;
+    --balance-font-size: 1.2rem;
     --balance-text-color: black;
   }
   h3 {

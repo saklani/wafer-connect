@@ -84,7 +84,7 @@
 
 <style>
   :root {
-    --address-font-size: 1.2rem;
+    --address-font-size: 1rem;
     --address-text-color: black;
     --address-hover: rgb(73, 69, 69);
   }

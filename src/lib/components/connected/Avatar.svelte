@@ -24,7 +24,7 @@
 <style>
   :root {
     --avatar-radius: 999px;
-    --radius: 96px;
+    --radius: 128px;
   }
   .avatar {
     border-radius: var(--avatar-radius);

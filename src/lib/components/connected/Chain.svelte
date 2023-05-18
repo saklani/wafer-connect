@@ -21,7 +21,11 @@
   let showDialog = false;
 </script>
 
-<button on:click={() => (showDialog = true)} disabled={isSwitchingNetwork || $chains.length === 1} style="border-radius: 999px;">
+<button
+  on:click={() => (showDialog = true)}
+  disabled={isSwitchingNetwork || $chains.length === 1}
+  style="border-radius: 999px;"
+>
   {isSwitchingNetwork ? "Switching•••" : $network.chain.name}
 </button>
 
