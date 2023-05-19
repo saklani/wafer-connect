@@ -37,7 +37,13 @@
     style="align-items: center; display: flex; justify-content: space-between; width: 100%;"
   >
     <h2>Connected</h2>
-    <Chain --chain-color={$theme.dialogTextColor} />
+    <Chain
+      --chain-menu-background-color={$theme.dialogBackgroundColor}
+      --chain-menu-color={$theme.dialogTextColor}
+      --chain-button-background-color={$theme.secondaryButtonColor}
+      --chain-button-color={$theme.secondaryButtonTextColor}
+      --border-radius={$theme.borderRadius}
+    />
   </div>
   <div
     style="align-items: center; display: flex; flex-direction: column; gap: 1rem; padding-block: 4px;"

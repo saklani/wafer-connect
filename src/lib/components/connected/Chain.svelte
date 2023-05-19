@@ -1,7 +1,7 @@
 <script>
   import { network, chains } from "../../stores";
   import { switchNetwork } from "@wagmi/core";
-  import Dialog from "../common/Dialog.svelte";
+  import Menu from "../common/Menu.svelte";
 
   /** @type {boolean}  */
   let isSwitchingNetwork = false;
@@ -18,13 +18,13 @@
   }
 
   /** @type {boolean}  */
-  let showDialog = false;
+  let showMenu = false;
 </script>
 
 <button
-  on:click={() => (showDialog = true)}
+  on:click={() => (showMenu = true)}
   disabled={isSwitchingNetwork || $chains.length === 1}
-  style="border-radius: 999px;"
+  style="border-radius: 999px; font-size: 0.9rem;"
 >
   {#if isSwitchingNetwork}
     <p>"Switching•••"</p>
@@ -42,22 +42,22 @@
     >
       <path
         d="M24.6289 11.8813L13.3491 23.1612"
-        stroke="black"
-        stroke-width="1.5"
+        stroke="var(--chain-button-color)"
+        stroke-width="2"
         stroke-linecap="square"
       />
       <path
         d="M2 11.8799L13.2798 23.1597"
-        stroke="black"
-        stroke-width="1.5"
+        stroke="var(--chain-button-color)"
+        stroke-width="2"
         stroke-linecap="square"
       />
     </svg>
   {/if}
 </button>
 
-<Dialog bind:showDialog --max-width="200px" --dialog-blur="blur(0px)">
-  <h3 slot="title">Chains</h3>
+<Menu bind:showMenu --menu-background-color="var(--chain-menu-background-color)" --menu-color="--chain-menu-color">
+  <h3 slot="title">Change Network</h3>
   {#each $chains as chain}
     {#if chain.id !== $network.chain.id}
       <button on:click={() => changeNetwork({ chainId: chain.id })}>
@@ -65,23 +65,24 @@
       </button>
     {/if}
   {/each}
-</Dialog>
+</Menu>
 
 <style>
   :root {
-    --chain-color: black;
+    --chain-menu-background-color: white;
+    --chain-menu-color: black;
+    --chain-button-background-color: rgba(192, 192, 192, 0.3);
+    --chain-button-color: black;
     --border-radius: 6px;
   }
   button {
-    background-color: transparent;
-    color: var(--chain-color);
+    background-color: var(--chain-button-background-color);
+    color: var(--chain-button-color);
     height: var(--height);
-    border: solid 1px var(--chain-color);
     border-radius: var(--border-radius);
     padding-block: 8px;
-    padding-inline: 12px;
   }
   button:hover {
-    background-color: rgb(192, 192, 192, 0.1);
+    background-color: rgba(192, 192, 192, 0.4);
   }
 </style>

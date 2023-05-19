@@ -18,7 +18,7 @@ button {
   gap: 4px;
   height: 42px;
   justify-content: space-between;
-  padding-inline: 8px;
+  padding-inline: 16px;
   z-index: 1;
 }
 
