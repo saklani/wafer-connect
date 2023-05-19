@@ -1,8 +1,11 @@
 <script>
-  import { goto } from "$app/navigation";
+  import { dev } from "$app/environment";
+  import { inject } from "@vercel/analytics";
   import Sidebar from "./Sidebar.svelte";
   import github from "./github.svg";
   import "./style.css";
+
+  inject({ mode: dev ? "development" : "production" });
 </script>
 
 <div class="app">

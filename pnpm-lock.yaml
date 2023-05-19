@@ -21,6 +21,9 @@ devDependencies:
   '@sveltejs/package':
     specifier: ^2.0.0
     version: 2.0.2(svelte@3.58.0)(typescript@5.0.4)
+  '@vercel/analytics':
+    specifier: ^1.0.1
+    version: 1.0.1
   marked:
     specifier: ^5.0.2
     version: 5.0.2
@@ -1096,6 +1099,10 @@ packages:
     dependencies:
       '@types/node': 12.20.55
     dev: false
+
+  /@vercel/analytics@1.0.1:
+    resolution: {integrity: sha512-Ux0c9qUfkcPqng3vrR0GTrlQdqNJ2JREn/2ydrVuKwM3RtMfF2mWX31Ijqo1opSjNAq6rK76PwtANw6kl6TAow==}
+    dev: true
 
   /@wagmi/chains@0.2.16(typescript@5.0.4):
     resolution: {integrity: sha512-rkWaI2PxCnbD8G07ZZff5QXftnSkYL0h5f4DkHCG3fGYYr/ZDvmCL4bMae7j7A9sAif1csPPBmbCzHp3R5ogCQ==}
