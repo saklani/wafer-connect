@@ -21,7 +21,7 @@
     publicClient,
   });
 
-  let theme = lightTheme;
+  let theme = darkTheme;
 </script>
 
 
@@ -74,12 +74,16 @@
       {/key}
 </div>
 
+<br/>
+
 ## Install
 Install `wafer-connect` and its peer dependencies `@wagmi/core` and `viem`.
 
 ```bash 
-npm install wafer-connect @wagmi/core viem"
+npm install wafer-connect @wagmi/core viem
 ```
+
+<br/>
 
 ## Features
 
@@ -102,7 +106,7 @@ npm install wafer-connect @wagmi/core viem"
   </div>
   <div class="box">
     <h3>Easily Customizable</h3>
-    <p>Customize with simple defaults.</p>
+    <p>Customizable with simple beautiful defaults.</p>
   </div>
 </div>
 

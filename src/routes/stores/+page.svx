@@ -56,7 +56,7 @@
 
 | Name   | Type                                                               | Description              |
 |--------|--------------------------------------------------------------------|--------------------------|
-| chain  | `Chain & unsupported?: boolean` \| `undefined`                       | Current connected chain  |
+| chain  | `Chain & unsupported?: boolean` \| `undefined`                     | Current connected chain  |
 | chains | `Chain[]`                                                          | List of supported chains |
 
 <br/>

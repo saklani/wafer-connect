@@ -48,7 +48,15 @@
   let themeIndex = 0;
 </script>
 
-<div class="column">
+<div class="column gap">
+  <div class="row gap">
+    <button class="secondary" on:click={() => (themeIndex = 0)}> Light </button>
+    <button class="secondary" on:click={() => (themeIndex = 1)}> Dark </button>
+    <button class="secondary" on:click={() => (themeIndex = 2)}> Anise </button>
+    <button class="secondary" on:click={() => (themeIndex = 3)}>
+      Dark Blue
+    </button>
+  </div>
   <div class="column center focus">
     {#key themeIndex}
       <ConnectButton
@@ -59,10 +67,5 @@
       />
     {/key}
   </div>
-  <div class="row gap">
-    <button on:click={() => (themeIndex = 0)}> Light </button>
-    <button on:click={() => (themeIndex = 1)}> Dark </button>
-    <button on:click={() => (themeIndex = 2)}> Anise </button>
-    <button on:click={() => (themeIndex = 3)}> Dark Blue </button>
-  </div>
 </div>
+

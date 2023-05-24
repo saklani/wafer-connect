@@ -24,7 +24,7 @@
 <button
   on:click={() => (showMenu = true)}
   disabled={isSwitchingNetwork || $chains.length === 1}
-  style="border-radius: 999px; font-size: 0.9rem;"
+  style="font-size: 0.9rem;"
 >
   {#if isSwitchingNetwork}
     <p>"Switching•••"</p>
@@ -56,7 +56,11 @@
   {/if}
 </button>
 
-<Menu bind:showMenu --menu-background-color="var(--chain-menu-background-color)" --menu-color="--chain-menu-color">
+<Menu
+  bind:showMenu
+  --menu-background-color="var(--chain-menu-background-color)"
+  --menu-color="var(--chain-menu-color)"
+>
   <h3 slot="title">Change Network</h3>
   {#each $chains as chain}
     {#if chain.id !== $network.chain.id}
@@ -71,18 +75,20 @@
   :root {
     --chain-menu-background-color: white;
     --chain-menu-color: black;
-    --chain-button-background-color: rgba(192, 192, 192, 0.3);
-    --chain-button-color: black;
+    --chain-button-background-color: rgba(240, 240, 240, 0.8);
+    --chain-button-color: rgb(50, 50, 50);
+    --chain-button-hover-color: rgba(192, 192, 192, 0.5);
     --border-radius: 6px;
   }
   button {
     background-color: var(--chain-button-background-color);
-    color: var(--chain-button-color);
-    height: var(--height);
     border-radius: var(--border-radius);
+    color: var(--chain-button-color);
+    height: 32px;
     padding-block: 8px;
+    padding-inline: 6px;
   }
   button:hover {
-    background-color: rgba(192, 192, 192, 0.4);
+    background-color: var(--chain-button-hover-color);
   }
 </style>

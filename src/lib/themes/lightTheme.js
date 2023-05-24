@@ -1,9 +1,9 @@
 const lightTheme = {
 	borderRadius: "4px",
-	primaryButtonColor: "rgb(235, 235, 235)",
-	primaryButtonHoverColor: "rgb(240, 240, 240)",
+	primaryButtonColor: "rgb(238, 238, 238)",
+	primaryButtonHoverColor: "rgb(243, 243, 243)",
 	primaryButtonTextColor: "black",
-	secondaryButtonColor: "rgb(230, 230, 230)",
+	secondaryButtonColor: "rgb(232, 232, 232)",
 	secondaryButtonHoverColor: "rgb(235, 235, 235)",
 	secondaryButtonTextColor: "black",
 	errorButtonColor: "rgb(220, 66, 66)",
@@ -12,6 +12,8 @@ const lightTheme = {
 	dialogBackgroundColor: "rgba(250, 250, 250, 0.85)",
 	dialogTextColor: "black",
 	dialogBlur: "blur(2px)",
+  chainMenuBackgroundColor: "",
+  chainMenuTextColor: "",
 };
 
 export { lightTheme };

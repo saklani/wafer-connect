@@ -23,6 +23,7 @@
     >
       <slot name="title" />
       <svg
+        style="cursor: pointer;"
         width="24"
         height="23"
         viewBox="0 0 24 23"

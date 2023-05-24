@@ -4,10 +4,11 @@
 
 # Themes
 
-The themes can be customized in the following way:
+The connect button is highly customisable. You can create simple or complex themes to match your branding.
 
 <CustomThemes/>
 
+The themes can be customized in the following way:
 ```svelte
 <script>
   import { configureChains, createConfig } from "@wagmi/core";
@@ -54,7 +55,7 @@ The themes can be customized in the following way:
 
 The complete list of customisable theme options.
 
-```javascript
+```
 interface Theme {
    borderRadius: string; // Controls the border radius of all elements
    primaryButtonColor: string;

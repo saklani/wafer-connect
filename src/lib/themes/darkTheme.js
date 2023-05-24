@@ -3,15 +3,17 @@ const darkTheme = {
 	primaryButtonColor: "rgba(25, 25, 25, 0.9)",
 	primaryButtonHoverColor: "rgb(25, 25, 25)",
 	primaryButtonTextColor: "white",
-	secondaryButtonColor: "black",
-	secondaryButtonHoverColor: "rgba(0, 0, 0, 0.7)",
+	secondaryButtonColor: "rgb(30, 30, 30)",
+	secondaryButtonHoverColor: "rgb(0, 0, 0)",
 	secondaryButtonTextColor: "white",
 	errorButtonColor: "rgb(220, 66, 66)",
 	errorButtonHoverColor: "rgb(230, 69, 69)",
 	errorButtonTextColor: "white",
 	dialogBackgroundColor: "rgba(50, 50, 50, 0.85)",
 	dialogTextColor: "white",
-	dialogBlur: "blur(4px)",
+	dialogBlur: "blur(2px)",
+  chainMenuBackgroundColor: "white",
+  chainMenuTextColor: "black",
 };
 
 export { darkTheme };

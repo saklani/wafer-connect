@@ -21,7 +21,7 @@
   on:click={() => (showDialog = true)}
   aria-label={`Connected to wallet with address ${address}`}
 >
-  <Avatar {address} --radius="30px" />
+  <Avatar {address} --radius="28px" />
   {shortAddress(address)}
 </button>
 
@@ -38,9 +38,10 @@
   >
     <h2>Connected</h2>
     <Chain
-      --chain-menu-background-color={$theme.dialogBackgroundColor}
-      --chain-menu-color={$theme.dialogTextColor}
+      --chain-menu-background-color={$theme.chainMenuBackgroundColor}
+      --chain-menu-color={$theme.chainMenuTextColor}
       --chain-button-background-color={$theme.secondaryButtonColor}
+      --chain-button-hover-color={$theme.secondaryButtonHoverColor}
       --chain-button-color={$theme.secondaryButtonTextColor}
       --border-radius={$theme.borderRadius}
     />
