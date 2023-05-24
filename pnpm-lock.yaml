@@ -24,15 +24,27 @@ devDependencies:
   '@vercel/analytics':
     specifier: ^1.0.1
     version: 1.0.1
-  marked:
-    specifier: ^5.0.2
-    version: 5.0.2
+  highlight.js:
+    specifier: ^11.8.0
+    version: 11.8.0
+  mdsvex:
+    specifier: ^0.10.6
+    version: 0.10.6(svelte@3.58.0)
+  prism-svelte:
+    specifier: ^0.5.0
+    version: 0.5.0
+  prismjs:
+    specifier: ^1.29.0
+    version: 1.29.0
   publint:
     specifier: ^0.1.9
     version: 0.1.11
   svelte-check:
     specifier: ^3.0.1
     version: 3.2.0(svelte@3.58.0)
+  svelte-highlight:
+    specifier: ^7.3.0
+    version: 7.3.0
   typescript:
     specifier: ^5.0.4
     version: 5.0.4
@@ -1093,6 +1105,10 @@ packages:
   /@types/trusted-types@2.0.3:
     resolution: {integrity: sha512-NfQ4gyz38SL8sDNrSixxU2Os1a5xcdFxipAFxYEuLUlvU2uDwS4NUpsImcf1//SlWItCVMMLiylsxbmNMToV/g==}
     dev: false
+
+  /@types/unist@2.0.6:
+    resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
+    dev: true
 
   /@types/ws@7.4.7:
     resolution: {integrity: sha512-JQbbmxZTZehdc2iszGKs5oC3NFnjeay7mtAWrdt7qNtAVK0g19muApzAy4bm9byz79xa2ZnO/BOBC2R8RC5Lww==}
@@ -2261,6 +2277,11 @@ packages:
     resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
     dev: false
 
+  /highlight.js@11.8.0:
+    resolution: {integrity: sha512-MedQhoqVdr0U6SSnWPzfiadUcDHfN/Wzq25AkXiQv9oiOO/sG0S7XkvpFIqWBl9Yq1UYyYOOVORs5UW2XlPyzg==}
+    engines: {node: '>=12.0.0'}
+    dev: true
+
   /hmac-drbg@1.0.1:
     resolution: {integrity: sha512-Tti3gMqLdZfhOQY1Mzf/AanLiqh1WTiJgEj26ZuYQ9fbkLomzGchCws4FyrSd4VkpBfiNhaE1On+lOz894jvXg==}
     dependencies:
@@ -2530,10 +2551,16 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /marked@5.0.2:
-    resolution: {integrity: sha512-TXksm9GwqXCRNbFUZmMtqNLvy3K2cQHuWmyBDLOrY1e6i9UvZpOTJXoz7fBjYkJkaUFzV9hBFxMuZSyQt8R6KQ==}
-    engines: {node: '>= 18'}
-    hasBin: true
+  /mdsvex@0.10.6(svelte@3.58.0):
+    resolution: {integrity: sha512-aGRDY0r5jx9+OOgFdyB9Xm3EBr9OUmcrTDPWLB7a7g8VPRxzPy4MOBmcVYgz7ErhAJ7bZ/coUoj6aHio3x/2mA==}
+    peerDependencies:
+      svelte: 3.x
+    dependencies:
+      '@types/unist': 2.0.6
+      prism-svelte: 0.4.7
+      prismjs: 1.29.0
+      svelte: 3.58.0
+      vfile-message: 2.0.4
     dev: true
 
   /merge2@1.4.1:
@@ -2814,6 +2841,19 @@ packages:
   /preact@10.13.2:
     resolution: {integrity: sha512-q44QFLhOhty2Bd0Y46fnYW0gD/cbVM9dUVtNTDKPcdXSMA7jfY+Jpd6rk3GB0lcQss0z5s/6CmVP0Z/hV+g6pw==}
     dev: false
+
+  /prism-svelte@0.4.7:
+    resolution: {integrity: sha512-yABh19CYbM24V7aS7TuPYRNMqthxwbvx6FF/Rw920YbyBWO3tnyPIqRMgHuSVsLmuHkkBS1Akyof463FVdkeDQ==}
+    dev: true
+
+  /prism-svelte@0.5.0:
+    resolution: {integrity: sha512-db91Bf3pRGKDPz1lAqLFSJXeW13mulUJxhycysFpfXV5MIK7RgWWK2E5aPAa71s8TCzQUXxF5JOV42/iOs6QkA==}
+    dev: true
+
+  /prismjs@1.29.0:
+    resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
+    engines: {node: '>=6'}
+    dev: true
 
   /process-warning@1.0.0:
     resolution: {integrity: sha512-du4wfLyj4yCZq1VupnVSZmRsPJsNuxoDQFdCFHLaYiEbFBD7QE0a+I4D7hOxrVnh78QE/YipFAj9lXHiXocV+Q==}
@@ -3167,6 +3207,12 @@ packages:
       - sugarss
     dev: true
 
+  /svelte-highlight@7.3.0:
+    resolution: {integrity: sha512-59oE9/xOFXAdT97qXIt6HMlzL2f+0YNQ+BArzRONwCW96ElxX7TGme1kU5s3tsk1D88G5dhBixcP1chOGOkVsg==}
+    dependencies:
+      highlight.js: 11.8.0
+    dev: true
+
   /svelte-hmr@0.15.1(svelte@3.58.0):
     resolution: {integrity: sha512-BiKB4RZ8YSwRKCNVdNxK/GfY+r4Kjgp9jCLEy0DuqAKfmQtpL38cQK3afdpjw4sqSs4PLi3jIPJIFp259NkZtA==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
@@ -3311,6 +3357,12 @@ packages:
       busboy: 1.6.0
     dev: true
 
+  /unist-util-stringify-position@2.0.3:
+    resolution: {integrity: sha512-3faScn5I+hy9VleOq/qNbAd6pAx7iH5jYBMS9I1HgQVijz/4mv5Bvw5iw1sC/90CODiKo81G/ps8AJrISn687g==}
+    dependencies:
+      '@types/unist': 2.0.6
+    dev: true
+
   /use-sync-external-store@1.2.0(react@18.2.0):
     resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
     peerDependencies:
@@ -3359,6 +3411,13 @@ packages:
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
+
+  /vfile-message@2.0.4:
+    resolution: {integrity: sha512-DjssxRGkMvifUOJre00juHoP9DPWuzjxKuMDrhNbk2TdaYYBNMStsNhEOt3idrtI12VQYM/1+iM0KOzXi4pxwQ==}
+    dependencies:
+      '@types/unist': 2.0.6
+      unist-util-stringify-position: 2.0.3
+    dev: true
 
   /viem@0.3.19(typescript@5.0.4):
     resolution: {integrity: sha512-7OlSgiB7e+OFz9OqTOZ/Mpx8GAAVKCxsaPDJRuR8QtixlruUHPfHBHOemkX+O/Drn6B7l04iCUZjCvSB8OtVKg==}

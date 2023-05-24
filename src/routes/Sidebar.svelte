@@ -5,35 +5,26 @@
 <div class="sidebar">
   <a
     href="/"
-    style="background-color: {$page.url.pathname === '/'
-      ? '#1d1814'
-      : 'white'}; color: {$page.url.pathname === '/' ? 'white' : 'grey'};"
+    style="color: {$page.url.pathname === '/' ? 'black' : '#6f6f6f'};"
   >
     Introduction
   </a>
+  <a href="/getting-started"  style="color: {$page.url.pathname === '/getting-started' ? 'black' : '#6f6f6f'};">Getting Started</a>
   <a
     href="/themes"
-    style="background-color: {$page.url.pathname === '/themes'
-      ? '#1d1814'
-      : 'white'}; color: {$page.url.pathname === '/themes' ? 'white' : 'grey'};"
+    style="color: {$page.url.pathname === '/themes' ? 'black' : '#6f6f6f'};"
   >
     Themes
   </a>
   <a
     href="/actions"
-    style="background-color: {$page.url.pathname === '/actions'
-      ? '#1d1814'
-      : 'white'}; color: {$page.url.pathname === '/actions'
-      ? 'white'
-      : 'grey'};"
+    style="color: {$page.url.pathname === '/actions' ? 'black' : '#6f6f6f'};"
   >
     Actions
   </a>
   <a
     href="/stores"
-    style="background-color: {$page.url.pathname === '/stores'
-      ? '#1d1814'
-      : 'white'}; color: {$page.url.pathname === '/stores' ? 'white' : 'grey'};"
+    style="color: {$page.url.pathname === '/stores' ? 'black' : '#6f6f6f'};"
   >
     Stores
   </a>
@@ -43,17 +34,15 @@
   .sidebar {
     display: flex;
     flex-direction: column;
-    width: 175px;
+    width: 250px;
     min-height: 100vh;
-    gap: 4px;
-    padding: 4px;
+    border-right: solid 0.1px lightgrey;
   }
 
   a {
     display: flex;
     padding-block: 12px;
-    padding-inline: 8px;
-    border-radius: 4px;
+    padding-inline: 1rem;
     text-decoration: none;
   }
 

@@ -1,13 +1,130 @@
 :root {
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --docs-border-radius: 2px;
 }
 
 
 h1 {
-  font-size: 32px;
-  margin: 0;
+  font-size: 2rem;
+  margin-block: 1rem;
 }
 
-h1, h2, h3, p {
+h2 {
+  font-size: 1.7rem;
+  margin-block: 1rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-block: 0.4rem;
+}
+
+h4 {
+  font-size: 1rem;
+  margin-block: 0.25rem;
+}
+
+h5 {
+  font-size: 0.9rem;
+  margin-block: 0.2rem;
+}
+
+h6 {
+  font-size: 0.8rem;
+  margin-block: 0.1rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+code {
+  font-size: 0.8rem;
+  padding-inline: 4px;
+  border-radius: var(--docs-border-radius);
+}
+
+pre,
+blockquote {
+  margin-inline: 0px;
+  border: solid 0.1px grey;
+  border-radius: var(--docs-border-radius);
+  padding: 1rem;
+}
+
+blockquote {
+  background-color: rgb(255, 254, 254);
+}
+
+table,
+td {
+  border: solid 0.1px;
+  gap: 0px;
+}
+
+th {
+  font-size: 0.9rem;
+  text-align: left;
   margin: 0;
+
+  padding: 2px;
+}
+
+.controls {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border-radius: 25px;
+  border: solid 0.1px grey;
+  padding-inline: 8px;
+  padding-block: 4px;
+  gap: 1rem;
+}
+
+.focus {
+  position: relative;
+  border: solid 0.1px grey;
+  border-radius: var(--docs-border-radius);
+  min-height: 200px;
+  margin-bottom: 1.5rem;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+}
+
+.max-w {
+  max-width: 700px;
+}
+
+.box {
+  border: solid 0.1px grey;
+  padding: 1rem;
+  border-radius: var(--docs-border-radius);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.gap {
+  gap: 0.5rem;
+}
+
+.stretch {
+  justify-content: stretch;
 }

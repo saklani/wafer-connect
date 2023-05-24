@@ -3,13 +3,17 @@
   import { inject } from "@vercel/analytics";
   import Sidebar from "./Sidebar.svelte";
   import github from "./github.svg";
+  import monokai from "svelte-highlight/styles/monokai";
   import "./style.css";
 
   inject({ mode: dev ? "development" : "production" });
 </script>
 
-<div class="app">
-  <header>
+<svelte:head>
+  {@html monokai}
+</svelte:head>
+  <main>  
+    <header>
     <h3>Wafer Connect</h3>
     <a href="https://github.com/saklani/wafer-connect">
       <img
@@ -19,30 +23,21 @@
       />
     </a>
   </header>
-  <main>
-    <div class="row">
+    <div class="row stretch">
       <Sidebar />
-      <div class="content">
-        <slot />
+      <div class="column content">
+        <div class="column max-w">
+          <slot/>
+        </div>
       </div>
     </div>
   </main>
-</div>
 
 <style>
-  .app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 0px;
-    padding-bottom: 50px;
-    margin: 0px;
-    background-color: "#F4F4F4";
-  }
 
   header {
     background-color: #1d1814;
-    padding-inline: 0.5rem;
+    padding-inline: 1rem;
     color: white;
     height: 64px;
     display: flex;
@@ -50,19 +45,10 @@
     align-items: center;
   }
 
-  main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-  }
   .content {
-    padding: 1rem;
-    width: calc(100vw - 175px - 2rem);
+    padding-inline: 3rem;
+    padding-top: 1rem;
+    width: calc(100vw - 175px - 6rem);
   }
-  .row {
-    display: flex;
-  }
+
 </style>

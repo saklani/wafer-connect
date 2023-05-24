@@ -1,0 +1,42 @@
+# Getting Started
+
+
+> A WalletConnect ProjectId is required since wafer-connect only supports WalletConnect v2.
+>
+> Learn More: [walletconnect.com](https://walletconnect.com)
+
+
+```svelte
+<script>
+  import { configureChains, createConfig } from "@wagmi/core";
+  import { mainnet } from "@wagmi/core/chains";
+  import { publicProvider } from "@wagmi/core/providers/public";
+  import ConnectButton, { getDefaultConnectors } from "wafer-connect";
+
+  const { chains, publicClient } = configureChains(
+  [mainnet],
+  [publicProvider()]
+  );
+
+  const { connectors, wallets } = getDefaultConnectors({
+  appName: "my_dapp",
+  projectId: "...", // WalletConnect ProjectId
+  chains,
+  });
+
+  createConfig({ connectors, publicClient });
+</script>
+
+<header>
+  <div />
+  <ConnectButton {chains} {connectors} {wallets} />
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+  }
+</style>
+```

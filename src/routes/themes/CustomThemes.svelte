@@ -49,8 +49,6 @@
 </script>
 
 <div class="column">
-  <h3>Custom Themes</h3>
-  <p>It is easy to customise and make different themes.</p>
   <div class="column center focus">
     {#key themeIndex}
       <ConnectButton
@@ -61,34 +59,10 @@
       />
     {/key}
   </div>
-  <div class="row">
+  <div class="row gap">
     <button on:click={() => (themeIndex = 0)}> Light </button>
     <button on:click={() => (themeIndex = 1)}> Dark </button>
     <button on:click={() => (themeIndex = 2)}> Anise </button>
     <button on:click={() => (themeIndex = 3)}> Dark Blue </button>
   </div>
 </div>
-
-<style>
-  .focus {
-    position: relative;
-    border: solid 0.1px grey;
-    border-radius: 8px;
-    min-height: 200px;
-    max-width: 600px;
-  }
-  .center {
-    justify-content: center;
-    align-items: center;
-  }
-  .column {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-  }
-  .row {
-    display: flex;
-    gap: 8px;
-  }
-</style>

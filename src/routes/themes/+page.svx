@@ -1,6 +1,14 @@
+<script>
+  import CustomThemes from "./CustomThemes.svelte"
+</script>
+
+# Themes
+
 The themes can be customized in the following way:
 
-```html
+<CustomThemes/>
+
+```svelte
 <script>
   import { configureChains, createConfig } from "@wagmi/core";
   import { mainnet } from "@wagmi/core/chains";
