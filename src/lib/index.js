@@ -6,6 +6,7 @@ import { Injected } from "./connectors/injected/injected.js";
 import { MetaMask } from "./connectors/metamask/metamask.js";
 import { WalletConnect } from "./connectors/walletConnect/walletConnect.js";
 import { account } from "./stores/account.js";
+import { balance } from "./stores/balance.js";
 import { network } from "./stores/network.js";
 import { darkTheme, lightTheme } from "./themes";
 
@@ -13,6 +14,7 @@ export default ConnectButton;
 
 export {
   account,
+  balance,
   darkTheme,
   lightTheme,
   network,

@@ -1,30 +1,42 @@
 <script>
   import { page } from "$app/stores";
+
+  $: path = $page.url.pathname;
 </script>
 
 <div class="sidebar">
   <a
     href="/"
-    style="color: {$page.url.pathname === '/' ? 'black' : '#6f6f6f'};"
+    style="background-color: {path === "/" ? "#e5e5e5" : "transparent"};
+    color: {path === "/" ? "black" : "#6f6f6f"};"
   >
     Introduction
   </a>
-  <a href="/getting-started"  style="color: {$page.url.pathname === '/getting-started' ? 'black' : '#6f6f6f'};">Getting Started</a>
+  <a
+    href="/getting-started"
+    style="background-color: {path === "/getting-started" ? "#e5e5e5" : "transparent"};
+    color: {path === "/getting-started" ? "black" : "#6f6f6f"};"
+  >
+    Getting Started
+  </a>
   <a
     href="/themes"
-    style="color: {$page.url.pathname === '/themes' ? 'black' : '#6f6f6f'};"
+    style="background-color: {path === "/themes" ? "#e5e5e5" : "transparent"};
+    color: {path === "/themes" ? "black" : "#6f6f6f"};"
   >
     Themes
   </a>
   <a
     href="/actions"
-    style="color: {$page.url.pathname === '/actions' ? 'black' : '#6f6f6f'};"
+    style="background-color: {path === "/actions" ? "#e5e5e5" : "transparent"};
+    color: {path === "/actions" ? "black" : "#6f6f6f"};"
   >
     Actions
   </a>
   <a
     href="/stores"
-    style="color: {$page.url.pathname === '/stores' ? 'black' : '#6f6f6f'};"
+    style="background-color: {path === "/stores" ? "#e5e5e5" : "transparent"};
+    color: {path === "/stores" ? "black" : "#6f6f6f"};"
   >
     Stores
   </a>

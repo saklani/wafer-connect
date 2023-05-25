@@ -55,7 +55,7 @@ The themes can be customized in the following way:
 
 The complete list of customisable theme options.
 
-```
+```ts
 interface Theme {
    borderRadius: string; // Controls the border radius of all elements
    primaryButtonColor: string;

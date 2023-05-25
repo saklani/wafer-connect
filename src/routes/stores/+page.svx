@@ -1,6 +1,7 @@
 <script>
   import ConnectButton, {
     account,
+    balance,
     network,
     getDefaultConnectors,
   } from "$lib/index.js";
@@ -31,6 +32,7 @@
   </div>
   <p><strong>account.address:</strong> {$account.address}</p>
   <p><strong>account.status:</strong> {$account.status}</p>
+  <p><strong>balance:</strong></p>
   <p><strong>network.chain.id:</strong> {$network.chain?.id}</p>
 </div>
 
