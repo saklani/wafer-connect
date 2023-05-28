@@ -30,8 +30,7 @@
 
 # Wafer Connect
 
-`wafer-connect` is a svelte component library to connect a
-wallet to your dApp.
+`wafer-connect` is a svelte library to connect a wallet to your svelte decentralized application (dApp).
 
 <div class="column center focus">
   <div class="row controls">
@@ -82,26 +81,22 @@ npm install wafer-connect @wagmi/core viem
 
 <div class="grid">
   <div class="box">
-    <h3>Built on industry standards</h3>
+    <h3>Built on Industry Standards</h3>
     <p>
       Built on popular libraries like <code>@wagmi/core</code> and
       <code>viem</code>.
     </p>
+  </div>  
+  <div class="box">
+    <h3>Incredibly Lightweight</h3>
+    <p> Zero external dependencies</p>
+  </div>
+  <div class="box">
+    <h3>Ready to use Themes</h3>
+    <p>Customizable themes with simple beautiful defaults.</p>
   </div>
   <div class="box">
     <h3>TypeScript Ready</h3>
-    <p>Types for the TypeScript lovers.</p>
-  </div>
-  <div class="box">
-    <h3>Incredibly lightweight</h3>
-    <p>No extra external dependencies.</p>
-  </div>
-  <div class="box">
-    <h3>Support for wide range of chains</h3>
-    <p>Add any chain supported by wagmi.</p>
-  </div>
-  <div class="box">
-    <h3>Easily Customizable</h3>
-    <p>Customizable with simple beautiful defaults.</p>
+    <p>Types generated.</p>
   </div>
 </div>

@@ -13,8 +13,8 @@
 
 h1 {
   font-size: 2rem;
-  margin-top: 0.3rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.7rem;
 }
 
 h2 {
@@ -58,8 +58,7 @@ code {
   padding-inline: 4px;
 }
 
-pre,
-blockquote {
+pre {
   background-color: var(--docs-secondary-color);
   border: solid 0.1px lightgrey;
   border-radius: var(--docs-border-radius);
@@ -69,12 +68,16 @@ blockquote {
 
 pre>code {
   border: none;
+  padding-inline: 0px;
 }
 
 blockquote {
   background-color: var(--docs-info-color);
+  border-radius: var(--docs-border-radius);
   color: white;
   font-size: 0.9rem;
+  margin-inline: 0px;
+  padding: 1.5rem;
 }
 
 blockquote>p>a {
@@ -133,8 +136,8 @@ th {
 }
 
 .box {
-  padding-block: 0.5rem;
-  padding-inline: 1rem;
+  padding-block: 0.8rem;
+  padding-inline: 1.4rem;
   border-radius: var(--docs-border-radius);
   border: solid 0.1px lightgrey;
 }
