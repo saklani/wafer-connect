@@ -3,7 +3,7 @@
   import { abbreviateETHBalance } from "../../utils.js";
 </script>
 
-<div style="height: 1.3rem;">
+<div style="height: 1.4rem;">
   {#await $balance then result}
     <h3>
       {abbreviateETHBalance(parseFloat(result.formatted))}
@@ -13,14 +13,8 @@
 </div>
 
 <style>
-  :root {
-    --balance-font-size: 1.2rem;
-    --balance-text-color: black;
-  }
   h3 {
-    font-size: var(--balance-font-size);
-    color: var(--balance-text-color);
+    color: var(--wafer-dialog-text-color);
     cursor: default;
   }
-
 </style>

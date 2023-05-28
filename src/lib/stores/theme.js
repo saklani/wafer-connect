@@ -1,8 +1,8 @@
 import { writable } from "svelte/store";
-import { lightTheme } from "../themes/lightTheme.js";
+import { light } from "../themes/light";
 
 function createTheme() {
-	const { set, subscribe } = writable(lightTheme);
+	const { set, subscribe } = writable(light);
 	return {
 		subscribe: subscribe,
 		set: (theme) => set(theme),

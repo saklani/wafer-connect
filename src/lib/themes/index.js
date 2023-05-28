@@ -1,4 +1,4 @@
-import { darkTheme } from "./darkTheme.js";
-import { lightTheme } from "./lightTheme.js";
+import { dark } from "./dark.js";
+import { light } from "./light.js";
 
-export { lightTheme, darkTheme };
+export { dark, light };

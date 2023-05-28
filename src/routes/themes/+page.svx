@@ -4,18 +4,19 @@
 
 # Themes
 
-The connect button is highly customisable. You can create simple or complex themes to match your branding.
+Wafer is highly customisable. You can create simple or complex themes to match your branding.
 
 <CustomThemes/>
 
 The themes can be customized in the following way:
-```svelte
+
+```
 <script>
   import { configureChains, createConfig } from "@wagmi/core";
   import { mainnet } from "@wagmi/core/chains";
   import { publicProvider } from "@wagmi/core/providers/public";
   import ConnectButton, {
-      darkTheme,
+      dark,
       getDefaultConnectors,
   } from "wafer-connect";
 
@@ -32,11 +33,15 @@ The themes can be customized in the following way:
 
   createConfig({ connectors, publicClient });
 
-  const theme = {
-    ...darkTheme,
-    primaryButtonColor: "rgb(38, 51, 106)",
-    primaryButtonHoverColor: "rgb(38, 51, 106, 0.8)",
-  };
+  const theme =  {
+      ...dark,
+      "--wafer-button-background-color": "rgb(69, 19, 91)",
+      "--wafer-button-hover-color": "rgb(69, 30, 111)",
+      "--wafer-secondary-button-background-color": "rgb(0, 0, 91)",
+      "--wafer-secondary-button-hover-color": "rgb(0, 0, 111)",
+      "--wafer-dialog-background-color": "rgba(69, 30, 111, 0.8)",
+      "--wafer-menu-background-color": "rgb(69, 30, 111)",
+    };
 </script>
 
 <header>
@@ -54,21 +59,31 @@ The themes can be customized in the following way:
 ```
 
 The complete list of customisable theme options.
-
-```ts
-interface Theme {
-   borderRadius: string; // Controls the border radius of all elements
-   primaryButtonColor: string;
-   primaryButtonHoverColor: string;
-   primaryButtonTextColor: string;
-   secondaryButtonColor: string;
-   secondaryButtonHoverColor: string;
-   secondaryButtonTextColor: string;
-   errorButtonColor: string;
-   errorButtonHoverColor: string;
-   errorButtonTextColor: string;
-   dialogBackgroundColor: string;
-   dialogTextColor: string;
-   dialogBlur: string;
+```
+{
+  "--wafer-avatar-radius": string;
+  "--wafer-border-radius": string;
+  "--wafer-button-height": string;
+  "--wafer-button-z-index": string;
+  "--wafer-dialog-width": string;
+  "--wafer-dialog-blur": string;
+  "--wafer-error-height": string;
+  "--wafer-secondary-button-height": string;
+  "--wafer-button-background-color": string;
+  "--wafer-button-text-color": string;
+  "--wafer-button-hover-color": string;
+  "--wafer-button-border": string;
+  "--wafer-secondary-button-background-color": string;
+  "--wafer-secondary-button-text-color": string;
+  "--wafer-secondary-button-hover-color": string;
+  "--wafer-secondary-button-border": string;
+  "--wafer-error-background-color": string;
+  "--wafer-error-hover-color": string;
+  "--wafer-error-text-color": string;
+  "--wafer-dialog-background-color": string;
+  "--wafer-dialog-text-color": string;
+  "--wafer-menu-background-color": string;
+  "--wafer-menu-text-color": string;
+  "--wafer-color-scheme": string;
 }
 ```

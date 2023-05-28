@@ -22,13 +22,9 @@
 {/if}
 
 <style>
-  :root {
-    --avatar-radius: 999px;
-    --radius: 128px;
-  }
   .avatar {
-    border-radius: var(--avatar-radius);
-    height: var(--radius);
-    width: var(--radius);
+    border-radius: var(--wafer-avatar-radius);
+    height: var(--wafer-avatar-radius);
+    width: var(--wafer-avatar-radius);
   }
 </style>

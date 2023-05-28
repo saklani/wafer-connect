@@ -1,34 +1,44 @@
-:root {
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
-
-/*******************************************************************************/
-/*                                   STYLE                                     */
-/*******************************************************************************/
-
 button {
   align-items: center;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--wafer-border-radius);
   cursor: pointer;
+  color-scheme: var(--wafer-color-scheme);
   display: flex;
   font-family: inherit;
   font-size: inherit;
   gap: 4px;
-  height: 42px;
   justify-content: space-between;
-  padding-inline: 16px;
-  z-index: 1;
+  padding: 8px;
+  height: var(--wafer-button-height);
+  z-index: var(--wafer-button-z-index);
 }
 
 button>img {
   width: 32px;
 }
 
-h1,
-h2,
-h3 {
-  margin: 0px;
-  cursor: default;
+button.wafer-primary {
+  background-color: var(--wafer-button-background-color);
+  color: var(--wafer-button-text-color);
+  border: var(--wafer-button-border);
+}
+button.wafer-primary:hover {
+  background-color: var(--wafer-button-hover-color);
+}
+
+button.wafer-secondary  {
+  background-color: var(--wafer-secondary-button-background-color);
+  color: var(--wafer-secondary-button-text-color);
+  border: var(--wafer-secondary-button-border);
+  height: var(--wafer-secondary-button-height);
+}
+button.wafer-secondary:hover {
+  background-color: var(--wafer-secondary-button-hover-color);
+}
+
+button.wafer-error {
+  background-color: var(--wafer-error-background-color);
+  color: var(--wafer-error-text-color);
+  height: var(--wafer-error-height);
 }

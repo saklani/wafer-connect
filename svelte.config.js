@@ -1,4 +1,5 @@
 import adapter from '@sveltejs/adapter-auto';
+import { vitePreprocess } from '@sveltejs/kit/vite';
 import { mdsvex } from "mdsvex";
 
 function highlight(code, lang) {
@@ -9,10 +10,10 @@ function highlight(code, lang) {
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
-    adapter: adapter(),
+    adapter: adapter({}),
   },
   extensions: [".svelte", ".svx"],
-  preprocess: mdsvex(),
+  preprocess: [mdsvex(), vitePreprocess()],
 };
 
 export default config;

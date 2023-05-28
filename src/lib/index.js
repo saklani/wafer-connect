@@ -8,15 +8,15 @@ import { WalletConnect } from "./connectors/walletConnect/walletConnect.js";
 import { account } from "./stores/account.js";
 import { balance } from "./stores/balance.js";
 import { network } from "./stores/network.js";
-import { darkTheme, lightTheme } from "./themes";
+import { dark, light } from "./themes";
 
 export default ConnectButton;
 
 export {
   account,
   balance,
-  darkTheme,
-  lightTheme,
+  dark,
+  light,
   network,
   getDefaultConnectors,
   Coinbase,

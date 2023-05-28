@@ -1,26 +1,16 @@
 <script>
-  import { account } from "./stores/account.js";
-  import { connectors as _connectors } from "./stores/connectors.js";
-  import { network } from "./stores/network.js";
+  import UnstyledConnectButton from "./UnstyledConnectButton.svelte";
   import { theme as _theme } from "./stores/theme.js";
-  import { chains as _chains } from "./stores/chains.js";
-  import { lightTheme } from "./themes/lightTheme.js";
-
-  import Connected from "./components/Connected.svelte";
-  import Disconnected from "./components/Disconnected.svelte";
-  import Loading from "./components/Loading.svelte";
-  import Unsupported from "./components/Unsupported.svelte";
+  import { dark } from "./themes/dark.js";
 
   import "./style.css";
 
-  let theme = lightTheme;
+  let theme = dark;
 
   /** @type {import("@wagmi/core").Chain[]}*/
   let chains;
 
-  /**
-   * @type {{id: string; name: string; icon: string; url: string; createConnector: (params) => import("@wagmi/core/connectors").Connector}[]}
-   */
+  /** @type {{id: string; name: string; icon: string; url: string; createConnector: (params) => import("@wagmi/core/connectors").Connector}[]} */
   let wallets;
 
   /** @type {import("@wagmi/core/connectors").Connector[]}*/
@@ -28,38 +18,35 @@
 
   export { connectors, theme, chains, wallets };
 
-  _chains.set(chains);
-  _connectors.set({ wagmiConnectors: connectors, wallets });
   _theme.set(theme);
 </script>
 
-{#if $account.status === "connected"}
-  {#if $network.chain.unsupported}
-    <Unsupported
-      --unsupported-background-color={$_theme.errorButtonColor}
-      --unsupported-color={$_theme.errorButtonTextColor}
-      --border-radius={$_theme.borderRadius}
-    />
-  {:else}
-    <Connected
-      address={$account.address}
-      --connected-background-color={$_theme.primaryButtonColor}
-      --connected-color={$_theme.primaryButtonTextColor}
-      --connected-hover-color={$_theme.primaryButtonHoverColor}
-      --border-radius={$_theme.borderRadius}
-    />
-  {/if}
-{:else if $account.status === "disconnected"}
-  <Disconnected
-    --disconnected-background-color={$_theme.primaryButtonColor}
-    --disconnected-hover-color={$_theme.primaryButtonHoverColor}
-    --disconnected-color={$_theme.primaryButtonTextColor}
-    --border-radius={$_theme.borderRadius}
-  />
-{:else}
-  <Loading
-    --loading-background-color={$_theme.primaryButtonColor}
-    --loading-color={$_theme.primaryButtonTextColor}
-    --border-radius={$_theme.borderRadius}
-  />
-{/if}
+<UnstyledConnectButton
+  {connectors}
+  {chains}
+  {wallets}
+  --wafer-button-background-color={$_theme["--wafer-button-background-color"]}
+  --wafer-button-text-color={$_theme["--wafer-button-text-color"]}
+  --wafer-button-hover-color={$_theme["--wafer-button-hover-color"]}
+  --wafer-button-border={$_theme["--wafer-button-border"]}
+  --wafer-secondary-button-background-color={$_theme["--wafer-secondary-button-background-color"]}
+  --wafer-secondary-button-text-color={$_theme["--wafer-secondary-button-text-color"]}
+  --wafer-secondary-button-hover-color={$_theme["--wafer-secondary-button-hover-color"]}
+  --wafer-secondary-button-border={$_theme["--wafer-secondary-button-border"]}
+  --wafer-error-background-color={$_theme["--wafer-error-background-color"]}
+  --wafer-error-hover-color={$_theme["--wafer-error-hover-color"]}
+  --wafer-error-text-color={$_theme["--wafer-error-text-color"]}
+  --wafer-dialog-background-color={$_theme["--wafer-dialog-background-color"]}
+  --wafer-dialog-text-color={$_theme["--wafer-dialog-text-color"]}
+  --wafer-menu-background-color={$_theme["--wafer-menu-background-color"]}
+  --wafer-menu-text-color={$_theme["--wafer-menu-text-color"]}
+  --wafer-color-scheme={$_theme["--wafer-color-scheme"]}
+  --wafer-avatar-radius={$_theme["--wafer-avatar-radius"]}
+  --wafer-border-radius={$_theme["--wafer-border-radius"]}
+  --wafer-button-height={$_theme["--wafer-button-height"]}
+  --wafer-button-z-index={$_theme["--wafer-button-z-index"]}
+  --wafer-dialog-width={$_theme["--wafer-dialog-width"]}
+  --wafer-dialog-blur={$_theme["--wafer-dialog-blur"]}
+  --wafer-error-height={$_theme["--wafer-error-height"]}
+  --wafer-secondary-button-height={$_theme["--wafer-secondary-button-height"]}
+/>

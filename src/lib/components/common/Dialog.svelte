@@ -31,13 +31,13 @@
       >
         <path
           d="M17.4829 5.86792L6.1692 17.1816"
-          stroke="var(--dialog-color)"
+          stroke="var(--wafer-dialog-text-color)"
           stroke-width="1.5"
           stroke-linecap="round"
         />
         <path
           d="M6.15088 5.84937L17.4646 17.1631"
-          stroke="var(--dialog-color)"
+          stroke="var(--wafer-dialog-text-color)"
           stroke-width="1.5"
           stroke-linecap="round"
         />
@@ -48,21 +48,14 @@
 </dialog>
 
 <style>
-  :root {
-    --dialog-background-color: rgba(240, 240, 240, 0.8);
-    --dialog-color: black;
-    --max-width: 324px;
-    --border-radius: 6px;
-  }
-
   dialog {
-    backdrop-filter: var(--dialog-blur);
-    background-color: var(--dialog-background-color);
+    backdrop-filter: var(--wafer-dialog-blur);
+    background-color: var(--wafer-dialog-background-color);
     border: none;
-    border-radius: var(--border-radius);
-    color: var(--dialog-color);
-    max-width: var(--max-width);
-    padding: 24px;
+    border-radius: var(--wafer-border-radius);
+    color: var(--wafer-dialog-text-color);
+    max-width: 314px;
+    padding: 1rem;
     width: 100%;
   }
 

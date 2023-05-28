@@ -28,17 +28,11 @@
 </dialog>
 
 <style>
-  :root {
-    --menu-background-color: white;
-    --menu-color: black;
-    --border-radius: 4px;
-  }
-
   dialog {
-    background-color: var(--menu-background-color);
+    background-color: var(--wafer-menu-background-color);
     border: none;
-    border-radius: var(--border-radius);
-    color: var(--menu-color);
+    border-radius: var(--wafer-border-radius);
+    color: var(--wafer-menu-text-color);
     left: 10px;
     max-width: 200px;
     padding: 24px;

@@ -1,6 +1,5 @@
 <script>
-  import { fade } from "svelte/transition";
-  import { theme } from "../stores";
+  import { fade } from "svelte/transition";;
   import { shortAddress } from "../utils.js";
   import Dialog from "./common/Dialog.svelte";
   import Address from "./connected/Address.svelte";
@@ -17,63 +16,29 @@
 </script>
 
 <button
+  class="wafer-primary"
   in:fade
   on:click={() => (showDialog = true)}
   aria-label={`Connected to wallet with address ${address}`}
 >
-  <Avatar {address} --radius="28px" />
+  <Avatar {address} --wafer-avatar-radius="29px" />
   {shortAddress(address)}
 </button>
 
-<Dialog
-  bind:showDialog
-  --dialog-background-color={$theme.dialogBackgroundColor}
-  --dialog-color={$theme.dialogTextColor}
-  --dialog-blur={$theme.dialogBlur}
-  --border-radius={$theme.borderRadius}
->
+<Dialog bind:showDialog>
   <div
     slot="title"
     style="align-items: center; display: flex; justify-content: space-between; width: 100%;"
   >
     <h2>Connected</h2>
-    <Chain
-      --chain-menu-background-color={$theme.chainMenuBackgroundColor}
-      --chain-menu-color={$theme.chainMenuTextColor}
-      --chain-button-background-color={$theme.secondaryButtonColor}
-      --chain-button-hover-color={$theme.secondaryButtonHoverColor}
-      --chain-button-color={$theme.secondaryButtonTextColor}
-      --border-radius={$theme.borderRadius}
-    />
+    <Chain />
   </div>
   <div
     style="align-items: center; display: flex; flex-direction: column; gap: 1rem; padding-block: 4px;"
   >
     <Avatar {address} />
-    <Address {address} --address-text-color={$theme.dialogTextColor} />
-    <Balance --balance-text-color={$theme.dialogTextColor} />
+    <Address {address} />
+    <Balance />
   </div>
-  <Disconnect
-    --disconnect-background-color={$theme.errorButtonColor}
-    --disconnect-color={$theme.errorButtonTextColor}
-    --disconnect-hover={$theme.errorButtonHoverColor}
-    --border-radius={$theme.borderRadius}
-  />
+  <Disconnect />
 </Dialog>
-
-<style>
-  :root {
-    --connected-background-color: rgb(235, 235, 235);
-    --connected-color: black;
-    --connected-hover-color: rgba(235, 235, 235, 0.7);
-    --border-radius: 6px;
-  }
-  button {
-    background-color: var(--connected-background-color);
-    color: var(--connected-color);
-    border-radius: var(--border-radius);
-  }
-  button:hover {
-    background-color: var(--connected-hover-color);
-  }
-</style>

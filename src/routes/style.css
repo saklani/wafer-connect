@@ -1,23 +1,31 @@
-:root {
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --docs-border-radius: 2px;
-  --docs-secondary-color: rgb(250, 250, 250);
-}
+@import '@fontsource/inter';
+@import '@fontsource/source-code-pro';
 
+:root {
+  --docs-font: "Inter", sans-serif;
+  --docs-code-font: "Source Code Pro", sans-serif;
+  --docs-border-radius: 3px;
+  --docs-secondary-color: rgb(250, 250, 250);
+  --docs-info-color: rgb(29, 56, 59);
+  --docs-border-radius: 4px;
+  font-family: var(--docs-font);
+}
 
 h1 {
   font-size: 2rem;
-  margin-block: 1rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 h2 {
-  font-size: 1.7rem;
-  margin-block: 1rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 h3 {
-  font-size: 1.4rem;
-  margin-block: 0.4rem;
+  font-size: 1.2rem;
+  margin-block: 0.5rem;
 }
 
 h4 {
@@ -36,26 +44,41 @@ h6 {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 0.95rem;
+  margin-block: 0.1rem;
 }
 
 code {
+  background-color: var(--docs-secondary-color);
+  border: solid 0.1px lightgrey;
+  border-radius: var(--docs-border-radius);
+  color: black;
+  font-family: var(--docs-code-font);
   font-size: 0.8rem;
   padding-inline: 4px;
-  border-radius: var(--docs-border-radius);
 }
 
 pre,
 blockquote {
-  margin-inline: 0px;
+  background-color: var(--docs-secondary-color);
   border: solid 0.1px lightgrey;
   border-radius: var(--docs-border-radius);
+  margin-inline: 0px;
   padding: 1rem;
-  background-color: var(--docs-secondary-color);
+}
+
+pre>code {
+  border: none;
 }
 
 blockquote {
+  background-color: var(--docs-info-color);
+  color: white;
   font-size: 0.9rem;
+}
+
+blockquote>p>a {
+  color: rgb(142, 193, 244);
 }
 
 table,
@@ -80,7 +103,7 @@ th {
   border: solid 0.1px lightgrey;
   padding-inline: 8px;
   padding-block: 4px;
-  gap: 1rem;
+  gap: 1.3rem;
 }
 
 .focus {
@@ -88,7 +111,7 @@ th {
   border: solid 0.1px lightgrey;
   border-radius: var(--docs-border-radius);
   min-height: 150px;
-  margin-bottom: 1.5rem;
+  margin-block: 1.5rem;
 }
 
 .center {
@@ -110,7 +133,8 @@ th {
 }
 
 .box {
-  padding: 1rem;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
   border-radius: var(--docs-border-radius);
   border: solid 0.1px lightgrey;
 }
@@ -119,8 +143,7 @@ th {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .gap {
@@ -129,6 +152,10 @@ th {
 
 .stretch {
   justify-content: stretch;
+}
+
+.margin-y {
+  margin-block: 1rem;
 }
 
 button.primary {

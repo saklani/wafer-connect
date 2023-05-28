@@ -1,8 +1,8 @@
 <script>
   import ConnectButton, {
-    darkTheme,
+    dark,
     getDefaultConnectors,
-    lightTheme,
+    light,
   } from "$lib/index.js";
   import { configureChains, createConfig } from "@wagmi/core";
   import { mainnet, polygon } from "@wagmi/core/chains";
@@ -26,36 +26,27 @@
   });
 
   const themes = [
-    lightTheme,
-    darkTheme,
+    light,
+    dark,
     {
-      ...lightTheme,
-      borderRadius: "2px",
-      primaryButtonColor: "rgb(168, 204, 140)",
-      primaryButtonHoverColor: "rgb(178, 214, 150)",
-      dialogBackgroundColor: "rgba(168, 204, 140, 0.7)",
+      ...dark,
+      "--wafer-button-background-color": "rgb(69, 19, 91)",
+      "--wafer-button-hover-color": "rgb(69, 30, 111)",
+      "--wafer-secondary-button-background-color": "rgb(0, 0, 91)",
+      "--wafer-secondary-button-hover-color": "rgb(0, 0, 111)",
+      "--wafer-dialog-background-color": "rgba(69, 30, 111, 0.8)",
+      "--wafer-menu-background-color": "rgb(69, 30, 111)",
     },
-    {
-      ...darkTheme,
-      borderRadius: "24px",
-      primaryButtonColor: "rgb(69, 20, 92)",
-      primaryButtonHoverColor: "rgb(70, 30, 102)",
-      secondaryButtonColor: "midnightblue",
-      secondaryButtonHoverColor: "darkblue",
-      dialogBackgroundColor: "rgba(69, 20, 92, 0.5)",
-    },
+  
   ];
   let themeIndex = 0;
 </script>
 
-<div class="column gap">
+<div class="column gap margin-y">
   <div class="row gap">
     <button class="secondary" on:click={() => (themeIndex = 0)}> Light </button>
     <button class="secondary" on:click={() => (themeIndex = 1)}> Dark </button>
-    <button class="secondary" on:click={() => (themeIndex = 2)}> Anise </button>
-    <button class="secondary" on:click={() => (themeIndex = 3)}>
-      Dark Blue
-    </button>
+    <button class="secondary" on:click={() => (themeIndex = 2)}> Eminence </button>
   </div>
   <div class="column center focus">
     {#key themeIndex}
@@ -68,4 +59,3 @@
     {/key}
   </div>
 </div>
-

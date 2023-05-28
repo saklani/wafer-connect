@@ -12,6 +12,12 @@ dependencies:
     version: 0.3.19(typescript@5.0.4)
 
 devDependencies:
+  '@fontsource/inter':
+    specifier: ^5.0.1
+    version: 5.0.1
+  '@fontsource/source-code-pro':
+    specifier: ^5.0.1
+    version: 5.0.1
   '@sveltejs/adapter-auto':
     specifier: ^2.0.1
     version: 2.0.1(@sveltejs/kit@1.15.9)
@@ -605,6 +611,14 @@ packages:
       '@ethersproject/properties': 5.7.0
       '@ethersproject/strings': 5.7.0
     dev: false
+
+  /@fontsource/inter@5.0.1:
+    resolution: {integrity: sha512-jezFhHp0HcVy2t6M6r89EcxkT30vx0ofGauveQWQ81j70N/wNDYs4zI+sedeend6zF9GXIEqpOTO2D1k7VQX4w==}
+    dev: true
+
+  /@fontsource/source-code-pro@5.0.1:
+    resolution: {integrity: sha512-SItUWzo8ibNnz6INEqNka/yjBJibdjk5uLVz8C2XRUZHHQKR3HU2Fkgt8nwLy2pipQWzzh8VrC3Zncdv4mGGYw==}
+    dev: true
 
   /@jridgewell/resolve-uri@3.1.0:
     resolution: {integrity: sha512-F2msla3tad+Mfht5cJq7LSXcdudKTWCVYUgw6pLFOOHSTtZlj6SWNYAp+AhuqLmWdBO2X5hPrLcu8cVP8fy28w==}
