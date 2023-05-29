@@ -3,15 +3,11 @@
   import { inject } from "@vercel/analytics";
   import Sidebar from "./Sidebar.svelte";
   import github from "./github.svg";
-  import monokai from "svelte-highlight/styles/monokai";
   import "./style.css";
 
   inject({ mode: dev ? "development" : "production" });
 </script>
 
-<svelte:head>
-  {@html monokai}
-</svelte:head>
   <main>  
     <header>
     <h3>Wafer Connect</h3>

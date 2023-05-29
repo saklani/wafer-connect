@@ -8,9 +8,9 @@ button {
   font-family: inherit;
   font-size: inherit;
   gap: 4px;
+  height: var(--wafer-button-height);
   justify-content: space-between;
   padding: 8px;
-  height: var(--wafer-button-height);
   z-index: var(--wafer-button-z-index);
 }
 

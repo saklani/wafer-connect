@@ -2,13 +2,13 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@wagmi/core':
-    specifier: ^1.0.8
+    specifier: ^1.0.0
     version: 1.0.8(react@18.2.0)(typescript@5.0.4)(viem@0.3.37)
   svelte:
-    specifier: ^3.59.1
+    specifier: ^3.0.0
     version: 3.59.1
   viem:
-    specifier: ^0.3.37
+    specifier: ^0.3.0
     version: 0.3.37(typescript@5.0.4)
 
 devDependencies:
