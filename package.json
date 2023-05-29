@@ -1,6 +1,6 @@
 {
   "name": "wafer-connect",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "homepage": "https://wafer.vercel.app",
   "repository": {
     "url": "https://github.com/saklani/wafer-connect"
@@ -48,6 +48,8 @@
     "viem": "^0.3.19"
   },
   "devDependencies": {
+    "@fontsource/inter": "^5.0.1",
+    "@fontsource/source-code-pro": "^5.0.1",
     "@sveltejs/adapter-auto": "^2.0.1",
     "@sveltejs/kit": "^1.5.0",
     "@sveltejs/package": "^2.0.0",
@@ -60,8 +62,6 @@
     "svelte-check": "^3.0.1",
     "svelte-highlight": "^7.3.0",
     "typescript": "^5.0.4",
-    "@fontsource/inter": "^5.0.1",
-    "@fontsource/source-code-pro": "^5.0.1",
     "vite": "^4.3.0"
   }
 }
