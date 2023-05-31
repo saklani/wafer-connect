@@ -8,7 +8,7 @@ Install `wafer-connect` and its peer dependencies `@wagmi/core` and `viem`.
 npm install wafer-connect @wagmi/core viem
 ``` 
 
-> A WalletConnect ProjectId is required since `wafer-connect` only supports WalletConnect v2.
+> WalletConnect ProjectId is required since `wafer-connect` only supports WalletConnect v2.
 >
 > Learn More: [walletconnect.com](https://walletconnect.com)
 

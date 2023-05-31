@@ -1,6 +1,7 @@
 <script>
-  import { network, chains } from "../../stores";
   import { switchNetwork } from "@wagmi/core";
+  import { chains } from "../../store/chains.js";
+  import { network } from "../../store/network.js";
   import Menu from "../common/Menu.svelte";
 
   /** @type {boolean}  */
@@ -61,7 +62,10 @@
   <h3 slot="title">Change Network</h3>
   {#each $chains as chain}
     {#if chain.id !== $network.chain.id}
-      <button class="wafer-secondary" on:click={() => changeNetwork({ chainId: chain.id })}>
+      <button
+        class="wafer-secondary"
+        on:click={() => changeNetwork({ chainId: chain.id })}
+      >
         {chain.name}
       </button>
     {/if}

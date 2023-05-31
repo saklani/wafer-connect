@@ -1,5 +1,5 @@
 <script>
-  import { balance } from "../../stores";
+  import { balance } from "../../store/balance.js";
   import { abbreviateETHBalance } from "../../utils.js";
 </script>
 

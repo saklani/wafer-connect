@@ -1,6 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
-  import { connectors } from "../stores/connectors.js";
+  import { connectors } from "../store/connectors.js";
   import Dialog from "./common/Dialog.svelte";
   import Connector from "./disconnected/Connector.svelte";
   import NoWallet from "./disconnected/NoWallet.svelte";

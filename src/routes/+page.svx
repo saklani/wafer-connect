@@ -1,8 +1,8 @@
 <script>
   import ConnectButton, {
     dark,
-    light,
     getDefaultConnectors,
+    light,
   } from "$lib/index.js";
   import { configureChains, createConfig } from "@wagmi/core";
   import { mainnet, polygon } from "@wagmi/core/chains";
@@ -28,9 +28,10 @@
   let theme = dark;
 </script>
 
-# Wafer Connect
+# Wafer Connect 
 
-`wafer-connect` is a svelte library to connect a wallet to your svelte decentralized application (dApp).
+`wafer-connect` is a svelte library to connect a wallet to your
+decentralized application.
 
 <div class="column center focus">
   <div class="row controls">
@@ -72,10 +73,8 @@
 </div>
 
 Add `wafer-connect` and its peer dependencies `@wagmi/core` and `viem`.
- 
-```bash 
-npm install wafer-connect @wagmi/core viem
-``` 
+
+`npm install wafer-connect @wagmi/core viem`
 
 ## Features
 
@@ -86,10 +85,10 @@ npm install wafer-connect @wagmi/core viem
       Built on popular libraries like <code>@wagmi/core</code> and
       <code>viem</code>.
     </p>
-  </div>  
+  </div>
   <div class="box">
     <h3>Incredibly Lightweight</h3>
-    <p> Zero external dependencies</p>
+    <p>Zero external dependencies</p>
   </div>
   <div class="box">
     <h3>Ready to use Themes</h3>

@@ -1,6 +1,6 @@
 <script>
   import UnstyledConnectButton from "./UnstyledConnectButton.svelte";
-  import { theme as _theme } from "./stores/theme.js";
+  import { theme as _theme } from "./store/theme.js";
   import { dark } from "./themes/dark.js";
 
   import "./style.css";

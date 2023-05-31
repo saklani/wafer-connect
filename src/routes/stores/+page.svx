@@ -1,12 +1,11 @@
 <script>
   import ConnectButton, {
     account,
-    balance,
     network,
     getDefaultConnectors,
   } from "$lib/index.js";
   import { configureChains, createConfig } from "@wagmi/core";
-  import { mainnet, polygon } from "@wagmi/core/chains";
+  import { mainnet } from "@wagmi/core/chains";
   import { publicProvider } from "@wagmi/core/providers/public";
 
   const { chains, publicClient } = configureChains(
@@ -23,23 +22,9 @@
   createConfig(connectors, publicClient);
 </script>
 
-# Stores 
-`wafer-connect` exposes two stores, `account` and `network` , useful for keeping track of the connection status and the current connected chain.
- 
-<div class="col">
-  <div>
-    <ConnectButton {chains} {connectors} {wallets} />
-  </div>
-  <p><strong>account.address:</strong> {$account.address}</p>
-  <p><strong>account.status:</strong> {$account.status}</p>
-  <p><strong>balance:</strong></p>
-  <p><strong>network.chain.id:</strong> {$network.chain?.id}</p>
-</div>
+# Store 
 
-
-## Store Definition 
-
-<br/>
+`wafer-connect/store` exposes svelte stores that can be a convenient way to keep track of values that change.
 
 ### account
  
@@ -52,7 +37,6 @@
 | isReconnecting | `boolean`                                                               | Returns true if account isReconnecting |
 | status         | `"connected"` \| `"reconnecting"` \| `"connecting"` \| `"disconnected"` | Returns current status of the account  |
 
-<br/>
 
 ### network
 
@@ -61,13 +45,21 @@
 | chain  | `Chain & unsupported?: boolean` \| `undefined`                     | Current connected chain  |
 | chains | `Chain[]`                                                          | List of supported chains |
 
-<br/>
 
-<style>
-  .col {
-    display: flex;
-    flex-direction: column;
-    border-radius: 4px;
-    margin-block: 1rem;
-  }
-</style>
+## Stores in Action
+
+<div class="column margin-y gap">
+  <div>
+
+    <ConnectButton {chains} {connectors} {wallets} />
+  </div>
+  <div>
+    <p><strong>account.address:</strong> {$account.address}</p>
+    <p><strong>account.status:</strong> {$account.status}</p>
+    <p><strong>balance:</strong></p>
+    <p><strong>network.chain.id:</strong> {$network.chain?.id}</p>
+  </div>
+  
+</div>
+
+

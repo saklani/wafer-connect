@@ -1,8 +1,8 @@
 <script>
-  import { account } from "./stores/account.js";
-  import { chains as _chains } from "./stores/chains.js";
-  import { connectors as _connectors } from "./stores/connectors.js";
-  import { network } from "./stores/network.js";
+  import { account } from "./store/account.js";
+  import { chains as _chains } from "./store/chains.js";
+  import { connectors as _connectors } from "./store/connectors.js";
+  import { network } from "./store/network.js";
 
   import Connected from "./components/Connected.svelte";
   import Disconnected from "./components/Disconnected.svelte";
