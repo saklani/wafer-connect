@@ -10,7 +10,7 @@ Wafer is highly customisable. You can create simple or complex themes to match y
 
 The themes can be customized in the following way:
 
-```
+```svelte
 <script>
   import { configureChains, createConfig } from "@wagmi/core";
   import { mainnet } from "@wagmi/core/chains";
@@ -59,7 +59,8 @@ The themes can be customized in the following way:
 ```
 
 The complete list of customisable theme options.
-```
+
+```javascript
 {
   "--wafer-avatar-radius": string;
   "--wafer-border-radius": string;

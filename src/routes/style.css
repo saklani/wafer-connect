@@ -1,9 +1,13 @@
-@import '@fontsource/inter';
-@import '@fontsource/source-code-pro';
+@import "@fontsource/inter";
+@import "@fontsource/source-code-pro";
 
 :root {
   --docs-font: "Inter", sans-serif;
+
+  --docs-code-background-color: #f1f1f1;
+  --docs-code-color: black;
   --docs-code-font: "Source Code Pro", sans-serif;
+
   --docs-border-radius: 3px;
   --docs-secondary-color: rgb(250, 250, 250);
   --docs-info-color: rgb(29, 56, 59);
@@ -49,39 +53,15 @@ p {
   margin-block: 0.1rem;
 }
 
-code {
-  background-color: var(--docs-secondary-color);
-  border: solid 0.1px lightgrey;
-  border-radius: var(--docs-border-radius);
-  color: black;
-  font-family: var(--docs-code-font);
-  font-size: 0.8rem;
-  padding-inline: 4px;
-}
-
-pre {
-  background-color: var(--docs-secondary-color);
-  border: solid 0.1px lightgrey;
-  border-radius: var(--docs-border-radius);
-  margin-inline: 0px;
-  padding: 1rem;
-}
-
-pre>code {
-  border: none;
-  padding-inline: 0px;
-}
-
 blockquote {
   background-color: var(--docs-info-color);
   border-radius: var(--docs-border-radius);
   color: white;
-  font-size: 0.9rem;
   margin-inline: 0px;
   padding: 1.5rem;
 }
 
-blockquote>p>a {
+blockquote > p > a {
   color: rgb(142, 193, 244);
 }
 
@@ -173,3 +153,82 @@ button.secondary {
   color: black;
   border-radius: var(--docs-border-radius);
 }
+
+code {
+  font-family: var(--docs-code-font);
+  font-size: 0.8rem;
+  padding-inline: 0.3rem;
+}
+
+pre[class*="language-"] {
+  background-color: var(--docs-code-background-color);
+  border: solid 0.1px lightgrey;
+  border-radius: var(--docs-border-radius);
+  color: var(--docs-code-color);
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+
+  text-shadow: none;
+
+  padding: 0.8rem;
+}
+
+pre[class*="language-"] > code {
+  background-color: transparent;
+  border: none;
+  padding-inline: 0px;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #8a8a8a;
+}
+
+.token.attr-value,
+.token.attr-value .token.punctuation,
+.token.interpolation,
+.token.string-property,
+.token.string,
+.style .token.string {
+  color: rgb(37, 143, 37);
+}
+
+.token.atrule,
+.token.keyword,
+.token.important,
+.token.deleted,
+.language-css .token.property {
+  color: blue;
+}
+
+.token.function {
+  color: magenta;
+}
+
+
+.language-javascript,
+.token .tag,
+.token.operator {
+  color: slateblue;
+}
+
+.token.tag .language-javascript,
+.token.attr-name,
+.token.literal-property {
+  color: rgb(251, 0, 96);
+}
+
+.token.punctuation {
+  color: darkslategray;
+}
+
+

@@ -74,7 +74,9 @@ decentralized application.
 
 Add `wafer-connect` and its peer dependencies `@wagmi/core` and `viem`.
 
-`npm install wafer-connect @wagmi/core viem`
+```bash
+npm install wafer-connect @wagmi/core viem
+```
 
 ## Features
 

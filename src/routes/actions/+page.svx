@@ -8,7 +8,7 @@
 
 Read the name of an ERC721 at `0xFBA3912Ca04dd458c843e2EE08967fC04f3579c2` on mainnet.
 
-```html
+```svelte
 <script lang="ts">
   import {
     configureChains,
