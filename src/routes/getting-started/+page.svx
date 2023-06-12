@@ -26,6 +26,7 @@ import ConnectButton, { getDefaultConnectors } from "wafer-connect";
 Initialize `@wagmi/core` client and get default connector.
 
 ```javascript
+
 const { chains, publicClient } = configureChains(
   [mainnet],
   [publicProvider()]
