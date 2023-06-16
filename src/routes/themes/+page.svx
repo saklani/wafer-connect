@@ -58,7 +58,7 @@ The themes can be customized in the following way:
 </style>
 ```
 
-The complete list of customisable theme options.
+The complete list of customizable theme options.
 
 ```javascript
 {
