@@ -57,6 +57,7 @@
     max-width: 314px;
     padding: 1rem;
     width: 100%;
+    z-index: -1;
   }
 
   dialog::backdrop {

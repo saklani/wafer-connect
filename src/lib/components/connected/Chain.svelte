@@ -1,6 +1,5 @@
 <script>
-  import { switchNetwork } from "@wagmi/core";
-  import { chains } from "../../store/chains.js";
+  import { getConfig, switchNetwork } from "@wagmi/core";
   import { network } from "../../store/network.js";
   import Menu from "../common/Menu.svelte";
 
@@ -20,17 +19,19 @@
 
   /** @type {boolean}  */
   let showMenu = false;
+
+  const chains = getConfig().chains;
 </script>
 
 <button
   class="wafer-secondary"
   on:click={() => (showMenu = true)}
-  disabled={isSwitchingNetwork || $chains.length === 1}
+  disabled={isSwitchingNetwork || chains.length === 1}
   style="font-size: 0.9rem;"
 >
   {#if isSwitchingNetwork}
-    <p>"Switching•••"</p>
-  {:else if $chains.length === 1}
+    <p>Switching•••</p>
+  {:else if chains.length === 1}
     <p>{$network.chain.name}</p>
   {:else}
     <p>{$network.chain.name}</p>
@@ -60,7 +61,7 @@
 
 <Menu bind:showMenu>
   <h3 slot="title">Change Network</h3>
-  {#each $chains as chain}
+  {#each chains as chain}
     {#if chain.id !== $network.chain.id}
       <button
         class="wafer-secondary"

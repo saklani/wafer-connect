@@ -13,13 +13,14 @@
     [publicProvider()]
   );
 
-  const { connectors, wallets } = getDefaultConnectors({
+  const { connectors } = getDefaultConnectors({
     appName: "example_custom",
     projectId: "956d5ec8e006d78c793f06be590de1fa",
     chains,
   });
 
   createConfig({
+    autoConnect: false,
     chains,
     connectors,
     publicClient,
@@ -68,7 +69,7 @@ decentralized application.
     </svg>
   </div>
   {#key theme}
-    <ConnectButton {theme} {chains} {connectors} {wallets} />
+    <ConnectButton {theme} />
   {/key}
 </div>
 

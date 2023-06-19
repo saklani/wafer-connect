@@ -40,10 +40,8 @@ const { connectors, wallets } = getDefaultConnectors({
 createConfig({ connectors, publicClient });
 ```
 
-Pass the `chains`, `connectors`, and `wallets` to `ConnectButton`.
-
 ```html
-<ConnectButton {chains} {connectors} {wallets} />
+<ConnectButton/>
 ```
 
 
@@ -71,7 +69,7 @@ Pass the `chains`, `connectors`, and `wallets` to `ConnectButton`.
 
 <header>
   <div />
-  <ConnectButton {chains} {connectors} {wallets} />
+  <ConnectButton />
 </header>
 
 <style>

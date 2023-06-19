@@ -4,7 +4,7 @@ import { writable } from "svelte/store";
 /**
  * Network store
  */
-function createNetwork() {
+function createStore() {
   /** @type {{chain?: import("@wagmi/core").Chain & {unsupported?: boolean;}; chains: import("@wagmi/core").Chain[];}} */
   const init = {
     chain: undefined,
@@ -13,9 +13,7 @@ function createNetwork() {
   const { set, subscribe } = writable(init);
   return {
     subscribe: subscribe,
-    reset: function () {
-      return set(getNetwork());
-    },
+    reset: () => set(getNetwork()),
   };
 }
-export const network = createNetwork();
+export const network = createStore();

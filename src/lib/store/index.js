@@ -1,4 +1,5 @@
 import { account } from "./account.js";
+import { balance } from "./balance.js";
 import { network } from "./network.js";
 
-export { account, network };
+export { account, balance, network };

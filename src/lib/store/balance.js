@@ -1,14 +1,18 @@
 import { fetchBalance } from "@wagmi/core";
-import { derived } from "svelte/store";
-import { account } from "./account.js";
-import { network } from "./network.js";
+import { writable } from "svelte/store";
+
+function createStore() {
+  const init = {
+    decimals: 0,
+    formatted: "0",
+    symbol: "",
+    value: 0n,
+  };
+  const { subscribe, set } = writable(init);
+  return { subscribe, reset: ({address, chainId}) => set(fetchBalance({ address, chainId })) }
+}
 
 /**
  * Balance store
  */
-export const balance = derived([account, network], ([$account, $network]) =>
-  fetchBalance({
-    address: $account.address,
-    chainId: $network.chain?.id,
-  }),
-);
+export const balance = createStore();
