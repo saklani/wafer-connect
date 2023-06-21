@@ -5,8 +5,9 @@
   import { network } from "../../stores/network.js";
 </script>
 
+
 <div style="height: 1.4rem;">
-  {#await fetchBalance({address: account.address, chainId: $network.chain.id}) then result}
+  {#await fetchBalance({address: $account.address, chainId: $network.chain.id}) then result}
     <h3>
       {abbreviateETHBalance(parseFloat(result.formatted))}
       {result.symbol}
