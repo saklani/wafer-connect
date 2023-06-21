@@ -1,5 +1,5 @@
 <script>
-  import { connect } from "@wagmi/core";
+  import { connect, watchAccount } from "@wagmi/core";
   import { getIconFromId } from "../../connectors/utils.js";
 
   /** @type {import("@wagmi/core/connectors").Connector}*/
