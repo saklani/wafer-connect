@@ -1,10 +1,11 @@
 <script>
   import { onMount } from "svelte";
   import UnstyledConnectButton from "./UnstyledConnectButton.svelte";
-  import { theme as _theme } from "./store/theme.js";
-  import "./style.css";
+  import { theme as _theme } from "./stores/theme.js";
   import { dark } from "./themes/dark.js";
-  import { watch } from "./watcher.js";
+  import { watch } from "./watch.js";
+
+  import "./style.css";
 
   /** @type {{"--wafer-avatar-radius": string"--wafer-border-radius": string"--wafer-button-height": string"--wafer-button-z-index": string"--wafer-dialog-width": string"--wafer-dialog-blur": string"--wafer-error-height": string"--wafer-secondary-button-height": string"--wafer-button-background-color": string"--wafer-button-text-color": string"--wafer-button-hover-color": string"--wafer-button-border": string"--wafer-secondary-button-background-color": string"--wafer-secondary-button-text-color": string"--wafer-secondary-button-hover-color": string"--wafer-secondary-button-border": string"--wafer-error-background-color": string"--wafer-error-hover-color": string"--wafer-error-text-color": string"--wafer-dialog-background-color": string"--wafer-dialog-text-color": string"--wafer-menu-background-color": string"--wafer-menu-text-color": string"--wafer-color-scheme": string;} | {}}*/
   let theme = dark;

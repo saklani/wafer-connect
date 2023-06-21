@@ -1,6 +1,6 @@
 <script>
   import { getConfig, switchNetwork } from "@wagmi/core";
-  import { network } from "../../store/network.js";
+  import { network } from "../../stores/network.js";
   import Menu from "../common/Menu.svelte";
 
   /** @type {boolean}  */
