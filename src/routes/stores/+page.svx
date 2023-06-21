@@ -1,10 +1,14 @@
 <script>
   import Stores from "./Stores.svelte"
-  </script>
+</script>
 
 # Store 
 
 `wafer-connect/stores` exposes svelte stores that can be a convenient way to keep track of values that change.
+
+```
+  import { account, network } from "wafer-connect/stores";
+```
 
 ### account
  
