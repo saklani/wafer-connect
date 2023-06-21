@@ -65,18 +65,22 @@ blockquote > p > a {
   color: rgb(142, 193, 244);
 }
 
-table,
-td {
+table {
   border: solid 0.1px;
-  gap: 0px;
 }
 
+table,
+td {
+  gap: 0px;
+}
+thead {
+  background-color: #f1f1f1;
+}
 th {
   font-size: 0.9rem;
   text-align: left;
-  margin: 0;
-
-  padding: 2px;
+  margin: 0px;
+  padding: 4px;
 }
 
 .controls {

@@ -4,7 +4,7 @@
 
 # Store 
 
-`wafer-connect/store` exposes svelte stores that can be a convenient way to keep track of values that change.
+`wafer-connect/stores` exposes svelte stores that can be a convenient way to keep track of values that change.
 
 ### account
  
