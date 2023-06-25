@@ -12,8 +12,8 @@ npm install wafer-connect @wagmi/core viem
 >
 > Learn More: [walletconnect.com](https://walletconnect.com)
 
-
 ## Import & Initialize
+
 Import from `wafer-connect` and `@wagmi/core`
 
 ```javascript

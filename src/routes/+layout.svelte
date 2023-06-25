@@ -42,9 +42,9 @@
   }
 
   .content {
-    padding-inline: 3rem;
-    padding-top: 1rem;
-    width: calc(100vw - 175px - 6rem);
+    padding-inline: 4rem;
+    padding-top: 1.5rem;
+    width: calc(100vw - 175px - 8rem);
   }
 
 </style>

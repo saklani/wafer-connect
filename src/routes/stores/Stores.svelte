@@ -1,7 +1,5 @@
 <script>
   import ConnectButton, {
-    account,
-    network,
     getDefaultConnectors,
   } from "$lib/index.js";
   import { configureChains, createConfig } from "@wagmi/core";
@@ -26,13 +24,6 @@
   });
 </script>
 
-<div class="column margin-y gap">
-  <div>
-    <ConnectButton />
-  </div>
-  <div>
-    <p><strong>account.address:</strong> {$account.address}</p>
-    <p><strong>account.status:</strong> {$account.status}</p>
-    <p><strong>network.chain.id:</strong> {$network.chain?.id}</p>
-  </div>
+<div class="column center gap margin-y">
+  <ConnectButton {chains} {connectors} />
 </div>

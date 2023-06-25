@@ -2,7 +2,7 @@
 
 `wafer-connect` supports any `@wagmi/core` action right out of the box.
 
-> Learn more about `@wagmi/core` actions: [wagmi.sh/core/actions/connect](https://wagmi.sh/core/actions/connect)
+> Learn more: [wagmi.sh/core/actions/connect](https://wagmi.sh/core/actions/connect)
 
 ## Read Contract
 
@@ -18,7 +18,9 @@ Read the name of an ERC721 at `0xFBA3912Ca04dd458c843e2EE08967fC04f3579c2` on ma
   } from "@wagmi/core";
   import { mainnet } from "@wagmi/core/chains";
   import { alchemyProvider } from "@wagmi/core/providers/alchemy";
-  import ConnectButton, { getDefaultConnectors } from "wafer-connect";
+  import ConnectButton, { 
+    getDefaultConnectors 
+  } from "wafer-connect";
 
   const { chains, publicClient } = configureChains(
     [mainnet],
@@ -40,7 +42,7 @@ Read the name of an ERC721 at `0xFBA3912Ca04dd458c843e2EE08967fC04f3579c2` on ma
 
   async function getData() {
     value = await readContract({
-      address: "0xFBA3912Ca04dd458c843e2EE08967fC04f3579c2" as `0x${string}`,
+      address: "0xFBA3912Ca04dd458c843e2EE08967fC04f3579c2",
       abi: erc721ABI,
       functionName: "name",
     });

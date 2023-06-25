@@ -15,42 +15,73 @@
   font-family: var(--docs-font);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+}
+
 h1 {
-  font-size: 2rem;
-  margin-top: 0.4rem;
-  margin-bottom: 0.7rem;
+  font-size: 2.4rem;
   font-weight: 400;
+  line-height: 2.5rem;
+  letter-spacing: -10%;
+  margin-bottom: 0.5rem;
 }
 
 h2 {
   font-size: 1.5rem;
-  margin-top: 1rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+  letter-spacing: -5%;
+  margin-top: 2rem;
   margin-bottom: 0.5rem;
 }
 
 h3 {
   font-size: 1.2rem;
-  margin-block: 0.5rem;
+  font-weight: 450;
+  line-height: 2.4rem;
+  letter-spacing: -2%;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  word-spacing: -5%;
 }
 
 h4 {
   font-size: 1rem;
-  margin-block: 0.25rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  letter-spacing: 5%;
 }
 
 h5 {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  font-weight: 500;
   margin-block: 0.2rem;
+  line-height: 1.35rem;
+  letter-spacing: 5%;
 }
 
 h6 {
+  color: darkslategray;
   font-size: 0.8rem;
+  font-weight: 500;
   margin-block: 0.1rem;
+  line-height: 1.2rem;
+  letter-spacing: 5%;
 }
 
 p {
   font-size: 0.95rem;
-  margin-block: 0.1rem;
+  margin-block: 0.5rem;
+  line-height: 1.425rem;
+  letter-spacing: 5%;
+  word-spacing: 3%;
 }
 
 blockquote {
@@ -65,18 +96,23 @@ blockquote > p > a {
   color: rgb(142, 193, 244);
 }
 
+blockquote > p > code {
+  color: black;
+}
+
 table {
   border: solid 0.1px;
 }
 
 table,
 td {
+  border-radius: var(--docs-border-radius);
   gap: 0px;
 }
 thead {
   background-color: #f1f1f1;
 }
-th {
+th, tr {
   font-size: 0.9rem;
   text-align: left;
   margin: 0px;
@@ -98,8 +134,16 @@ th {
   position: relative;
   border: solid 0.1px lightgrey;
   border-radius: var(--docs-border-radius);
+  margin-block: 1.75rem;
   min-height: 150px;
-  margin-block: 1.5rem;
+}
+
+.align {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
 }
 
 .center {
@@ -117,12 +161,12 @@ th {
 }
 
 .max-w {
-  max-width: 650px;
+  max-width: 575px;
 }
 
 .box {
-  padding-block: 0.8rem;
-  padding-inline: 1.4rem;
+  padding-block: 1.2rem;
+  padding-inline: 1.5rem;
   border-radius: var(--docs-border-radius);
   border: solid 0.1px lightgrey;
 }
@@ -131,11 +175,11 @@ th {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
-  margin-bottom: 1rem;
+  margin-block: 1rem;
 }
 
-.gap {
-  gap: 0.5rem;
+.gap-large {
+  gap: 1rem;
 }
 
 .stretch {
@@ -143,7 +187,7 @@ th {
 }
 
 .margin-y {
-  margin-block: 1rem;
+  margin-block: 2rem;
 }
 
 button.primary {
@@ -159,8 +203,12 @@ button.secondary {
 }
 
 code {
+  background-color: var(--docs-code-background-color);
+  border-radius: var(--docs-border-radius);
   font-family: var(--docs-code-font);
   font-size: 0.8rem;
+  line-height: 1.2rem;
+  padding-block: 0.1rem;
   padding-inline: 0.3rem;
 }
 
@@ -180,8 +228,8 @@ pre[class*="language-"] {
   tab-size: 2;
 
   text-shadow: none;
-
   padding: 0.8rem;
+  margin-block: 0.5rem;
 }
 
 pre[class*="language-"] > code {
@@ -218,7 +266,6 @@ pre[class*="language-"] > code {
   color: magenta;
 }
 
-
 .language-javascript,
 .token .tag,
 .token.operator {
@@ -235,4 +282,20 @@ pre[class*="language-"] > code {
   color: darkslategray;
 }
 
+button.eminence {
+  background-color: rgb(69, 19, 91);
+  color: white;
+}
+button.eminence:hover {
+  background-color: rgb(69, 30, 111);
+}
+
+button.zeus {
+  background-color: #1d1814;
+  color: white;
+}
+
+button.zeus:hover {
+  background-color: rgb(25, 25, 25);
+}
 

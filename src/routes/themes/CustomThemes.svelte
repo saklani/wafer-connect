@@ -43,10 +43,10 @@
 </script>
 
 <div class="column gap margin-y">
-  <div class="row gap">
+  <div class="row gap-large">
     <button class="secondary" on:click={() => (themeIndex = 0)}> Light </button>
-    <button class="secondary" on:click={() => (themeIndex = 1)}> Dark </button>
-    <button class="secondary" on:click={() => (themeIndex = 2)}> Eminence </button>
+    <button class="secondary zeus" on:click={() => (themeIndex = 1)}> Dark </button>
+    <button class="secondary eminence" on:click={() => (themeIndex = 2)}> Eminence </button>
   </div>
   <div class="column center focus">
     {#key themeIndex}

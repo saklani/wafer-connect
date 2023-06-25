@@ -1,35 +1,129 @@
 <script>
+  import { account, network } from "$lib";
   import Stores from "./Stores.svelte"
 </script>
 
-# Store 
+# Stores 
 
-`wafer-connect/stores` exposes svelte stores that can be a convenient way to keep track of values that change.
+Exposes svelte stores that can keep track of values that change.
 
-```
+```js
   import { account, network } from "wafer-connect/stores";
 ```
 
-### account
- 
-| Name           | Type                                                                    | Description                            |
-|----------------|-------------------------------------------------------------------------|----------------------------------------|
-| address        | `0xstring` \| `undefined`                                               | Address of the connected account       |
-| isConnected    | `boolean`                                                               | Returns true if account isConnected    |
-| isConnecting   | `boolean`                                                               | Returns true if account isConnecting   |
-| isDisconnected | `boolean`                                                               | Returns true if account isDisconnected |
-| isReconnecting | `boolean`                                                               | Returns true if account isReconnecting |
-| status         | `"connected"` \| `"reconnecting"` \| `"connecting"` \| `"disconnected"` | Returns current status of the account  |
-
-
-### network
-
-| Name   | Type                                                               | Description              |
-|--------|--------------------------------------------------------------------|--------------------------|
-| chain  | `Chain & unsupported?: boolean` \| `undefined`                     | Current connected chain  |
-| chains | `Chain[]`                                                          | List of supported chains |
-
-
-## Stores in Action
 <Stores/>
 
+## Account
+
+<div class="column gap-large">
+  <div class="column doc">
+    <div class="row doc-header">
+      <p><strong>address</strong></p>
+      <code>Address or undefined</code>
+    </div>
+    <div class="row space-between align">
+      <p>The address of the connected account</p>
+      <code>{$account.address}</code>
+    </div>
+  </div>
+  <div class="column doc">
+    <div class="row doc-header">
+      <p><strong>isConnected</strong></p>
+      <code>Boolean</code>
+    </div>
+    <div class="row space-between align">
+      <p>Returns true if account isConnected</p>
+      <code>{$account.isConnected}</code>
+    </div>
+  </div>
+  <div class="column doc">
+    <div class="row doc-header">
+      <p><strong>isConnecting</strong></p>
+      <code>Boolean</code>
+    </div>
+    <div class="row space-between align">
+      <p>Returns true if account isConnecting</p>
+      <code>{$account.isConnecting}</code>
+    </div>
+  </div>
+  <div class="column doc">
+    <div class="row doc-header">
+      <p><strong>isDisconnected</strong></p>
+      <code>Boolean</code>
+    </div>
+    <div class="row space-between align">
+      <p>Returns true if account isDisconnected</p>
+      <code>{$account.isDisconnected}</code>
+    </div>
+  </div>
+  <div class="column doc">
+    <div class="row doc-header">
+      <p><strong>isReconnecting</strong></p>
+      <code>Boolean</code>
+    </div>
+    <div class="row space-between align">
+      <p>Returns true if account isReconnecting</p>
+      <code>{$account.isReconnecting}</code>
+    </div>
+  </div>
+  <div class="column doc">
+    <div class="row doc-header">
+      <p><strong>status</strong></p>
+      <code>"connected" | "reconnecting" | "connecting" | "disconnected"</code>
+    </div>
+    <div class="row space-between align">
+      <p>Returns current status of the account</p>
+      <code>{$account.status}</code>
+    </div>
+  </div>
+</div>
+
+## Network
+
+<div class="column gap-large">
+  <div class="column doc">
+    <div class="row doc-header">
+      <p><strong>chain</strong></p>
+      <code>Chain & unsupported?: boolean or undefined</code>
+    </div>
+    <div class="row space-between align">
+      <p>Current connected chain</p>
+      <code>{$network.chain?.id}</code>
+    </div>
+  </div>
+  <div class="column doc">
+    <div class="row doc-header">
+      <p><strong>chains</strong></p>
+      <code>Chain[]</code>
+    </div>
+    <div class="row space-between align">
+      <p>List of supported chains</p>
+      <code>{JSON.stringify($network.chains.map(c => c.id))}</code>
+    </div>
+  </div>
+</div>
+
+
+<br/>
+<br/>
+
+<style>
+  .doc {
+    border: solid 0.1px lightgrey;
+    border-radius: var(--docs-border-radius);
+    padding: 8px;
+    gap: 0px;
+  }
+  .doc-header {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .doc-header > code {
+    border-radius: 999px;
+    background-color: rgb(0, 97, 225);
+    color: white;
+    padding-block: 4px;
+    padding-inline: 8px;
+  }
+  </style>
