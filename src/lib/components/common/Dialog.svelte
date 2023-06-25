@@ -54,7 +54,7 @@
     border: none;
     border-radius: var(--wafer-border-radius);
     color: var(--wafer-dialog-text-color);
-    max-width: 314px;
+    max-width: 324px;
     padding: 1rem;
     width: 100%;
     z-index: -1;

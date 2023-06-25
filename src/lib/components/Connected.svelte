@@ -28,7 +28,7 @@
 <Dialog bind:showDialog>
   <div
     slot="title"
-    style="align-items: center; display: flex; justify-content: space-between; width: 100%;"
+    style="align-items: center; display: flex; height: 50px;  justify-content: space-between;  width: 100%;"
   >
     <h2>Connected</h2>
     <Chain />

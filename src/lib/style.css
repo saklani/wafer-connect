@@ -1,3 +1,14 @@
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+}
+
 button {
   align-items: center;
   border: none;
@@ -11,6 +22,7 @@ button {
   height: var(--wafer-button-height);
   justify-content: space-between;
   padding: 8px;
+  padding-inline: 1rem;
   z-index: var(--wafer-button-z-index);
 }
 

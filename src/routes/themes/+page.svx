@@ -4,7 +4,7 @@
 
 # Themes
 
-Wafer is highly customisable. You can create simple or complex themes to match your branding.
+Wafer is highly customizable. You can create simple or complex themes to match your branding.
 
 <CustomThemes/>
 

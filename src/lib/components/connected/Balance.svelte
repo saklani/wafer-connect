@@ -6,7 +6,7 @@
 </script>
 
 
-<div style="height: 1.4rem;">
+<div style="height: 50px;">
   {#await fetchBalance({address: $account.address, chainId: $network.chain.id}) then result}
     <h3>
       {abbreviateETHBalance(parseFloat(result.formatted))}
