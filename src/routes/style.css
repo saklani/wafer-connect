@@ -178,6 +178,10 @@ th, tr {
   margin-block: 1rem;
 }
 
+.gap {
+  gap: 0.5rem;
+}
+
 .gap-large {
   gap: 1rem;
 }

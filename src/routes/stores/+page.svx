@@ -112,7 +112,7 @@ Exposes svelte stores that can keep track of values that change.
     border: solid 0.1px lightgrey;
     border-radius: var(--docs-border-radius);
     padding: 8px;
-    gap: 0px;
+    gap: 8px;
   }
   .doc-header {
     align-items: center;
